@@ -1,0 +1,17 @@
+{
+  "name": "adminSystem",
+  "private": true,
+  "packageManager": "npm@10.0.0",
+  "devDependencies": {
+    "turbo": "^2.9.14"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint"
+  }
+}
