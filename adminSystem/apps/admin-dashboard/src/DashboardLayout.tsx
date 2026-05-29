@@ -37,24 +37,24 @@ export default function DashboardLayout({
           <SidebarHeader className="p-4 text-xl font-bold">Sirvent</SidebarHeader>
           <SidebarContent>
             <SidebarMenu>
-                <SidebarMenuItem>
-                  <a href="/dashboard" className="flex items-center gap-2 p-2 rounded-md hover:bg-muted/50">
-                    <HomeIcon className="size-4" />
-                    <span>Inicio</span>
-                  </a>
-                </SidebarMenuItem>
-                <SidebarMenuItem>
-                  <a href="/dashboard/users" className="flex items-center gap-2 p-2 rounded-md hover:bg-muted/50">
-                    <UsersIcon className="size-4" />
-                    <span>Usuarios</span>
-                  </a>
-                </SidebarMenuItem>
-                <SidebarMenuItem>
-                  <a href="/dashboard/settings" className="flex items-center gap-2 p-2 rounded-md hover:bg-muted/50">
-                    <SettingsIcon className="size-4" />
-                    <span>Configuración</span>
-                  </a>
-                </SidebarMenuItem>
+              <SidebarMenuItem>
+                <a href="/dashboard" className="flex items-center gap-2 p-2 rounded-md hover:bg-muted/50">
+                  <HomeIcon className="size-4" />
+                  <span>Inicio</span>
+                </a>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <a href="/dashboard/users" className="flex items-center gap-2 p-2 rounded-md hover:bg-muted/50">
+                  <UsersIcon className="size-4" />
+                  <span>Usuarios</span>
+                </a>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <a href="/dashboard/settings" className="flex items-center gap-2 p-2 rounded-md hover:bg-muted/50">
+                  <SettingsIcon className="size-4" />
+                  <span>Configuración</span>
+                </a>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarContent>
           <SidebarFooter>

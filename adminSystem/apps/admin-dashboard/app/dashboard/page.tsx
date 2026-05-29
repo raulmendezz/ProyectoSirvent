@@ -41,8 +41,8 @@ export default function DashboardPage() {
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle>Pedidos Recientes</CardTitle>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon"><MoreHorizontalIcon /></Button>
+            <DropdownMenuTrigger render={<Button variant="ghost" size="icon" />}>
+              <MoreHorizontalIcon />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem>Exportar CSV</DropdownMenuItem>
