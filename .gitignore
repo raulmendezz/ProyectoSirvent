@@ -1,0 +1,12 @@
+# Gitignore for ProyectoSirvent
+# Exclude node_modules and build artifacts
+node_modules/
+.next/
+out/
+.dist/
+build/
+*.log
+.DS_Store
+.env.local
+.env.development
+.env.production
