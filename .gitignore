@@ -1,0 +1,38 @@
+﻿# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+bower_components/
+
+# Build output
+dist/
+build/
+out/
+
+# Claude Code local settings
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# Next.js
+.next/
+
+# Misc
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

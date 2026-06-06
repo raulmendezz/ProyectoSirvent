@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Heladería Sirvent Benidorm - Desde 1940 elaborando helados y horchatas artesanales de máxima calidad. Recetas tradicionales directas de Jijona.">
+    <meta name="author" content="Heladería Sirvent Benidorm">
+    <meta name="keywords"
+        content="Heladeria Sirvent, Benidorm, helados artesanales, horchata de chufa, gofres, crepes, Jijona, heladeria playa levante, heladeria playa poniente">
+
+    <!-- Title -->
+    <title>Heladería Sirvent Benidorm | Helados Artesanos desde 1940</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/Productos/TARRINA HELADO copia.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- --- NAVIGATION BAR --- -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-icon">🍧</span>
+                <div class="brand-name">
+                    <span class="brand-title">Sirvent</span>
+                    <span class="brand-subtitle">Benidorm · Desde 1940</span>
+                </div>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active" onclick="closeMenu()">Home</a></li>
+                <li><a href="#historia" class="nav-link" data-key="nav_historia" onclick="closeMenu()">Nuestra
+                        Historia</a></li>
+                <li><a href="#carta" class="nav-link" data-key="nav_carta" onclick="closeMenu()">La Carta</a></li>
+                <li><a href="#contacto" class="nav-link" data-key="nav_contacto" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Language Selector -->
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es" onclick="setLanguage('es')">ES</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                </div>
+
+                <!-- Mobile Menu Hamburger -->
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- --- HERO SECTION --- -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-badge" data-key="hero_badge">
+                    <i class="fa-solid fa-award"></i> Desde 1940 · Helados Artesanos
+                </span>
+                <h1 class="hero-title" data-key="hero_title">
+                    Sabores de siempre en un rincón de <span>Benidorm</span>
+                </h1>
+                <p class="hero-desc" data-key="hero_desc">
+                    Recetas tradicionales nacidas en Jijona y perfeccionadas a lo largo de generaciones. Disfruta del
+                    auténtico sabor artesanal con vistas al mar mediterráneo.
+                </p>
+                <div class="hero-actions">
+                    <a href="#carta" class="btn btn-primary" data-key="hero_cta_carta">
+                        <i class="fa-solid fa-utensils"></i> Ver la Carta
+                    </a>
+                    <a href="#historia" class="btn btn-secondary" data-key="hero_cta_historia">
+                        Nuestra Historia
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="hero-image-bg"></div>
+                <!-- Premium Hero image showcasing a signature artisan product -->
+                <img src="img/Productos/CONO BOLAS HELADO.png" alt="Heladería Sirvent Helados Artesanos"
+                    class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- --- HISTORIA / TRADICIÓN SECTION --- -->
+    <section class="history section-padding" id="historia">
+        <div class="container history-container">
+            <div class="history-image-frame" data-aos="fade-right">
+                <!-- Using beautiful actual image of a premium product in the workspace -->
+                <img src="img/Productos/TARRINA HELADO SIRVENT copia.png" alt="Helado de Jijona Sirvent"
+                    class="history-img">
+            </div>
+
+            <div class="history-text" data-aos="fade-left">
+                <span class="section-subtitle" data-key="history_subtitle">Nuestra Tradición</span>
+                <h2 class="section-title" data-key="history_title">De la cuna del turrón a la costa de Benidorm</h2>
+                <p data-key="history_p1">
+                    En 1940, la familia Sirvent inició su andadura elaborando helados y turrones artesanos en Jijona,
+                    cuna indiscutible de esta tradición. Con ingredientes de máxima calidad y un mimo infinito,
+                    decidimos trasladar esta pasión a Benidorm.
+                </p>
+                <p data-key="history_p2">
+                    Hoy, más de 80 años después, mantenemos intacto el legado del iaio Luis Sirvent. Nuestra Horchata de
+                    Chufa de Alboraya premium y nuestros helados cremosos son el reflejo de un compromiso inquebrantable
+                    con la autenticidad y el sabor mediterráneo.
+                </p>
+
+                <div class="history-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-hourglass-half"></i>
+                        </div>
+                        <div class="highlight-info">
+                            <h4 data-key="hist_h1">Artesanos desde 1940</h4>
+                            <p data-key="hist_p1_highlight">Tres generaciones elaborando helados con recetas secretas
+                                familiares.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-lemon"></i>
+                        </div>
+                        <div class="highlight-info">
+                            <h4 data-key="hist_h2">Ingredientes Premium</h4>
+                            <p data-key="hist_p2_highlight">Chufa de Alboraya seleccionada y almendras de Jijona de
+                                primera calidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- LA CARTA SECTION --- -->
+    <section class="carta section-padding" id="carta">
+        <div class="container">
+            <div class="carta-header">
+                <span class="section-subtitle" data-key="carta_subtitle">Heladería Sirvent</span>
+                <h2 class="section-title" data-key="carta_title">Nuestra Carta de Manjares</h2>
+            </div>
+
+            <!-- Controls & Filters -->
+            <div class="carta-controls">
+                <!-- Live Search -->
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Busca tu helado o bebida favorita...">
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-category="all" data-key="tab_all">Todos</button>
+                    <button class="tab-btn" data-category="helados" data-key="tab_helados">Helados y Tarrinas</button>
+                    <button class="tab-btn" data-category="granizados" data-key="tab_granizados">Granizados</button>
+                    <button class="tab-btn" data-category="cocktails" data-key="tab_cocktails">Cócteles Frozen</button>
+                    <button class="tab-btn" data-category="frap" data-key="tab_frap">Frap-Shakes y Copas</button>
+                    <button class="tab-btn" data-category="horchata" data-key="tab_horchata">Horchata y Leche</button>
+                    <button class="tab-btn" data-category="gofres" data-key="tab_gofres">Gofres y Crepes</button>
+                    <button class="tab-btn" data-category="cafe" data-key="tab_cafe">Cafetería</button>
+                    <button class="tab-btn" data-category="bebidas" data-key="tab_bebidas">Bebidas</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="products-grid">
+                <!-- Dynamically Populated by app.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- --- CONTACT & LOCATION SECTION --- -->
+    <section class="contact section-padding" id="contacto">
+        <div class="container contact-container">
+            <div class="contact-info-panel" data-aos="fade-right">
+                <div class="contact-card">
+                    <span class="section-subtitle" data-key="nav_contacto">Contacto</span>
+                    <h2 class="contact-card-title" data-key="contact_title">Ven a vernos en Benidorm</h2>
+
+                    <!-- Dynamic Hour Badge -->
+                    <div class="status-badge open" id="statusBadge">
+                        <span class="status-dot" id="statusDot"></span>
+                        <span id="statusText">Abierto ahora</span>
+                    </div>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;" data-key="status_hours">
+                        Horario: Todos los días de 09:00 a 00:00
+                    </p>
+
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <h5 data-key="contact_tel">Teléfono de contacto</h5>
+                                <p><a href="tel:+34965868560">96 586 85 60</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <h5 data-key="contact_email">Correo electrónico</h5>
+                                <p><a href="mailto:info@heladossirventbenidorm.com">info@heladossirventbenidorm.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <h5 data-key="contact_addr">Dirección</h5>
+                                <p>Avinguda Alcoi, 2, 03503 Benidorm, Alicante</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FOOTER --- -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-brand-title">🍧 Sirvent Benidorm</h3>
+                    <p class="footer-desc" data-key="footer_desc">
+                        Elaborando momentos felices y helados artesanales en Benidorm desde 1940. Recetas tradicionales
+                        directas de Jijona.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/heladossirvent" class="social-icon" target="_blank"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/HeladosSirvent" class="social-icon" target="_blank"
+                            aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@heladossirvent?lang=es" class="social-icon" target="_blank"
+                            aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-key="footer_links_title">Navegación</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#hero" class="footer-link">Home</a></li>
+                        <li><a href="#historia" class="footer-link" data-key="nav_historia">Nuestra Historia</a></li>
+                        <li><a href="#carta" class="footer-link" data-key="nav_carta">La Carta</a></li>
+                        <li><a href="#contacto" class="footer-link" data-key="nav_contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-key="footer_hours_title">Nuestros Locales</h4>
+                    <ul class="footer-links-list">
+                        <li class="footer-link" style="cursor: default;">
+                            <i class="fa-solid fa-map-pin" style="color: var(--primary-light); margin-right: 8px;"></i>
+                            <strong>Avinguda Alcoi, 2, 03503 Benidorm, Alicante</strong>
+                        </li>
+                        <li class="footer-link" style="cursor: default;">
+                            <i class="fa-solid fa-clock" style="color: var(--primary-light); margin-right: 8px;"></i>
+                            09:00 - 01:00 (Lunes - Domingo)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider">
+                <div class="footer-copy">
+                    &copy; 2026 Heladería Sirvent Benidorm. Todos los derechos reservados.
+                </div>
+                <div class="footer-credits" data-key="footer_credit">
+                    Diseñado con amor para <span>Heladería Sirvent</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- MOBILE NAVIGATION SCRIPTS --- -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+            const icon = document.getElementById("menuIcon");
+            menu.classList.toggle("active");
+            if (menu.classList.contains("active")) {
+                icon.className = "fa-solid fa-xmark";
+            } else {
+                icon.className = "fa-solid fa-bars";
+            }
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById("navMenu");
+            const icon = document.getElementById("menuIcon");
+            menu.classList.remove("active");
+            icon.className = "fa-solid fa-bars";
+        }
+
+        // Simple highlight on scroll for active nav items
+        window.addEventListener("scroll", () => {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 120) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <!-- Load Interactive app logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>
