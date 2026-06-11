@@ -1,5 +1,6 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { ScheduleModule } from '@nestjs/schedule';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
@@ -10,18 +11,21 @@ import { LogsModule } from './logs/logs.module';
 import { AlertsModule } from './alerts/alerts.module';
 import { AmazonModule } from './amazon/amazon.module';
 import { WhitelistModule } from './whitelist/whitelist.module';
+import { WorkerModule } from './worker/worker.module';
 import { IpWhitelistMiddleware } from './common/middleware/ip-whitelist.middleware';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
+    ScheduleModule.forRoot(),
     PrismaModule,
+    LogsModule,
     AuthModule,
     UsersModule,
     InventoryModule,
-    LogsModule,
     AlertsModule,
     AmazonModule,
+    WorkerModule,
     WhitelistModule,
   ],
   controllers: [AppController],
