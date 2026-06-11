@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import axios from 'axios';
 import { AmazonAuthService } from './amazon-auth.service';
 
-const BASE_URL = 'https://sellingpartnerapi-eu.amazon.com';
+const BASE_URL = 'https://sandbox.sellingpartnerapi-eu.amazon.com';
 
 @Injectable()
 export class AmazonCatalogService {
