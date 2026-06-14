@@ -477,6 +477,47 @@ const products = [
     }
 ];
 
+// --- SABORES DISPONIBLES ---
+const saboresHelado = [
+    { nombre: "Oreo", badge: null },
+    { nombre: "Turrón con trozos", badge: null },
+    { nombre: "Dulce de leche", badge: null },
+    { nombre: "Pistacho", badge: null },
+    { nombre: "Cheese Cake", badge: null },
+    { nombre: "Biscotino Cookies", badge: null },
+    { nombre: "Kinder Bueno", badge: null },
+    { nombre: "Plátano con nueces al caramelo", badge: null },
+    { nombre: "Turrón", badge: "Sin azúcar" },
+    { nombre: "Limón", badge: "Vegano" },
+    { nombre: "Stracciatella", badge: null },
+    { nombre: "Ferrero Rocher", badge: null },
+    { nombre: "Pantera Rosa", badge: null },
+    { nombre: "Chocolate negro", badge: "Vegano" },
+    { nombre: "Mango", badge: "Vegano" },
+    { nombre: "Nata", badge: null },
+    { nombre: "Chocolate Sirvent", badge: null },
+    { nombre: "Menta con chocolate (Aftereight)", badge: null },
+    { nombre: "Chocolate blanco con filipinos", badge: null },
+    { nombre: "Merengada", badge: "Sin azúcar" },
+    { nombre: "Avellana", badge: null },
+    { nombre: "Lotus", badge: null },
+    { nombre: "Caramelo salado", badge: null },
+    { nombre: "Vainilla", badge: null },
+    { nombre: "Fresa Natural", badge: null },
+    { nombre: "Huevo Kinder", badge: null },
+    { nombre: "Málaga (Ron con pasas)", badge: null },
+    { nombre: "Chocolate Fondant", badge: null },
+    { nombre: "Nube de Algodón", badge: null },
+    { nombre: "Tutti Frutti", badge: null },
+    { nombre: "Yogur", badge: null },
+    { nombre: "Coco con Raffaello", badge: null },
+    { nombre: "Moka (Café)", badge: null },
+    { nombre: "Crema Catalana", badge: null },
+    { nombre: "Pistacho Dubai", badge: null },
+    { nombre: "Chocolate con Oreo", badge: null },
+    { nombre: "Coco con Mango", badge: null }
+];
+
 // --- INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
     // Check navigation scroll
@@ -616,6 +657,14 @@ function renderProducts() {
 
         const tagsHtml = product.tags.map(t => `<span class="tag-item">${t}</span>`).join("");
 
+        const isHeladoBolas = ["helado_1_bola", "helado_2_bolas", "helado_3_bolas"].includes(product.id);
+        const btnSabores = isHeladoBolas
+            ? `<button class="btn-ver-sabores" onclick="abrirPopupSabores('${title}')">
+                   <i class="fa-solid fa-ice-cream"></i>
+                   ${state.currentLanguage === 'es' ? 'Ver sabores' : 'See flavors'}
+               </button>`
+            : "";
+
         const card = document.createElement("div");
         card.className = "product-card";
         card.setAttribute("data-aos", "fade-up");
@@ -633,6 +682,7 @@ function renderProducts() {
                 <p class="product-desc">${desc}</p>
                 <div class="product-action" style="margin-top: auto; border-top: 1px dashed var(--border-color); padding-top: 12px;">
                     <div class="card-tags">${tagsHtml}</div>
+                    ${btnSabores}
                 </div>
             </div>
         `;
@@ -661,6 +711,33 @@ function checkOpeningStatus() {
         statusText.textContent = translations[state.currentLanguage].status_closed;
     }
 }
+
+// --- POPUP SABORES ---
+function abrirPopupSabores(titulo) {
+    const popup = document.getElementById("popupSabores");
+    document.getElementById("popupSaboresTitle").textContent = titulo;
+
+    const lista = document.getElementById("popupSaboresList");
+    lista.innerHTML = saboresHelado.map(s => `
+        <div class="sabor-item">
+            <i class="fa-solid fa-circle"></i>
+            <span>${s.nombre}${s.badge ? `<span class="sabor-badge">${s.badge}</span>` : ""}</span>
+        </div>
+    `).join("");
+
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarPopupSabores() {
+    document.getElementById("popupSabores").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+window.addEventListener("click", (e) => {
+    const popup = document.getElementById("popupSabores");
+    if (e.target === popup) cerrarPopupSabores();
+});
 
 // --- LOCATION / MAP TABS LOGIC ---
 function setupMapTabs() {

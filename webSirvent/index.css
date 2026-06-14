@@ -1074,6 +1074,143 @@ button, input, select {
     color: var(--primary-light);
 }
 
+/* --- POPUP SABORES --- */
+.modal-sabores {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-sabores-content {
+    width: 85%;
+    max-width: 720px;
+    max-height: 85vh;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background-image: url("img/Productos/fondo nuevo.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-sabores-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.52);
+    border-radius: 20px;
+}
+
+.modal-sabores-close {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    z-index: 3;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    transition: var(--transition-fast);
+}
+
+.modal-sabores-close:hover {
+    color: var(--primary-light);
+    transform: scale(1.15);
+}
+
+.modal-sabores-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 44px 40px 36px;
+    overflow-y: auto;
+    max-height: 85vh;
+}
+
+.modal-sabores-text h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.sabores-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 20px;
+}
+
+.sabor-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.sabor-item i {
+    color: var(--primary-light);
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.sabor-badge {
+    font-size: 11px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 1px 7px;
+    margin-left: 4px;
+    white-space: nowrap;
+}
+
+.btn-ver-sabores {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 9px 18px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-round);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition-fast);
+}
+
+.btn-ver-sabores:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 92, 124, 0.35);
+}
+
+@media (max-width: 600px) {
+    .modal-sabores-content {
+        width: 95%;
+    }
+    .modal-sabores-text {
+        padding: 40px 20px 24px;
+    }
+    .sabores-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-sabores-text h2 {
+        font-size: 22px;
+    }
+}
+
 /* --- ANIMATIONS --- */
 @keyframes float {
     0% { transform: translateY(0px); }
