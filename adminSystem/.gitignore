@@ -1,7 +1,7 @@
 # Node modules
 node_modules/
 # Logs
-logs/
+/logs/
 *.log
 # Dependency directories
 bower_components/
