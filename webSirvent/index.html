@@ -67,7 +67,7 @@
                     <i class="fa-solid fa-award"></i> Desde 1940 · Helados Artesanos
                 </span>
                 <h1 class="hero-title" data-key="hero_title">
-                    Sabores de siempre en un rincón de <span>Benidorm</span>
+                    Tu momento sirvent en <span>Benidorm</span>
                 </h1>
                 <p class="hero-desc" data-key="hero_desc">
                     Recetas tradicionales nacidas en Jijona y perfeccionadas a lo largo de generaciones. Disfruta del
@@ -105,9 +105,18 @@
                 <span class="section-subtitle" data-key="history_subtitle">Nuestra Tradición</span>
                 <h2 class="section-title" data-key="history_title">De la cuna del turrón a la costa de Benidorm</h2>
                 <p data-key="history_p1">
-                    En 1940, la familia Sirvent inició su andadura elaborando helados y turrones artesanos en Jijona,
-                    cuna indiscutible de esta tradición. Con ingredientes de máxima calidad y un mimo infinito,
-                    decidimos trasladar esta pasión a Benidorm.
+                    No es un casual, que la mayoría de la población de Jijona de finales de siglo XIX,
+                    aparte de la fabricación del turrón, a la que ya se dedicaba desde el siglo XIV,
+                    empezara la práctica de un nuevo oficio, el de heladero.
+
+                </p>
+                <p data-key="history_p1b">
+                    Por aquel entonces, su población explotaba unos antiguos neveros ubicados en la sierra de la
+                    Carrasqueta,
+                    para transportar alimentos de manera refrigerada, con la nieve que acumulaban en ellos durante las
+                    épocas de invierno.
+                    Este privilegio, sirvió como detonante,para que sus gentes se inmiscuyeran en este oficio, ya que
+                    disponían de la materia imprescindible para su elaboración, el frío.
                 </p>
                 <p data-key="history_p2">
                     Hoy, más de 80 años después, mantenemos intacto el legado del iaio Luis Sirvent. Nuestra Horchata de
@@ -121,7 +130,7 @@
                             <i class="fa-solid fa-hourglass-half"></i>
                         </div>
                         <div class="highlight-info">
-                            <h4 data-key="hist_h1">Artesanos desde 1940</h4>
+                            <h4 data-key="hist_h1">MAESTROS HELADEROS ARTESANOS</h4>
                             <p data-key="hist_p1_highlight">Tres generaciones elaborando helados con recetas secretas
                                 familiares.</p>
                         </div>
@@ -133,7 +142,7 @@
                         </div>
                         <div class="highlight-info">
                             <h4 data-key="hist_h2">Ingredientes Premium</h4>
-                            <p data-key="hist_p2_highlight">Chufa de Alboraya seleccionada y almendras de Jijona de
+                            <p data-key="hist_p2_highlight">Chufa de Alboraya seleccionada y turrón de Jijona de
                                 primera calidad.</p>
                         </div>
                     </div>
@@ -227,6 +236,33 @@
                                 <p>Avinguda Alcoi, 2, 03503 Benidorm, Alicante</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flavor-roulette-panel" data-aos="fade-left">
+                <div class="roulette-card">
+                    <span class="section-subtitle" data-key="roulette_subtitle">¿Indeciso?</span>
+                    <h2 class="contact-card-title" data-key="roulette_title">Gira la ruleta de sabores</h2>
+                    <p class="roulette-desc" data-key="roulette_desc">
+                        ¿No sabes qué sabor elegir? Deja que la suerte decida por ti entre todos nuestros sabores
+                        artesanales.
+                    </p>
+
+                    <div class="roulette-wheel-wrapper">
+                        <div class="roulette-pointer"><i class="fa-solid fa-caret-down"></i></div>
+                        <div class="roulette-wheel" id="rouletteWheel"></div>
+                        <div class="roulette-center"><i class="fa-solid fa-ice-cream"></i></div>
+                    </div>
+
+                    <button class="btn-spin-roulette" id="btnSpinRoulette" onclick="girarRuletaSabores()">
+                        <i class="fa-solid fa-dice"></i>
+                        <span id="btnSpinRouletteText" data-key="roulette_btn">Girar la ruleta</span>
+                    </button>
+
+                    <div class="roulette-result" id="rouletteResult">
+                        <span class="roulette-result-label" data-key="roulette_result_label">Tu sabor es...</span>
+                        <strong id="rouletteResultName"></strong>
                     </div>
                 </div>
             </div>

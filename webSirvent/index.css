@@ -707,17 +707,21 @@ button, input, select {
     overflow: hidden;
     position: relative;
     background-color: rgba(255, 248, 249, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
 }
 
 .product-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: var(--transition-smooth);
 }
 
 .product-card:hover .product-img {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 .product-info {
@@ -740,14 +744,6 @@ button, input, select {
     font-size: 17px;
     font-weight: 700;
     color: var(--text-dark);
-}
-
-.product-price {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--primary);
-    font-family: 'Playfair Display', serif;
-    flex-shrink: 0;
 }
 
 .product-subtitle {
@@ -907,6 +903,138 @@ button, input, select {
     border-radius: 50%;
     background-color: currentColor;
     animation: blink 1.5s infinite;
+}
+
+/* --- FLAVOR ROULETTE --- */
+.flavor-roulette-panel {
+    display: flex;
+}
+
+.roulette-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.roulette-card .contact-card-title {
+    text-align: center;
+}
+
+.roulette-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 26px;
+}
+
+.roulette-wheel-wrapper {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 28px;
+}
+
+.roulette-wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid white;
+    box-shadow: var(--shadow-lg), inset 0 0 0 1px var(--border-color);
+    transform: rotate(0deg);
+    transition: transform 3.6s cubic-bezier(0.17, 0.84, 0.42, 1);
+}
+
+.roulette-wheel.spinning {
+    box-shadow: var(--shadow-lg), 0 0 0 6px var(--primary-ultra-light);
+}
+
+.roulette-pointer {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: var(--text-dark);
+    z-index: 3;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+}
+
+.roulette-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 18px;
+    box-shadow: var(--shadow-md);
+    z-index: 2;
+}
+
+.btn-spin-roulette {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 26px;
+    background: var(--primary);
+    color: white;
+    border-radius: var(--radius-round);
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(255, 92, 124, 0.25);
+}
+
+.btn-spin-roulette:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 92, 124, 0.35);
+}
+
+.btn-spin-roulette:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+.roulette-result {
+    display: none;
+    flex-direction: column;
+    margin-top: 22px;
+    padding: 14px 22px;
+    background-color: var(--primary-ultra-light);
+    border: 1px dashed var(--primary-light);
+    border-radius: var(--radius-md);
+    width: 100%;
+}
+
+.roulette-result.show {
+    display: flex;
+    animation: fadeInUp 0.5s ease;
+}
+
+.roulette-result-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.roulette-result strong {
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark);
 }
 
 /* Map selector */
@@ -1227,4 +1355,9 @@ button, input, select {
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.4; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

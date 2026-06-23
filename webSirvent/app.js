@@ -19,26 +19,27 @@ const translations = {
         nav_historia: "Nuestra Historia",
         nav_contacto: "Contacto",
         hero_badge: "Desde 1940 · Helados Artesanos",
-        hero_title: "Sabores de siempre en un rincón de <span>Benidorm</span>",
+        hero_title: "Tu momento sirvent en <span>Benidorm</span>",
         hero_desc: "Recetas tradicionales nacidas en Jijona y perfeccionadas a lo largo de generaciones. Disfruta del auténtico sabor artesanal con vistas al mar mediterráneo.",
         hero_cta_carta: "Ver la Carta",
         hero_cta_historia: "Nuestra Historia",
         history_subtitle: "Nuestra Tradición",
         history_title: "De la cuna del turrón a la costa de Benidorm",
-        history_p1: "En 1940, la familia Sirvent inició su andadura elaborando helados y turrones artesanos en Jijona, cuna indiscutible de esta tradición. Con ingredientes de máxima calidad y un mimo infinito, decidimos trasladar esta pasión a Benidorm.",
+        history_p1: "No es un casual, que la mayoría de la población de Jijona de finales de siglo XIX, aparte de la fabricación del turrón, a la que ya se dedicaba desde el siglo XIV, empezara la práctica de un nuevo oficio, el de heladero.",
+        history_p1b: "Por aquel entonces, su población explotaba unos antiguos neveros ubicados en la sierra de la Carrasqueta, para transportar alimentos de manera refrigerada, con la nieve que acumulaban en ellos durante las épocas de invierno. Este privilegio, sirvió como detonante, para que sus gentes se inmiscuyeran en este oficio, ya que disponían de la materia imprescindible para su elaboración, el frío.",
         history_p2: "Hoy, más de 80 años después, mantenemos intacto el legado del iaio Luis Sirvent. Nuestra Horchata de Chufa de Alboraya premium y nuestros helados cremosos son el reflejo de un compromiso inquebrantable con la autenticidad y el sabor mediterráneo.",
-        hist_h1: "Artesanos desde 1940",
+        hist_h1: "MAESTROS HELADEROS ARTESANOS",
         hist_p1_highlight: "Tres generaciones elaborando helados con recetas secretas familiares.",
         hist_h2: "Ingredientes Premium",
-        hist_p2_highlight: "Chufa de Alboraya seleccionada y almendras de Jijona de primera calidad.",
+        hist_p2_highlight: "Chufa de Alboraya seleccionada y turrón de Jijona de primera calidad.",
         carta_subtitle: "Heladería Sirvent",
         carta_title: "Nuestra Carta de Manjares",
         search_placeholder: "Busca tu helado o bebida favorita...",
         tab_all: "Todos",
         tab_helados: "Helados y Tarrinas",
         tab_granizados: "Granizados",
-        tab_cocktails: "Cócteles Frozen",
-        tab_frap: "Frap-Shakes y Copas",
+        tab_cocktails: "Cócteles Froozen",
+        tab_frap: "Frap-Shakes",
         tab_horchata: "Horchata y Leche",
         tab_gofres: "Gofres y Crepes",
         tab_cafe: "Cafetería",
@@ -52,6 +53,12 @@ const translations = {
         contact_tel: "Teléfono de contacto",
         contact_email: "Correo electrónico",
         contact_addr: "Dirección",
+        roulette_subtitle: "¿Indeciso?",
+        roulette_title: "Gira la ruleta de sabores",
+        roulette_desc: "¿No sabes qué sabor elegir? Deja que la suerte decida por ti entre todos nuestros sabores artesanales.",
+        roulette_btn: "Girar la ruleta",
+        roulette_btn_spinning: "Girando...",
+        roulette_result_label: "Tu sabor es...",
         footer_desc: "Elaborando momentos felices y helados artesanales en Benidorm desde 1940. Recetas tradicionales directas de Jijona.",
         footer_links_title: "Navegación",
         footer_hours_title: "Nuestros Locales",
@@ -62,26 +69,27 @@ const translations = {
         nav_historia: "Our Story",
         nav_contacto: "Contact Us",
         hero_badge: "Since 1940 · Artisan Ice Cream",
-        hero_title: "Time-honored flavors in the heart of <span>Benidorm</span>",
+        hero_title: "Your Sirvent moment in <span>Benidorm</span>",
         hero_desc: "Traditional recipes born in Jijona and perfected over generations. Enjoy the authentic artisan flavor with beautiful views of the Mediterranean Sea.",
         hero_cta_carta: "View the Menu",
         hero_cta_historia: "Our Story",
         history_subtitle: "Our Tradition",
         history_title: "From the cradle of nougat to the coast of Benidorm",
-        history_p1: "In 1940, the Sirvent family began their journey making artisan ice cream and nougat in Jijona, the undisputed cradle of this sweet tradition. With top-quality ingredients and infinite care, we brought this passion to Benidorm.",
+        history_p1: "It is no coincidence that, by the end of the 19th century, most of the population of Jijona — already devoted to nougat-making since the 14th century — began practicing a new trade: that of ice cream maker.",
+        history_p1b: "Back then, the local population made use of old ice wells (\"neveros\") in the Carrasqueta mountains to transport food refrigerated, using the snow stored in them during the winter months. This advantage was the spark that drew the local people into this trade, since they already had access to the essential ingredient for making it: the cold.",
         history_p2: "Today, over 80 years later, we keep grandfather Luis Sirvent's legacy intact. Our premium Horchata de Chufa de Alboraya and our creamy ice creams are a reflection of our unwavering commitment to Mediterranean authenticity.",
-        hist_h1: "Artisan since 1940",
+        hist_h1: "MASTER ARTISAN ICE CREAM MAKERS",
         hist_p1_highlight: "Three generations crafting ice creams using secret family recipes.",
         hist_h2: "Premium Ingredients",
-        hist_p2_highlight: "Selected Alboraya tigernuts and top-quality Jijona almonds.",
+        hist_p2_highlight: "Selected Alboraya tigernuts and top-quality Jijona nougat.",
         carta_subtitle: "Sirvent Ice Cream Shop",
         carta_title: "Our Delightful Menu",
         search_placeholder: "Search for your favorite ice cream or drink...",
         tab_all: "All",
         tab_helados: "Ice Creams & Tubs",
         tab_granizados: "Slushes / Granizados",
-        tab_cocktails: "Frozen Cocktails",
-        tab_frap: "Frap-Shakes & Bowls",
+        tab_cocktails: "Froozen Cocktails",
+        tab_frap: "Frap-Shakes",
         tab_horchata: "Horchata & Milk",
         tab_gofres: "Waffles & Crepes",
         tab_cafe: "Coffee Shop",
@@ -95,12 +103,55 @@ const translations = {
         contact_tel: "Phone number",
         contact_email: "Email address",
         contact_addr: "Address",
+        roulette_subtitle: "Can't decide?",
+        roulette_title: "Spin the flavor wheel",
+        roulette_desc: "Not sure which flavor to pick? Let luck decide for you among all our artisan flavors.",
+        roulette_btn: "Spin the wheel",
+        roulette_btn_spinning: "Spinning...",
+        roulette_result_label: "Your flavor is...",
         footer_desc: "Crafting happy moments and artisanal ice cream in Benidorm since 1940. Traditional recipes straight from Jijona.",
         footer_links_title: "Navigation",
         footer_hours_title: "Our Shops",
         footer_credit: "Designed with love for <span>Heladería Sirvent</span>"
     }
 };
+
+// --- PRODUCT TAG TRANSLATIONS (tags are stored in English, translated for ES display) ---
+const tagTranslationsEs = {
+    "100% Arabica": "100% Arábica",
+    "Alcoholic": "Con alcohol",
+    "Artisanal": "Artesanal",
+    "Best Seller": "Más vendido",
+    "Chef Special": "Especial del chef",
+    "Chocolate": "Chocolate",
+    "Citric": "Cítrico",
+    "Coffee Lovers": "Para amantes del café",
+    "Customizable": "Personalizable",
+    "Freshly Baked": "Recién horneado",
+    "Fruity": "Afrutado",
+    "Gluten-free option": "Opción sin gluten",
+    "Intense": "Intenso",
+    "Kinder Lovers": "Para amantes de Kinder",
+    "Local": "Local",
+    "Maxi Size": "Tamaño Maxi",
+    "Nut-Free": "Sin frutos secos",
+    "Pastry": "Repostería",
+    "Popular": "Popular",
+    "Premium": "Premium",
+    "Refreshing": "Refrescante",
+    "Soft drink": "Refresco",
+    "Sweet": "Dulce",
+    "Tradition": "Tradición",
+    "Traditional": "Tradicional",
+    "Tropical": "Tropical",
+    "Vegan": "Vegano",
+    "Vibrant": "Vibrante",
+    "Water": "Agua"
+};
+
+function translateTag(tag) {
+    return state.currentLanguage === 'es' ? (tagTranslationsEs[tag] || tag) : tag;
+}
 
 // --- PRODUCT DATABASE ---
 const products = [
@@ -169,7 +220,7 @@ const products = [
         descEs: "Ron blanco, fresas frescas y hielo picado. Un clásico del verano.",
         descEn: "White rum, fresh strawberries, and crushed ice. A summer classic.",
         price: 8.50,
-        img: "img/Productos/GRANIZADOS SABORES  copia.png",
+        img: "img/Productos/daikiri.png",
         tags: ["Alcoholic", "Fruity"],
         hasSizes: false
     },
@@ -181,7 +232,7 @@ const products = [
         descEs: "Vodka, curaçao azul, refrescante y helador.",
         descEn: "Vodka, blue curaçao, refreshing and freezing.",
         price: 8.50,
-        img: "img/Productos/GRANIZADOS SABORES  copia.png",
+        img: "img/Productos/blueLagoon.png",
         tags: ["Alcoholic", "Vibrant"],
         hasSizes: false
     },
@@ -193,7 +244,7 @@ const products = [
         descEs: "Ron blanco con pulpa de mango natural, dulce y exótico.",
         descEn: "White rum with natural mango pulp, sweet and exotic.",
         price: 8.50,
-        img: "img/Productos/GRANIZADOS SABORES  copia.png",
+        img: "img/Productos/mango.png",
         tags: ["Alcoholic", "Tropical"],
         hasSizes: false
     },
@@ -229,7 +280,7 @@ const products = [
         descEs: "Tequila de primera, triple seco y zumo de lima batido con hielo.",
         descEn: "Top tequila, triple sec, and lime juice blended with ice.",
         price: 8.50,
-        img: "img/Productos/GRANIZADOS SABORES  copia.png",
+        img: "img/Productos/mango.png",
         tags: ["Alcoholic", "Citric"],
         hasSizes: false
     },
@@ -338,8 +389,8 @@ const products = [
         category: "horchata",
         nameEs: "Leche Preparada del iaio Luis",
         nameEn: "Grandpa Luis' Prepared Milk",
-        descEs: "Receta tradicional de leche aromatizada con canela, corteza de limón y enfriada a punto de nieve.",
-        descEn: "Traditional recipe of milk flavored with cinnamon, lemon peel, and cooled to slush point.",
+        descEs: "Receta tradicional de leche con canela y raspadura de limón.",
+        descEn: "Traditional recipe of milk with cinnamon and lemon zest.",
         price: 4.00,
         img: "img/Productos/LECHE MERENGADA.png",
         tags: ["Traditional", "Sweet"],
@@ -352,8 +403,8 @@ const products = [
     {
         id: "fartons",
         category: "horchata",
-        nameEs: "Fartón Tradicional (1 ud)",
-        nameEn: "Traditional Farton Pastry (1 pc)",
+        nameEs: "Fartons Artesanos (1 ud)",
+        nameEn: "Artisan Fartons Pastry (1 pc)",
         descEs: "Bollo alargado, dulce y esponjoso con glaseado, ideal para mojar en la horchata.",
         descEn: "Elongated, sweet, spongy pastry with sugar glaze, perfect for dipping in horchata.",
         price: 2.30,
@@ -440,18 +491,6 @@ const products = [
 
     // --- BEBIDAS ---
     {
-        id: "agua",
-        category: "bebidas",
-        nameEs: "Agua Mineral",
-        nameEn: "Mineral Water",
-        descEs: "Agua mineral fresca sin gas para calmar la sed.",
-        descEn: "Fresh still mineral water to quench your thirst.",
-        price: 2.00,
-        img: "img/Productos/CAFE SOLO.png", // fallback or placeholder icon representation
-        tags: ["Water"],
-        hasSizes: false
-    },
-    {
         id: "refresco",
         category: "bebidas",
         nameEs: "Refresco",
@@ -459,20 +498,8 @@ const products = [
         descEs: "Coca-Cola, Fanta, Sprite o Nestea helados en lata.",
         descEn: "Chilled Coca-Cola, Fanta, Sprite, or Nestea in a can.",
         price: 2.50,
-        img: "img/Productos/GRANIZADOS SABORES  copia.png",
+        img: "img/Productos/refrescos.webp",
         tags: ["Soft drink"],
-        hasSizes: false
-    },
-    {
-        id: "cerveza",
-        category: "bebidas",
-        nameEs: "Cerveza Especial",
-        nameEn: "Premium Beer",
-        descEs: "Cerveza dorada y fría, ideal para desconectar frente a la costa.",
-        descEn: "Cold and crisp golden beer, perfect for relaxing by the coast.",
-        price: 3.00,
-        img: "img/Productos/GRANIZADOS SABORES  copia.png",
-        tags: ["Alcoholic"],
         hasSizes: false
     }
 ];
@@ -522,17 +549,20 @@ const saboresHelado = [
 document.addEventListener("DOMContentLoaded", () => {
     // Check navigation scroll
     window.addEventListener("scroll", handleNavbarScroll);
-    
+
     // Initial UI render
     setLanguage(state.currentLanguage);
     checkOpeningStatus();
-    
+
     // Setup filter listeners
     setupFilters();
-    
+
     // Setup map tabs
     setupMapTabs();
-    
+
+    // Build the flavor roulette wheel
+    buildRouletteWheel();
+
     // Interval to keep opening status fresh
     setInterval(checkOpeningStatus, 60000);
 });
@@ -550,7 +580,7 @@ function handleNavbarScroll() {
 // --- LANGUAGE TRANSLATIONS ENGINE ---
 function setLanguage(lang) {
     state.currentLanguage = lang;
-    
+
     // Update active lang button
     document.querySelectorAll(".lang-btn").forEach(btn => {
         if (btn.getAttribute("data-lang") === lang) {
@@ -614,7 +644,7 @@ function renderProducts() {
     const filtered = products.filter(product => {
         // Category check
         const matchCategory = state.currentCategory === 'all' || product.category === state.currentCategory;
-        
+
         // Search query check
         const name = (state.currentLanguage === 'es' ? product.nameEs : product.nameEn).toLowerCase();
         const desc = (state.currentLanguage === 'es' ? product.descEs : product.descEn).toLowerCase();
@@ -638,24 +668,8 @@ function renderProducts() {
         const title = state.currentLanguage === 'es' ? product.nameEs : product.nameEn;
         const subtitle = state.currentLanguage === 'es' ? product.nameEn : product.nameEs;
         const desc = state.currentLanguage === 'es' ? product.descEs : product.descEn;
-        
-        // Price structure formatting
-        let priceHtml = "";
-        if (product.hasSizes) {
-            priceHtml = `
-                <div class="product-sizes-list" style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
-                    ${product.sizes.map(s => `
-                        <span style="font-size: 13px; font-weight: 700; color: var(--primary);">
-                            ${state.currentLanguage === 'es' ? s.nameEs : s.nameEn}: <span style="font-family: 'Playfair Display', serif; font-size: 16px;">${s.price.toFixed(2)}€</span>
-                        </span>
-                    `).join("")}
-                </div>
-            `;
-        } else {
-            priceHtml = `<span class="product-price">${product.price.toFixed(2)}€</span>`;
-        }
 
-        const tagsHtml = product.tags.map(t => `<span class="tag-item">${t}</span>`).join("");
+        const tagsHtml = product.tags.map(t => `<span class="tag-item">${translateTag(t)}</span>`).join("");
 
         const isHeladoBolas = ["helado_1_bola", "helado_2_bolas", "helado_3_bolas"].includes(product.id);
         const btnSabores = isHeladoBolas
@@ -676,7 +690,6 @@ function renderProducts() {
             <div class="product-info">
                 <div class="product-title-row" style="align-items: center;">
                     <h3 class="product-title">${title}</h3>
-                    ${priceHtml}
                 </div>
                 <p class="product-subtitle">${subtitle}</p>
                 <p class="product-desc">${desc}</p>
@@ -694,15 +707,15 @@ function renderProducts() {
 function checkOpeningStatus() {
     const now = new Date();
     const currentHour = now.getHours();
-    
+
     const statusBadge = document.getElementById("statusBadge");
     const statusDot = document.getElementById("statusDot");
     const statusText = document.getElementById("statusText");
-    
+
     if (!statusBadge) return;
 
     const isOpen = currentHour >= state.openingHours.openHour && currentHour < state.openingHours.closeHour;
-    
+
     if (isOpen) {
         statusBadge.className = "status-badge open";
         statusText.textContent = translations[state.currentLanguage].status_open;
@@ -739,6 +752,67 @@ window.addEventListener("click", (e) => {
     if (e.target === popup) cerrarPopupSabores();
 });
 
+// --- FLAVOR ROULETTE ---
+let rouletteRotation = 0;
+let isSpinningRoulette = false;
+const ROULETTE_COLORS = ["#ff5c7c", "#ffb3c1"];
+
+function buildRouletteWheel() {
+    const wheel = document.getElementById("rouletteWheel");
+    if (!wheel) return;
+
+    const segmentAngle = 360 / saboresHelado.length;
+    const stops = saboresHelado.map((_, i) => {
+        const color = ROULETTE_COLORS[i % ROULETTE_COLORS.length];
+        const from = (i * segmentAngle).toFixed(3);
+        const to = ((i + 1) * segmentAngle).toFixed(3);
+        return `${color} ${from}deg ${to}deg`;
+    }).join(", ");
+
+    wheel.style.background = `conic-gradient(${stops})`;
+}
+
+function girarRuletaSabores() {
+    if (isSpinningRoulette) return;
+
+    const wheel = document.getElementById("rouletteWheel");
+    const btn = document.getElementById("btnSpinRoulette");
+    const btnText = document.getElementById("btnSpinRouletteText");
+    const result = document.getElementById("rouletteResult");
+    if (!wheel || !btn || !result) return;
+
+    isSpinningRoulette = true;
+    btn.disabled = true;
+    btnText.textContent = translations[state.currentLanguage].roulette_btn_spinning;
+    result.classList.remove("show");
+    wheel.classList.add("spinning");
+
+    const segmentAngle = 360 / saboresHelado.length;
+    const chosenIndex = Math.floor(Math.random() * saboresHelado.length);
+    const segmentCenter = chosenIndex * segmentAngle + segmentAngle / 2;
+
+    // Pointer sits at the top (0deg); rotate so the chosen segment lands there.
+    const desiredMod = (360 - segmentCenter + 360) % 360;
+    const currentMod = ((rouletteRotation % 360) + 360) % 360;
+    const delta = (desiredMod - currentMod + 360) % 360;
+    const extraSpins = 5;
+
+    rouletteRotation += delta + extraSpins * 360;
+    wheel.style.transform = `rotate(${rouletteRotation}deg)`;
+
+    setTimeout(() => {
+        const sabor = saboresHelado[chosenIndex];
+        document.getElementById("rouletteResultName").innerHTML =
+            `${sabor.nombre}${sabor.badge ? ` <span class="sabor-badge" style="background: var(--primary-light); color: white;">${sabor.badge}</span>` : ""}`;
+
+        result.classList.add("show");
+        wheel.classList.remove("spinning");
+        btn.disabled = false;
+        btnText.textContent = translations[state.currentLanguage].roulette_btn;
+        isSpinningRoulette = false;
+    }, 3700);
+}
+
 // --- LOCATION / MAP TABS LOGIC ---
 function setupMapTabs() {
     const mapTabs = document.querySelector(".map-selector");
@@ -748,10 +822,10 @@ function setupMapTabs() {
         if (e.target.classList.contains("map-tab-btn")) {
             document.querySelectorAll(".map-tab-btn").forEach(btn => btn.classList.remove("active"));
             e.target.classList.add("active");
-            
+
             const location = e.target.getAttribute("data-location");
             state.selectedLocation = location;
-            
+
             // Switch active map iframe
             document.querySelectorAll(".map-iframe").forEach(iframe => {
                 if (iframe.id === `map-${location}`) {
