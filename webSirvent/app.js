@@ -202,7 +202,7 @@ const products = [
         descEs: "Súper refrescante. Elige tu sabor preferido: Limón, Café, Fresa, Mango o Blue Tropic.",
         descEn: "Super refreshing. Choose your favorite flavor: Lemon, Coffee, Strawberry, Mango, or Blue Tropic.",
         price: 4.00,
-        img: "img/Productos/GRANIZADOS SABORES  copia.png",
+        img: "img/Productos/GRANIZADOS%20SABORES%20%20copia.png",
         tags: ["Refreshing", "Vegan"],
         hasSizes: true,
         sizes: [
@@ -256,7 +256,7 @@ const products = [
         descEs: "Vodka premium con fresas trituradas heladas.",
         descEn: "Premium vodka with frozen crushed strawberries.",
         price: 8.50,
-        img: "img/Productos/GRANIZADOS SABORES  copia.png",
+        img: "img/Productos/GRANIZADOS%20SABORES%20%20copia.png",
         tags: ["Alcoholic", "Sweet"],
         hasSizes: false
     },
@@ -292,7 +292,7 @@ const products = [
         descEs: "Combinado tradicional alicantino de café licor helado y ginebra.",
         descEn: "Traditional Alicantino blend of frozen coffee liqueur and gin.",
         price: 8.50,
-        img: "img/Productos/GRANIZADOS SABORES  copia.png",
+        img: "img/Productos/GRANIZADOS%20SABORES%20%20copia.png",
         tags: ["Alcoholic", "Tradition"],
         hasSizes: false
     },
