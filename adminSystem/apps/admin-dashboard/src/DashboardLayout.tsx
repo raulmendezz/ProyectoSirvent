@@ -20,12 +20,15 @@ import {
   SidebarMenuButton,
   SidebarInset,
 } from "@/components/ui/sidebar";
-import { HomeIcon, UsersIcon, SettingsIcon, LogOutIcon } from "lucide-react";
+import { HomeIcon, UsersIcon, SettingsIcon, LogOutIcon, ShoppingCartIcon, PackageIcon, FileTextIcon } from "lucide-react";
 
 const NAV_ITEMS = [
-  { href: "/dashboard",          label: "Inicio",        icon: HomeIcon     },
-  { href: "/dashboard/users",    label: "Usuarios",      icon: UsersIcon    },
-  { href: "/dashboard/settings", label: "Configuración", icon: SettingsIcon },
+  { href: "/dashboard",                    label: "Inicio",          icon: HomeIcon         },
+  { href: "/dashboard/amazon/pedidos",     label: "Pedidos Amazon",  icon: ShoppingCartIcon },
+  { href: "/dashboard/amazon/inventario",  label: "Inventario FBA",  icon: PackageIcon      },
+  { href: "/dashboard/facturas",           label: "Facturas",        icon: FileTextIcon     },
+  { href: "/dashboard/users",              label: "Usuarios",        icon: UsersIcon        },
+  { href: "/dashboard/settings",           label: "Configuración",   icon: SettingsIcon     },
 ];
 
 export default function DashboardLayout({

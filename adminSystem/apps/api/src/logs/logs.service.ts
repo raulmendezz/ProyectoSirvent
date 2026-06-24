@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { LogLevel } from '@prisma/client';
+import { log_level } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
@@ -7,14 +7,20 @@ export class LogsService {
   constructor(private prisma: PrismaService) {}
 
   log(
-    level: LogLevel,
+    level: log_level,
     source: string,
     message: string,
     meta?: Record<string, unknown>,
     userId?: number,
   ) {
     return this.prisma.log.create({
-      data: { level, source, message, meta: meta as any, userId },
+      data: {
+        level,
+        source,
+        message,
+        meta: meta ? JSON.stringify(meta) : undefined,
+        userId,
+      },
     });
   }
 
@@ -22,7 +28,6 @@ export class LogsService {
     return this.prisma.log.findMany({
       orderBy: { createdAt: 'desc' },
       take: limit,
-      include: { user: { select: { email: true } } },
     });
   }
 

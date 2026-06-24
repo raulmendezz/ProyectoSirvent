@@ -15,9 +15,9 @@ export class AlertsService {
 
   async checkLowStock() {
     const products = await this.prisma.$queryRaw<(LowStockProduct & { id: number })[]>`
-      SELECT id, sku, name, stock, minStock
-      FROM Product
-      WHERE stock <= minStock
+      SELECT id, sku, nombre AS name, stock_total AS stock, minStock
+      FROM products
+      WHERE stock_total <= minStock AND activo = 1
     `;
 
     if (products.length === 0) return;
@@ -51,7 +51,6 @@ export class AlertsService {
   findAll() {
     return this.prisma.alert.findMany({
       orderBy: { createdAt: 'desc' },
-      include: { product: { select: { sku: true, name: true } } },
     });
   }
 

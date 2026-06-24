@@ -3,22 +3,25 @@ import { ConfigService } from '@nestjs/config';
 import axios from 'axios';
 import { AmazonAuthService } from './amazon-auth.service';
 
-const BASE_URL = 'https://sandbox.sellingpartnerapi-eu.amazon.com';
-
 @Injectable()
 export class AmazonCatalogService {
   private readonly logger = new Logger(AmazonCatalogService.name);
+  private readonly baseUrl: string;
 
   constructor(
     private auth: AmazonAuthService,
     private config: ConfigService,
-  ) {}
+  ) {
+    this.baseUrl = config.get('AMAZON_SANDBOX') === 'true'
+      ? 'https://sandbox.sellingpartnerapi-eu.amazon.com'
+      : 'https://sellingpartnerapi-eu.amazon.com';
+  }
 
   async getCatalogItem(asin: string): Promise<any> {
     const token = await this.auth.getAccessToken();
     const marketplaceId = this.config.getOrThrow('AMAZON_MARKETPLACE_ID');
 
-    const { data } = await axios.get(`${BASE_URL}/catalog/2022-04-01/items/${asin}`, {
+    const { data } = await axios.get(`${this.baseUrl}/catalog/2022-04-01/items/${asin}`, {
       headers: { 'x-amz-access-token': token },
       params: {
         marketplaceIds: marketplaceId,
@@ -33,7 +36,7 @@ export class AmazonCatalogService {
     const token = await this.auth.getAccessToken();
     const marketplaceId = this.config.getOrThrow('AMAZON_MARKETPLACE_ID');
 
-    const { data } = await axios.get(`${BASE_URL}/catalog/2022-04-01/items`, {
+    const { data } = await axios.get(`${this.baseUrl}/catalog/2022-04-01/items`, {
       headers: { 'x-amz-access-token': token },
       params: {
         marketplaceIds: marketplaceId,

@@ -12,6 +12,7 @@ import { AlertsModule } from './alerts/alerts.module';
 import { AmazonModule } from './amazon/amazon.module';
 import { WhitelistModule } from './whitelist/whitelist.module';
 import { WorkerModule } from './worker/worker.module';
+import { InvoicesModule } from './invoices/invoices.module';
 import { IpWhitelistMiddleware } from './common/middleware/ip-whitelist.middleware';
 
 @Module({
@@ -27,6 +28,7 @@ import { IpWhitelistMiddleware } from './common/middleware/ip-whitelist.middlewa
     AmazonModule,
     WorkerModule,
     WhitelistModule,
+    InvoicesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
