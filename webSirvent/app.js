@@ -8,7 +8,7 @@ const state = {
     selectedLocation: 'levante', // 'levante' or 'poniente'
     openingHours: {
         openHour: 9,
-        closeHour: 24 // midnight
+        closeHour: 1 // 01:00 AM
     }
 };
 
@@ -46,7 +46,7 @@ const translations = {
         tab_bebidas: "Bebidas",
         status_open: "Abierto ahora",
         status_closed: "Cerrado ahora",
-        status_hours: "Horario: Todos los días de 09:00 a 00:00",
+        status_hours: "Horario: Todos los días de 09:00 a 01:00",
         contact_title: "Ven a vernos en Benidorm",
         location_levante: "Playa de Levante",
         location_poniente: "Playa de Poniente",
@@ -96,7 +96,7 @@ const translations = {
         tab_bebidas: "Drinks",
         status_open: "Open now",
         status_closed: "Closed now",
-        status_hours: "Hours: Every day from 09:00 AM to 12:00 AM",
+        status_hours: "Hours: Every day from 09:00 AM to 01:00 AM",
         contact_title: "Come see us in Benidorm",
         location_levante: "Levante Beach",
         location_poniente: "Poniente Beach",
@@ -157,39 +157,15 @@ function translateTag(tag) {
 const products = [
     // --- HELADOS Y TARRINAS ---
     {
-        id: "helado_1_bola",
+        id: "helado_bolas",
         category: "helados",
-        nameEs: "Tarrina o Cono - 1 Bola",
-        nameEn: "Tub or Cone - 1 Scoop",
-        descEs: "Un sabor a tu elección en tarrina crujiente o cono artesano.",
-        descEn: "One scoop of your choice served in a crispy tub or artisan cone.",
+        nameEs: "Tarrina o Cono",
+        nameEn: "Tub or Cone",
+        descEs: "Elige tu sabor favorito en tarrina crujiente o cono artesano. 1, 2 o 3 bolas.",
+        descEn: "Choose your favourite flavour in a crispy tub or artisan cone. 1, 2 or 3 scoops.",
         price: 3.00,
-        img: "img/Productos/TARRINA HELADO copia.png",
+        img: "img/Productos/conoTarrina.png",
         tags: ["Gluten-free option", "Artisanal"],
-        hasSizes: false
-    },
-    {
-        id: "helado_2_bolas",
-        category: "helados",
-        nameEs: "Tarrina o Cono - 2 Bolas",
-        nameEn: "Tub or Cone - 2 Scoops",
-        descEs: "Combina hasta dos sabores diferentes en un formato generoso.",
-        descEn: "Combine up to two different flavors in a generous serving.",
-        price: 5.00,
-        img: "img/Productos/CONO BOLAS HELADO.png",
-        tags: ["Artisanal", "Popular"],
-        hasSizes: false
-    },
-    {
-        id: "helado_3_bolas",
-        category: "helados",
-        nameEs: "Tarrina o Cono - 3 Bolas",
-        nameEn: "Tub or Cone - 3 Scoops",
-        descEs: "El paraíso del helado: tres bolas de pura felicidad cremosa.",
-        descEn: "Ice cream paradise: three scoops of pure creamy happiness.",
-        price: 7.00,
-        img: "img/Productos/TARRINA HELADO SIRVENT copia.png",
-        tags: ["Maxi Size", "Artisanal"],
         hasSizes: false
     },
 
@@ -204,6 +180,7 @@ const products = [
         price: 4.00,
         img: "img/Productos/GRANIZADOS%20SABORES%20%20copia.png",
         tags: ["Refreshing", "Vegan"],
+        hasGranizadoSabores: true,
         hasSizes: true,
         sizes: [
             { id: "sm", nameEs: "Pequeño", nameEn: "Small", price: 4.00 },
@@ -213,100 +190,17 @@ const products = [
 
     // --- FROZEN COCKTAILS ---
     {
-        id: "cocktail_strawberry_daiquiri",
+        id: "frozen_cocktails",
         category: "cocktails",
-        nameEs: "Strawberry Daiquiri",
-        nameEn: "Strawberry Daiquiri",
-        descEs: "Ron blanco, fresas frescas y hielo picado. Un clásico del verano.",
-        descEn: "White rum, fresh strawberries, and crushed ice. A summer classic.",
+        nameEs: "Frozen Cocktails",
+        nameEn: "Frozen Cocktails",
+        descEs: "Cócteles helados artesanales. Elige entre nuestra selección de combinados frozen.",
+        descEn: "Artisan frozen cocktails. Choose from our selection of frozen blends.",
         price: 8.50,
-        img: "img/Productos/daikiri.png",
-        tags: ["Alcoholic", "Fruity"],
-        hasSizes: false
-    },
-    {
-        id: "cocktail_blue_lagoon",
-        category: "cocktails",
-        nameEs: "Blue Lagoon",
-        nameEn: "Blue Lagoon",
-        descEs: "Vodka, curaçao azul, refrescante y helador.",
-        descEn: "Vodka, blue curaçao, refreshing and freezing.",
-        price: 8.50,
-        img: "img/Productos/blueLagoon.png",
-        tags: ["Alcoholic", "Vibrant"],
-        hasSizes: false
-    },
-    {
-        id: "cocktail_mango_daiquiri",
-        category: "cocktails",
-        nameEs: "Mango Daiquiri",
-        nameEn: "Mango Daiquiri",
-        descEs: "Ron blanco con pulpa de mango natural, dulce y exótico.",
-        descEn: "White rum with natural mango pulp, sweet and exotic.",
-        price: 8.50,
-        img: "img/Productos/mango.png",
-        tags: ["Alcoholic", "Tropical"],
-        hasSizes: false
-    },
-    {
-        id: "cocktail_strawberry_vodka",
-        category: "cocktails",
-        nameEs: "Strawberry Vodka",
-        nameEn: "Strawberry Vodka",
-        descEs: "Vodka premium con fresas trituradas heladas.",
-        descEn: "Premium vodka with frozen crushed strawberries.",
-        price: 8.50,
-        img: "img/Productos/GRANIZADOS%20SABORES%20%20copia.png",
-        tags: ["Alcoholic", "Sweet"],
-        hasSizes: false
-    },
-    {
-        id: "cocktail_irish_frozen",
-        category: "cocktails",
-        nameEs: "Irish Frozen",
-        nameEn: "Irish Frozen Whisky",
-        descEs: "Combinado helado con Whisky irlandés y un toque de crema.",
-        descEn: "Frozen blend with Irish Whiskey and a touch of cream.",
-        price: 8.50,
-        img: "img/Productos/AFOGATO.png",
-        tags: ["Alcoholic", "Intense"],
-        hasSizes: false
-    },
-    {
-        id: "cocktail_margarita",
-        category: "cocktails",
-        nameEs: "Frozen Margarita",
-        nameEn: "Frozen Margarita",
-        descEs: "Tequila de primera, triple seco y zumo de lima batido con hielo.",
-        descEn: "Top tequila, triple sec, and lime juice blended with ice.",
-        price: 8.50,
-        img: "img/Productos/mango.png",
-        tags: ["Alcoholic", "Citric"],
-        hasSizes: false
-    },
-    {
-        id: "cocktail_mentireta",
-        category: "cocktails",
-        nameEs: "Mentireta",
-        nameEn: "Mentireta Slush",
-        descEs: "Combinado tradicional alicantino de café licor helado y ginebra.",
-        descEn: "Traditional Alicantino blend of frozen coffee liqueur and gin.",
-        price: 8.50,
-        img: "img/Productos/GRANIZADOS%20SABORES%20%20copia.png",
-        tags: ["Alcoholic", "Tradition"],
-        hasSizes: false
-    },
-    {
-        id: "cocktail_frappe_baileys",
-        category: "cocktails",
-        nameEs: "Café Frappé Baileys",
-        nameEn: "Baileys Coffee Frappe",
-        descEs: "Café expreso, licor Baileys y helado batidos hasta lograr una crema perfecta.",
-        descEn: "Espresso coffee, Baileys liqueur, and ice cream blended to a creamy perfection.",
-        price: 8.50,
-        img: "img/Productos/Frap-Shake Cafe copia.png",
-        tags: ["Alcoholic", "Sweet"],
-        hasSizes: false
+        img: "img/Productos/mangoDaikiri.png",
+        tags: ["Alcoholic", "Artisanal"],
+        hasSizes: false,
+        hasFrozenCocktails: true
     },
 
     // --- COPAS Y FRAP-SHAKES ---
@@ -500,8 +394,47 @@ const products = [
         price: 2.50,
         img: "img/Productos/refrescos.webp",
         tags: ["Soft drink"],
-        hasSizes: false
+        hasSizes: false,
+        hasBebidas: true
     }
+];
+
+// --- FROZEN COCKTAILS LIST ---
+const frozenCocktailsList = [
+    { nombre: "Strawberry Daiquiri", desc: "Ron blanco, fresas frescas y hielo picado.", img: "img/Productos/daikiriStraw.png" },
+    { nombre: "Blue Lagoon", desc: "Vodka, curaçao azul, refrescante y helador.", img: "img/Productos/blueLagoon.png" },
+    { nombre: "Mango Daiquiri", desc: "Ron blanco con pulpa de mango natural.", img: "img/Productos/mangoDaikiri.png" },
+    { nombre: "Strawberry Vodka", desc: "Vodka premium con fresas trituradas heladas.", img: "img/Productos/StrawberryVodka.png" },
+    { nombre: "Irish Frozen", desc: "Whisky irlandés con un toque de crema.", img: "img/Productos/IrishFrozen.png" },
+    { nombre: "Frozen Margarita", desc: "Tequila, triple seco y zumo de lima.", img: "img/Productos/forezenMargarita.png" },
+    { nombre: "Mentireta", desc: "Café licor helado y ginebra. Tradición alicantina.", img: "img/Productos/mentireta.png" },
+    { nombre: "Café Frappé Baileys", desc: "Café expreso, Baileys y helado batidos.", img: "img/Productos/cafeFrappeBaileys.png" }
+];
+
+// --- BEBIDAS DISPONIBLES ---
+const bebidasDisponibles = [
+    { nombre: "Cocacola" },
+    { nombre: "Cocacola zero" },
+    { nombre: "Sprite" },
+    { nombre: "Agua gas" },
+    { nombre: "Agua" },
+    { nombre: "Mahou" },
+    { nombre: "Mahou 0,0" },
+    { nombre: "Radler" },
+    { nombre: "F. Limón" },
+    { nombre: "F. Naranja" },
+    { nombre: "Nestea" },
+    { nombre: "Aquarius" },
+    { nombre: "Tónica" }
+];
+
+// --- SABORES GRANIZADO ---
+const saboresGranizado = [
+    { nombre: "Granizado de Limón" },
+    { nombre: "Fresa" },
+    { nombre: "Tropical Mango" },
+    { nombre: "Piña Colada" },
+    { nombre: "Café" }
 ];
 
 // --- SABORES DISPONIBLES ---
@@ -671,11 +604,32 @@ function renderProducts() {
 
         const tagsHtml = product.tags.map(t => `<span class="tag-item">${translateTag(t)}</span>`).join("");
 
-        const isHeladoBolas = ["helado_1_bola", "helado_2_bolas", "helado_3_bolas"].includes(product.id);
+        const isHeladoBolas = product.id === "helado_bolas";
         const btnSabores = isHeladoBolas
             ? `<button class="btn-ver-sabores" onclick="abrirPopupSabores('${title}')">
                    <i class="fa-solid fa-ice-cream"></i>
                    ${state.currentLanguage === 'es' ? 'Ver sabores' : 'See flavors'}
+               </button>`
+            : "";
+
+        const btnBebidas = product.hasBebidas
+            ? `<button class="btn-ver-sabores" onclick="abrirPopupBebidas()">
+                   <i class="fa-solid fa-bottle-water"></i>
+                   ${state.currentLanguage === 'es' ? 'Ver bebidas' : 'See drinks'}
+               </button>`
+            : "";
+
+        const btnGranizadoSabores = product.hasGranizadoSabores
+            ? `<button class="btn-ver-sabores" onclick="abrirPopupGranizadoSabores()">
+                   <i class="fa-solid fa-snowflake"></i>
+                   ${state.currentLanguage === 'es' ? 'Ver sabores' : 'See flavors'}
+               </button>`
+            : "";
+
+        const btnFrozenCocktails = product.hasFrozenCocktails
+            ? `<button class="btn-ver-sabores" onclick="abrirPopupFrozenCocktails()">
+                   <i class="fa-solid fa-martini-glass-citrus"></i>
+                   ${state.currentLanguage === 'es' ? 'Ver cócteles' : 'See cocktails'}
                </button>`
             : "";
 
@@ -696,6 +650,9 @@ function renderProducts() {
                 <div class="product-action" style="margin-top: auto; border-top: 1px dashed var(--border-color); padding-top: 12px;">
                     <div class="card-tags">${tagsHtml}</div>
                     ${btnSabores}
+                    ${btnBebidas}
+                    ${btnGranizadoSabores}
+                    ${btnFrozenCocktails}
                 </div>
             </div>
         `;
@@ -714,7 +671,15 @@ function checkOpeningStatus() {
 
     if (!statusBadge) return;
 
-    const isOpen = currentHour >= state.openingHours.openHour && currentHour < state.openingHours.closeHour;
+    // Handle closing hours that cross midnight (e.g., open 9:00 - 01:00)
+    let isOpen;
+    if (state.openingHours.closeHour > state.openingHours.openHour) {
+        // Normal case (e.g., 9-22)
+        isOpen = currentHour >= state.openingHours.openHour && currentHour < state.openingHours.closeHour;
+    } else {
+        // Crosses midnight (e.g., 9-1): open if hour >= 9 OR hour < 1
+        isOpen = currentHour >= state.openingHours.openHour || currentHour < state.openingHours.closeHour;
+    }
 
     if (isOpen) {
         statusBadge.className = "status-badge open";
@@ -750,6 +715,83 @@ function cerrarPopupSabores() {
 window.addEventListener("click", (e) => {
     const popup = document.getElementById("popupSabores");
     if (e.target === popup) cerrarPopupSabores();
+});
+
+// --- POPUP BEBIDAS ---
+function abrirPopupBebidas() {
+    const popup = document.getElementById("popupBebidas");
+    const lista = document.getElementById("popupBebidasList");
+    lista.innerHTML = bebidasDisponibles.map(b => `
+        <div class="sabor-item">
+            <i class="fa-solid fa-circle"></i>
+            <span>${b.nombre}</span>
+        </div>
+    `).join("");
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarPopupBebidas() {
+    document.getElementById("popupBebidas").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+window.addEventListener("click", (e) => {
+    const popup = document.getElementById("popupBebidas");
+    if (e.target === popup) cerrarPopupBebidas();
+});
+
+// --- POPUP GRANIZADO SABORES ---
+function abrirPopupGranizadoSabores() {
+    const popup = document.getElementById("popupGranizadoSabores");
+    const lista = document.getElementById("popupGranizadoSaboresList");
+    lista.innerHTML = saboresGranizado.map(s => `
+        <div class="sabor-item">
+            <i class="fa-solid fa-circle"></i>
+            <span>${s.nombre}</span>
+        </div>
+    `).join("");
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarPopupGranizadoSabores() {
+    document.getElementById("popupGranizadoSabores").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+window.addEventListener("click", (e) => {
+    const popup = document.getElementById("popupGranizadoSabores");
+    if (e.target === popup) cerrarPopupGranizadoSabores();
+});
+
+// --- POPUP FROZEN COCKTAILS ---
+function abrirPopupFrozenCocktails() {
+    const popup = document.getElementById("popupFrozenCocktails");
+    const lista = document.getElementById("popupFrozenCocktailsList");
+    lista.innerHTML = frozenCocktailsList.map(c => `
+        <div class="cocktail-card">
+            <div class="cocktail-card-img-wrap">
+                <img src="${c.img}" alt="${c.nombre}" class="cocktail-card-img">
+            </div>
+            <div class="cocktail-card-body">
+                <h4 class="cocktail-card-name">${c.nombre}</h4>
+                <p class="cocktail-card-desc">${c.desc}</p>
+            </div>
+        </div>
+    `).join("");
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarPopupFrozenCocktails() {
+    document.getElementById("popupFrozenCocktails").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+window.addEventListener("click", (e) => {
+    const popup = document.getElementById("popupFrozenCocktails");
+    if (e.target === popup) cerrarPopupFrozenCocktails();
 });
 
 // --- FLAVOR ROULETTE ---

@@ -1339,6 +1339,73 @@ button, input, select {
     }
 }
 
+/* --- FROZEN COCKTAILS POPUP --- */
+.modal-cocktails-wide {
+    max-width: 900px;
+}
+
+.cocktails-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 4px;
+}
+
+.cocktail-card {
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, background 0.2s;
+    cursor: default;
+}
+
+.cocktail-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.cocktail-card-img-wrap {
+    width: 100%;
+}
+
+.cocktail-card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cocktail-card-body {
+    padding: 10px 10px 12px;
+}
+
+.cocktail-card-name {
+    margin: 0 0 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+}
+
+.cocktail-card-desc {
+    margin: 0;
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+    .cocktails-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .modal-cocktails-wide {
+        max-width: 95%;
+    }
+}
+
 /* --- ANIMATIONS --- */
 @keyframes float {
     0% { transform: translateY(0px); }
