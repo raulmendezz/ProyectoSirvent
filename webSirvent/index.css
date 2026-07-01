@@ -6,35 +6,44 @@
 :root {
     /* Color Palette */
     --bg-primary: rgba(255, 255, 255, 0.92);
-    --bg-secondary: rgba(255, 248, 249, 0.92);     /* Soft blush pink background with glassmorphism */
-    --bg-tertiary: #ffeef1;      /* Soft rose quartz for cards/accents */
-    --primary: #ff5c7c;          /* Sweet strawberry pink */
-    --primary-hover: #e03f60;    /* Vibrant raspberry pink */
-    --primary-light: #ffb3c1;    /* Pastel blossom pink */
+    --bg-secondary: rgba(255, 248, 249, 0.92);
+    /* Soft blush pink background with glassmorphism */
+    --bg-tertiary: #ffeef1;
+    /* Soft rose quartz for cards/accents */
+    --primary: #ff5c7c;
+    /* Sweet strawberry pink */
+    --primary-hover: #e03f60;
+    /* Vibrant raspberry pink */
+    --primary-light: #ffb3c1;
+    /* Pastel blossom pink */
     --primary-ultra-light: #fff0f3;
-    
-    --text-dark: #2d2325;        /* Soft cocoa dark gray (very elegant, warm) */
-    --text-muted: #6e5e61;       /* Warm brownish gray */
-    --text-light: #9e8e91;       /* Light warm gray */
-    
-    --border-color: rgba(255, 224, 229, 0.6);     /* Delicate pink border */
-    
+
+    --text-dark: #2d2325;
+    /* Soft cocoa dark gray (very elegant, warm) */
+    --text-muted: #6e5e61;
+    /* Warm brownish gray */
+    --text-light: #9e8e91;
+    /* Light warm gray */
+
+    --border-color: rgba(255, 224, 229, 0.6);
+    /* Delicate pink border */
+
     /* Glassmorphism */
     --glass-bg: rgba(255, 255, 255, 0.78);
     --glass-border: rgba(255, 92, 124, 0.12);
     --glass-shadow: 0 8px 32px 0 rgba(255, 92, 124, 0.05);
-    
+
     /* Shadows */
     --shadow-sm: 0 4px 12px rgba(255, 92, 124, 0.03);
     --shadow-md: 0 12px 30px rgba(255, 92, 124, 0.06);
     --shadow-lg: 0 20px 50px rgba(255, 92, 124, 0.10);
-    
+
     /* Layout & Border Radii */
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-round: 50px;
-    
+
     /* Transitions */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -53,11 +62,17 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
-    background-color: #fff8f9; /* Solid soft blush pink matching screenshots */
+    background-color: #fff8f9;
+    /* Solid soft blush pink matching screenshots */
     min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     line-height: 1.2;
@@ -73,7 +88,9 @@ ul {
     list-style: none;
 }
 
-button, input, select {
+button,
+input,
+select {
     font-family: inherit;
     font-size: inherit;
     border: none;
@@ -85,14 +102,17 @@ button, input, select {
 ::-webkit-scrollbar {
     width: 10px;
 }
+
 ::-webkit-scrollbar-track {
     background: rgba(255, 248, 249, 0.5);
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--primary-light);
     border-radius: var(--radius-round);
     border: 3px solid rgba(255, 248, 249, 0.5);
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
 }
@@ -192,7 +212,8 @@ button, input, select {
     padding: 8px 0;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: var(--primary);
 }
 
@@ -207,7 +228,8 @@ button, input, select {
     transition: var(--transition-fast);
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
 }
 
@@ -241,6 +263,48 @@ button, input, select {
     box-shadow: 0 2px 8px rgba(255, 92, 124, 0.2);
 }
 
+/* --- ROULETTE GRID CARD (inside product grid) --- */
+.roulette-grid-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 248, 249, 0.95), rgba(255, 235, 240, 0.8));
+    border: 1px dashed var(--primary-light);
+}
+
+.roulette-grid-card:hover {
+    border-color: var(--primary);
+}
+
+.roulette-grid-content {
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.roulette-grid-title {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+}
+
+.roulette-grid-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.roulette-wheel-wrapper-sm {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+}
+
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -263,11 +327,11 @@ button, input, select {
         transition: var(--transition-smooth);
         box-shadow: var(--shadow-md);
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
     .menu-toggle {
         display: block;
     }
@@ -303,7 +367,7 @@ button, input, select {
         padding-bottom: 60px;
         min-height: auto;
     }
-    
+
     .hero-container {
         grid-template-columns: 1fr;
         gap: 48px;
@@ -435,7 +499,8 @@ button, input, select {
     width: 90%;
     height: 90%;
     background-color: var(--primary-ultra-light);
-    border-radius: 43% 57% 65% 35% / 47% 45% 55% 53%; /* Beautiful organic blob */
+    border-radius: 43% 57% 65% 35% / 47% 45% 55% 53%;
+    /* Beautiful organic blob */
     animation: blobMorph 10s ease-in-out infinite alternate;
     z-index: 1;
 }
@@ -871,7 +936,8 @@ button, input, select {
     font-weight: 600;
 }
 
-.contact-detail p, .contact-detail a {
+.contact-detail p,
+.contact-detail a {
     font-size: 14px;
     color: var(--text-muted);
 }
@@ -1269,7 +1335,7 @@ button, input, select {
     margin-bottom: 24px;
     font-size: 30px;
     font-family: 'Playfair Display', serif;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .sabores-grid {
@@ -1284,7 +1350,7 @@ button, input, select {
     gap: 8px;
     font-size: 14px;
     padding: 6px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .sabor-item i {
@@ -1295,7 +1361,7 @@ button, input, select {
 
 .sabor-badge {
     font-size: 11px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: 1px 7px;
     margin-left: 4px;
@@ -1328,12 +1394,15 @@ button, input, select {
     .modal-sabores-content {
         width: 95%;
     }
+
     .modal-sabores-text {
         padding: 40px 20px 24px;
     }
+
     .sabores-grid {
         grid-template-columns: 1fr;
     }
+
     .modal-sabores-text h2 {
         font-size: 22px;
     }
@@ -1393,7 +1462,7 @@ button, input, select {
 .cocktail-card-desc {
     margin: 0;
     font-size: 11px;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
     line-height: 1.4;
 }
 
@@ -1401,6 +1470,7 @@ button, input, select {
     .cocktails-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .modal-cocktails-wide {
         max-width: 95%;
     }
@@ -1408,23 +1478,53 @@ button, input, select {
 
 /* --- ANIMATIONS --- */
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @keyframes blobMorph {
-    0% { border-radius: 43% 57% 65% 35% / 47% 45% 55% 53%; }
-    50% { border-radius: 55% 45% 38% 62% / 55% 60% 40% 45%; }
-    100% { border-radius: 43% 57% 65% 35% / 47% 45% 55% 53%; }
+    0% {
+        border-radius: 43% 57% 65% 35% / 47% 45% 55% 53%;
+    }
+
+    50% {
+        border-radius: 55% 45% 38% 62% / 55% 60% 40% 45%;
+    }
+
+    100% {
+        border-radius: 43% 57% 65% 35% / 47% 45% 55% 53%;
+    }
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

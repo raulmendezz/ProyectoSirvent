@@ -8,7 +8,7 @@ const state = {
     selectedLocation: 'levante', // 'levante' or 'poniente'
     openingHours: {
         openHour: 9,
-        closeHour: 1 // 01:00 AM
+        closeHour: 2 // 02:00 AM
     }
 };
 
@@ -46,7 +46,7 @@ const translations = {
         tab_bebidas: "Bebidas",
         status_open: "Abierto ahora",
         status_closed: "Cerrado ahora",
-        status_hours: "Horario: Todos los días de 09:00 a 01:00",
+        status_hours: "Horario: Todos los días de 09:00 a 02:00",
         contact_title: "Ven a vernos en Benidorm",
         location_levante: "Playa de Levante",
         location_poniente: "Playa de Poniente",
@@ -96,7 +96,7 @@ const translations = {
         tab_bebidas: "Drinks",
         status_open: "Open now",
         status_closed: "Closed now",
-        status_hours: "Hours: Every day from 09:00 AM to 01:00 AM",
+        status_hours: "Hours: Every day from 09:00 AM to 02:00 AM",
         contact_title: "Come see us in Benidorm",
         location_levante: "Levante Beach",
         location_poniente: "Poniente Beach",
@@ -313,9 +313,9 @@ const products = [
         category: "gofres",
         nameEs: "Gofre o Crepe Recién Hecho",
         nameEn: "Freshly Made Waffle or Crepe",
-        descEs: "Gofre o crepe crujiente sin nada. Personalízalo con nata montada, salsas Kinder Bueno, Nutella, chocolate blanco o negro por +2.00€ c/u o bola extra por +2.50€.",
-        descEn: "Crispy waffle or thin crepe plain. Customize it with whipped cream, Kinder Bueno, Nutella, white or dark chocolate sauces for +2.00€ each or extra scoop for +2.50€.",
-        price: 4.00,
+        descEs: "Gofre o crepe crujiente sin nada. Personalízalo con nata montada, salsas Kinder Bueno, Nutella, chocolate blanco o negro, o bola extra.",
+        descEn: "Crispy waffle or thin crepe plain. Customize it with whipped cream, Kinder Bueno, Nutella, white or dark chocolate sauces, or an extra scoop.",
+        price: null,
         img: "img/Productos/CREPE.png",
         tags: ["Freshly Baked", "Customizable"],
         hasSizes: false
@@ -408,7 +408,8 @@ const frozenCocktailsList = [
     { nombre: "Irish Frozen", desc: "Whisky irlandés con un toque de crema.", img: "img/Productos/IrishFrozen.png" },
     { nombre: "Frozen Margarita", desc: "Tequila, triple seco y zumo de lima.", img: "img/Productos/forezenMargarita.png" },
     { nombre: "Mentireta", desc: "Café licor helado y ginebra. Tradición alicantina.", img: "img/Productos/mentireta.png" },
-    { nombre: "Café Frappé Baileys", desc: "Café expreso, Baileys y helado batidos.", img: "img/Productos/cafeFrappeBaileys.png" }
+    { nombre: "Café Frappé Baileys", desc: "Café expreso, Baileys y helado batidos.", img: "img/Productos/cafeFrappeBaileys.png" },
+    { nombre: "Piña con Malibu", desc: "Piña natural triturada con ron Malibu de coco, helado y refrescante.", img: "img/Productos/mangoMalibu.png" }
 ];
 
 // --- BEBIDAS DISPONIBLES ---
@@ -448,12 +449,12 @@ const saboresHelado = [
     { nombre: "Kinder Bueno", badge: null },
     { nombre: "Plátano con nueces al caramelo", badge: null },
     { nombre: "Turrón", badge: "Sin azúcar" },
-    { nombre: "Limón", badge: "Vegano" },
+    { nombre: "Limón", badge: "Sin Lactosa" },
     { nombre: "Stracciatella", badge: null },
     { nombre: "Ferrero Rocher", badge: null },
     { nombre: "Pantera Rosa", badge: null },
-    { nombre: "Chocolate negro", badge: "Vegano" },
-    { nombre: "Mango", badge: "Vegano" },
+    { nombre: "Chocolate negro", badge: "Sin Lactosa" },
+    { nombre: "Mango", badge: "Sin Lactosa" },
     { nombre: "Nata", badge: null },
     { nombre: "Chocolate Sirvent", badge: null },
     { nombre: "Menta con chocolate (Aftereight)", badge: null },
@@ -658,6 +659,50 @@ function renderProducts() {
         `;
         grid.appendChild(card);
     });
+
+    // Inject roulette card next to helados when that category is selected
+    if (state.currentCategory === 'helados') {
+        const rouletteCard = document.createElement("div");
+        rouletteCard.className = "product-card roulette-grid-card";
+        rouletteCard.setAttribute("data-aos", "fade-up");
+        rouletteCard.innerHTML = `
+            <div class="roulette-grid-content">
+                <span class="section-subtitle">${translations[state.currentLanguage].roulette_subtitle}</span>
+                <h3 class="roulette-grid-title">${translations[state.currentLanguage].roulette_title}</h3>
+                <p class="roulette-grid-desc">${translations[state.currentLanguage].roulette_desc}</p>
+                <div class="roulette-wheel-wrapper roulette-wheel-wrapper-sm">
+                    <div class="roulette-pointer"><i class="fa-solid fa-caret-down"></i></div>
+                    <div class="roulette-wheel" id="cartaRouletteWheel"></div>
+                    <div class="roulette-center"><i class="fa-solid fa-ice-cream"></i></div>
+                </div>
+                <button class="btn-spin-roulette" id="btnCartaSpinRoulette" onclick="girarRuletaSabores('carta')">
+                    <i class="fa-solid fa-dice"></i>
+                    <span id="btnCartaSpinRouletteText">${translations[state.currentLanguage].roulette_btn}</span>
+                </button>
+                <div class="roulette-result" id="cartaRouletteResult">
+                    <span class="roulette-result-label">${translations[state.currentLanguage].roulette_result_label}</span>
+                    <strong id="cartaRouletteResultName"></strong>
+                </div>
+            </div>
+        `;
+        grid.appendChild(rouletteCard);
+
+        // Build the wheel for the carta roulette
+        setTimeout(() => {
+            const cartaWheel = document.getElementById("cartaRouletteWheel");
+            if (cartaWheel) {
+                const segmentAngle = 360 / saboresHelado.length;
+                const stops = saboresHelado.map((_, i) => {
+                    const color = ROULETTE_COLORS[i % ROULETTE_COLORS.length];
+                    const from = (i * segmentAngle).toFixed(3);
+                    const to = ((i + 1) * segmentAngle).toFixed(3);
+                    return `${color} ${from}deg ${to}deg`;
+                }).join(", ");
+                cartaWheel.style.background = `conic-gradient(${stops})`;
+            }
+            cartaRouletteRotation = 0;
+        }, 0);
+    }
 }
 
 // --- OPEN / CLOSED REALTIME CHECKER ---
@@ -799,10 +844,10 @@ let rouletteRotation = 0;
 let isSpinningRoulette = false;
 const ROULETTE_COLORS = ["#ff5c7c", "#ffb3c1"];
 
-function buildRouletteWheel() {
-    const wheel = document.getElementById("rouletteWheel");
-    if (!wheel) return;
+let cartaRouletteRotation = 0;
+let isSpinningCartaRoulette = false;
 
+function buildRouletteWheel() {
     const segmentAngle = 360 / saboresHelado.length;
     const stops = saboresHelado.map((_, i) => {
         const color = ROULETTE_COLORS[i % ROULETTE_COLORS.length];
@@ -811,19 +856,35 @@ function buildRouletteWheel() {
         return `${color} ${from}deg ${to}deg`;
     }).join(", ");
 
-    wheel.style.background = `conic-gradient(${stops})`;
-}
-
-function girarRuletaSabores() {
-    if (isSpinningRoulette) return;
+    const bg = `conic-gradient(${stops})`;
 
     const wheel = document.getElementById("rouletteWheel");
-    const btn = document.getElementById("btnSpinRoulette");
-    const btnText = document.getElementById("btnSpinRouletteText");
-    const result = document.getElementById("rouletteResult");
+    if (wheel) wheel.style.background = bg;
+
+    const cartaWheel = document.getElementById("cartaRouletteWheel");
+    if (cartaWheel) cartaWheel.style.background = bg;
+}
+
+function girarRuletaSabores(variant) {
+    const isCarta = (variant === 'carta');
+
+    // Pick the right set of elements
+    const spinningFlag = isCarta ? isSpinningCartaRoulette : isSpinningRoulette;
+    if (spinningFlag) return;
+
+    const wheelId = isCarta ? "cartaRouletteWheel" : "rouletteWheel";
+    const btnId = isCarta ? "btnCartaSpinRoulette" : "btnSpinRoulette";
+    const btnTextId = isCarta ? "btnCartaSpinRouletteText" : "btnSpinRouletteText";
+    const resultId = isCarta ? "cartaRouletteResult" : "rouletteResult";
+    const resultNameId = isCarta ? "cartaRouletteResultName" : "rouletteResultName";
+
+    const wheel = document.getElementById(wheelId);
+    const btn = document.getElementById(btnId);
+    const btnText = document.getElementById(btnTextId);
+    const result = document.getElementById(resultId);
     if (!wheel || !btn || !result) return;
 
-    isSpinningRoulette = true;
+    if (isCarta) { isSpinningCartaRoulette = true; } else { isSpinningRoulette = true; }
     btn.disabled = true;
     btnText.textContent = translations[state.currentLanguage].roulette_btn_spinning;
     result.classList.remove("show");
@@ -835,23 +896,25 @@ function girarRuletaSabores() {
 
     // Pointer sits at the top (0deg); rotate so the chosen segment lands there.
     const desiredMod = (360 - segmentCenter + 360) % 360;
-    const currentMod = ((rouletteRotation % 360) + 360) % 360;
+    let currentRotation = isCarta ? cartaRouletteRotation : rouletteRotation;
+    const currentMod = ((currentRotation % 360) + 360) % 360;
     const delta = (desiredMod - currentMod + 360) % 360;
     const extraSpins = 5;
 
-    rouletteRotation += delta + extraSpins * 360;
-    wheel.style.transform = `rotate(${rouletteRotation}deg)`;
+    currentRotation += delta + extraSpins * 360;
+    if (isCarta) { cartaRouletteRotation = currentRotation; } else { rouletteRotation = currentRotation; }
+    wheel.style.transform = `rotate(${currentRotation}deg)`;
 
     setTimeout(() => {
         const sabor = saboresHelado[chosenIndex];
-        document.getElementById("rouletteResultName").innerHTML =
+        document.getElementById(resultNameId).innerHTML =
             `${sabor.nombre}${sabor.badge ? ` <span class="sabor-badge" style="background: var(--primary-light); color: white;">${sabor.badge}</span>` : ""}`;
 
         result.classList.add("show");
         wheel.classList.remove("spinning");
         btn.disabled = false;
         btnText.textContent = translations[state.currentLanguage].roulette_btn;
-        isSpinningRoulette = false;
+        if (isCarta) { isSpinningCartaRoulette = false; } else { isSpinningRoulette = false; }
     }, 3700);
 }
 
