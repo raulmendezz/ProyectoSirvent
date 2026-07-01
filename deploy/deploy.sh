@@ -6,7 +6,7 @@
 
 set -e
 
-APP_DIR="/var/www/ProyectoSirvent"
+APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 API_DIR="${APP_DIR}/adminSystem/apps/api"
 DASH_DIR="${APP_DIR}/adminSystem/apps/admin-dashboard"
 
