@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Fábrica Sirvent Benidorm - Granizados artesanales, helados, maquinaria y suministro para eventos.">
+    <meta name="author" content="Heladería Sirvent Benidorm">
+    <title>Fábrica | Heladería Sirvent Benidorm</title>
+
+    <link rel="icon" type="image/png" href="img/Productos/TARRINA HELADO copia.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="fabrica.css">
+</head>
+
+<body class="fabrica-page">
+
+    <!-- ── NAV ── -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-icon">🍧</span>
+                <div class="brand-name">
+                    <span class="brand-title">Sirvent</span>
+                    <span class="brand-subtitle">Benidorm · Desde 1940</span>
+                </div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#historia" class="nav-link">Nuestra Historia</a></li>
+                <li><a href="index.html#carta" class="nav-link">La Carta</a></li>
+                <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="fabrica.html" class="nav-link active">Fábrica</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="fabrica-hero">
+        <div class="container">
+            <span class="badge"><i class="fa-solid fa-industry"></i> Elaboración artesanal · Desde 1940</span>
+            <h1>Nuestra <span>Fábrica</span></h1>
+            <p>Desde Benidorm elaboramos granizados artesanales, helados de autor y suministramos sabor a más de 200
+                clientes en toda la región.</p>
+        </div>
+    </section>
+
+    <!-- ── STATS BAR ── -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">+80</div>
+                    <div class="stat-label">Años de experiencia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">37</div>
+                    <div class="stat-label">Sabores de helado</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Granizados y horchata</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+200</div>
+                    <div class="stat-label">Clientes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── GRANIZADOS ── -->
+    <section class="fab-section" id="granizados">
+        <div class="container">
+            <span class="section-label"><i class="fa-solid fa-snowflake"></i> Granizados</span>
+            <h2>Granizados artesanales</h2>
+            <p class="section-intro">
+                Elaborados en nuestra fábrica con ingredientes naturales y recetas propias. Frescos, intensos y listos
+                para servir en cualquier punto de venta.
+            </p>
+            <div class="granizados-grid">
+                <div class="granizado-card">
+                    <span class="granizado-icon">🍋</span>
+                    <h3>Limón</h3>
+                    <p>Refrescante y natural</p>
+                </div>
+                <div class="granizado-card">
+                    <span class="granizado-icon">🍍</span>
+                    <h3>Piña Colada</h3>
+                    <p>Tropical con toque coco</p>
+                </div>
+                <div class="granizado-card">
+                    <span class="granizado-icon">🌴</span>
+                    <h3>Tropical</h3>
+                    <p>Mezcla de frutas exóticas</p>
+                </div>
+                <div class="granizado-card">
+                    <span class="granizado-icon">🍓</span>
+                    <h3>Fresa</h3>
+                    <p>Dulce y afrutado</p>
+                </div>
+                <div class="granizado-card">
+                    <span class="granizado-icon">☕</span>
+                    <h3>Café</h3>
+                    <p>Intenso y energizante</p>
+                </div>
+                <div class="granizado-card">
+                    <span class="granizado-icon">🥭</span>
+                    <h3>Mango</h3>
+                    <p>Exótico y cremoso</p>
+                </div>
+                <div class="granizado-card">
+                    <span class="granizado-icon">🥛</span>
+                    <h3>Horchata Artesanal</h3>
+                    <p>Receta tradicional de chufa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── HELADOS ── -->
+    <section class="fab-section alt" id="helados">
+        <div class="container">
+            <span class="section-label"><i class="fa-solid fa-ice-cream"></i> Helados</span>
+            <h2>Nuestra carta de sabores</h2>
+            <p class="section-intro">
+                37 sabores de helado elaborados artesanalmente en nuestra fábrica. Disponibles en tarrina para
+                distribución, eventos y tienda propia.
+            </p>
+            <div class="helados-grid">
+
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Oreo</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Turrón con trozos</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Dulce de leche</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Pistacho</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Cheese Cake</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Biscotino Cookies</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Kinder Bueno</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Plátano con nueces al caramelo</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Turrón</span>
+                    <span class="badge-tag badge-sugar">Sin azúcar</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Limón</span>
+                    <span class="badge-tag badge-sinleche">Sin leche</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Stracciatella</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Ferrero Rocher</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Pantera Rosa</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Chocolate Negro</span>
+                    <span class="badge-tag badge-sinleche">Sin leche</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Mango</span>
+                    <span class="badge-tag badge-sinleche">Sin leche</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Nata</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Chocolate Sirvent</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Menta con chocolate (After Eight)</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Chocolate Blanco con Filipinos</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Merengada</span>
+                    <span class="badge-tag badge-diabetic">Diabéticos</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Avellana</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Lotus</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Caramelo Salado</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Vainilla</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Fresa Natural</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Huevo Kinder</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Málaga (Ron con pasas)</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Chocolate Fondant</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Nube de Algodón</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Tutti Frutti</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Yogur</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Coco con Raffaello</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Moka (Café)</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Crema Catalana</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Pistacho Dubai</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Chocolate con Oreo</span>
+                </div>
+                <div class="helado-tag">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Helado de Coco con Mango</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MAQUINARIA ── -->
+    <section class="fab-section" id="maquinaria">
+        <div class="container">
+            <span class="section-label"><i class="fa-solid fa-gears"></i> Maquinaria</span>
+            <h2>Venta de maquinaria</h2>
+            <p class="section-intro">
+                Además de nuestros productos, comercializamos maquinaria profesional de granizado para negocios de
+                hostelería, bares, hoteles, restaurantes y eventos.
+            </p>
+            <div class="maq-grid">
+                <div class="maq-card">
+                    <div class="maq-icon"><i class="fa-solid fa-blender"></i></div>
+                    <h3>Máquinas de granizado</h3>
+                    <p>Equipos profesionales para elaborar granizados de alta calidad. Ideales para bares, chiringuitos,
+                        restaurantes y puestos de hostelería. Fácil limpieza y mantenimiento.</p>
+                </div>
+                <div class="maq-card">
+                    <div class="maq-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3>Instalación y soporte</h3>
+                    <p>Nos encargamos de la instalación y el asesoramiento técnico para que saques el máximo rendimiento
+                        a tu máquina desde el primer día.</p>
+                </div>
+                <div class="maq-card">
+                    <div class="maq-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h3>Suministro de producto</h3>
+                    <p>Con tu máquina te garantizamos el suministro continuo de nuestros granizados artesanales listos
+                        para usar, en todos los sabores disponibles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── EVENTOS ── -->
+    <section class="fab-section alt" id="eventos">
+        <div class="container">
+            <div class="eventos-wrapper">
+                <div class="eventos-content">
+                    <span class="section-label"><i class="fa-solid fa-calendar-check"></i> Eventos</span>
+                    <h2>Suministro para eventos</h2>
+                    <p class="section-intro" style="margin-bottom: 0;">
+                        Contamos con una amplia red de clientes a los que suministramos nuestros productos para todo
+                        tipo de eventos: bodas, comuniones, ferias, festivales, catering corporativo y mucho más.
+                    </p>
+                    <ul class="eventos-list">
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            Servicio personalizado adaptado al volumen y tipo de evento.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            Entrega puntual con cadena de frío garantizada.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            Disponibilidad de toda nuestra gama de granizados y helados artesanales.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            Opción de alquiler de máquinas de granizado para el evento.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            Presupuesto sin compromiso en menos de 24 horas.
+                        </li>
+                    </ul>
+                </div>
+                <div class="eventos-stats">
+                    <div class="ev-stat">
+                        <div class="num">+200</div>
+                        <div class="lbl">Clientes activos</div>
+                    </div>
+                    <div class="ev-stat">
+                        <div class="num">+80</div>
+                        <div class="lbl">Años en el sector</div>
+                    </div>
+                    <div class="ev-stat">
+                        <div class="num">24h</div>
+                        <div class="lbl">Respuesta presupuesto</div>
+                    </div>
+                    <div class="ev-stat">
+                        <div class="num">100%</div>
+                        <div class="lbl">Artesanal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Quieres trabajar con nosotros?</h2>
+            <p>Contacta con nuestro equipo y te asesoraremos sin compromiso.</p>
+            <a href="https://wa.me/34666373531" target="_blank" rel="noopener noreferrer" class="cta-btn">
+                <i class="fa-brands fa-whatsapp"></i> Contactar ahora
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-brand-title">🍧 Sirvent Benidorm</h3>
+                    <p class="footer-desc">
+                        Elaborando momentos felices y helados artesanales en Benidorm desde 1940. Recetas tradicionales
+                        directas de Jijona.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/heladossirvent" class="social-icon" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/HeladosSirvent" class="social-icon" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@heladossirvent?lang=es" class="social-icon" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="historia.html" class="footer-link">Nuestra Historia</a></li>
+                        <li><a href="index.html#carta" class="footer-link">La Carta</a></li>
+                        <li><a href="index.html#contacto" class="footer-link">Contacto</a></li>
+                        <li><a href="fabrica.html" class="footer-link">Fábrica</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Nuestros Locales</h4>
+                    <ul class="footer-links-list">
+                        <li class="footer-link" style="cursor: default;">
+                            <i class="fa-solid fa-map-pin" style="color: var(--primary-light); margin-right: 8px;"></i>
+                            <strong>Avinguda Alcoi, 2, 03503 Benidorm, Alicante</strong>
+                        </li>
+                        <li class="footer-link" style="cursor: default;">
+                            <i class="fa-solid fa-clock" style="color: var(--primary-light); margin-right: 8px;"></i>
+                            09:00 - 02:00 (Lunes - Domingo)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider">
+                <div class="footer-copy">
+                    &copy; 2026 Heladería Sirvent Benidorm. Todos los derechos reservados.
+                </div>
+                <div class="footer-credits">
+                    Diseñado con amor para <span>Heladería Sirvent</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('active');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
