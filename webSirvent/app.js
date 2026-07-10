@@ -429,6 +429,22 @@ const bebidasDisponibles = [
     { nombre: "Tónica" }
 ];
 
+// --- SABORES COMBINADOS DE NUESTROS CLIENTES ---
+const saboresCombinados = [
+    { nombre: "Yogur y Pistacho" },
+    { nombre: "Yogur y Bueno" },
+    { nombre: "Yogur y Lotus" },
+    { nombre: "Tres Chocolates: chocolate, fondant y negro" },
+    { nombre: "Plátano y Vainilla" },
+    { nombre: "Fresa, Chocolate y Vainilla" },
+    { nombre: "Limón, Merengada y Yogur" },
+    { nombre: "Málaga, Tutti Frutti y Limón" },
+    { nombre: "Ferrero, Lotus y Cheesecake" },
+    { nombre: "Pistacho, Caramelo y Nata" },
+    { nombre: "Kinder Huevo, Bueno y Oreo" },
+    { nombre: "Pistacho Dubai, Vainilla y Chocolate" }
+];
+
 // --- SABORES GRANIZADO ---
 const saboresGranizado = [
     { nombre: "Granizado de Limón" },
@@ -702,6 +718,24 @@ function renderProducts() {
             }
             cartaRouletteRotation = 0;
         }, 0);
+
+        // Inject sabores combinados card next to helados as well
+        const combosCard = document.createElement("div");
+        combosCard.className = "product-card roulette-grid-card combos-grid-card";
+        combosCard.setAttribute("data-aos", "fade-up");
+        combosCard.innerHTML = `
+            <div class="roulette-grid-content">
+                <span class="section-subtitle">${state.currentLanguage === 'es' ? 'Favoritos' : 'Favorites'}</span>
+                <h3 class="roulette-grid-title">${state.currentLanguage === 'es' ? 'Sabores combinados de nuestros clientes' : 'Our customers\' combined flavors'}</h3>
+                <p class="roulette-grid-desc">${state.currentLanguage === 'es' ? 'Las combinaciones más pedidas por nuestros clientes. ¡Inspírate y crea la tuya!' : 'The combinations our customers order the most. Get inspired and create your own!'}</p>
+                <img src="img/Productos/saborescombinados.png" alt="Sabores combinados de nuestros clientes" class="combos-grid-img" loading="lazy">
+                <button class="btn-ver-sabores" onclick="abrirPopupCombos()">
+                    <i class="fa-solid fa-ice-cream"></i>
+                    ${state.currentLanguage === 'es' ? 'Ver sabores combinados' : 'See combined flavors'}
+                </button>
+            </div>
+        `;
+        grid.appendChild(combosCard);
     }
 }
 
@@ -808,6 +842,30 @@ function cerrarPopupGranizadoSabores() {
 window.addEventListener("click", (e) => {
     const popup = document.getElementById("popupGranizadoSabores");
     if (e.target === popup) cerrarPopupGranizadoSabores();
+});
+
+// --- POPUP SABORES COMBINADOS ---
+function abrirPopupCombos() {
+    const popup = document.getElementById("popupCombos");
+    const lista = document.getElementById("popupCombosList");
+    lista.innerHTML = saboresCombinados.map(s => `
+        <div class="sabor-item">
+            <i class="fa-solid fa-circle"></i>
+            <span>${s.nombre}</span>
+        </div>
+    `).join("");
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarPopupCombos() {
+    document.getElementById("popupCombos").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+window.addEventListener("click", (e) => {
+    const popup = document.getElementById("popupCombos");
+    if (e.target === popup) cerrarPopupCombos();
 });
 
 // --- POPUP FROZEN COCKTAILS ---
