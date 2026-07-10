@@ -305,6 +305,13 @@ select {
     margin: 0 auto 20px;
 }
 
+.combos-grid-img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 4px;
+}
+
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -891,8 +898,18 @@ select {
 
 .contact-container {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 60px;
+    grid-template-columns: 0.9fr 1fr 1fr;
+    gap: 40px;
+}
+
+@media (max-width: 1200px) {
+    .contact-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .combos-panel {
+        grid-column: 1 / -1;
+    }
 }
 
 @media (max-width: 992px) {
@@ -1021,6 +1038,40 @@ select {
     font-size: 14px;
     color: var(--text-muted);
     margin-bottom: 26px;
+}
+
+/* --- SABORES COMBINADOS PANEL --- */
+.combos-panel {
+    display: flex;
+}
+
+.combos-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.combos-card .contact-card-title {
+    text-align: center;
+}
+
+.combos-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.combos-img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    margin-bottom: 8px;
 }
 
 .roulette-wheel-wrapper {

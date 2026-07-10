@@ -212,6 +212,24 @@
                     </div>
                 </div>
             </div>
+
+            <div class="combos-panel" data-aos="fade-left">
+                <div class="combos-card">
+                    <span class="section-subtitle">Favoritos</span>
+                    <h2 class="contact-card-title">Sabores combinados de nuestros clientes</h2>
+                    <p class="combos-desc">
+                        Las combinaciones más pedidas por nuestros clientes. ¡Inspírate y crea la tuya!
+                    </p>
+
+                    <img src="img/Productos/saborescombinados.png"
+                        alt="Sabores combinados de nuestros clientes" class="combos-img">
+
+                    <button class="btn-ver-sabores" onclick="abrirPopupCombos()">
+                        <i class="fa-solid fa-ice-cream"></i>
+                        Ver sabores combinados
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -468,6 +486,17 @@
             <div class="modal-sabores-text">
                 <h2><i class="fa-solid fa-martini-glass-citrus" style="margin-right:10px;"></i>Frozen Cocktails</h2>
                 <div id="popupFrozenCocktailsList" class="cocktails-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Sabores Combinados -->
+    <div class="modal-sabores" id="popupCombos">
+        <div class="modal-sabores-content">
+            <span class="modal-sabores-close" onclick="cerrarPopupCombos()">&times;</span>
+            <div class="modal-sabores-text">
+                <h2><i class="fa-solid fa-ice-cream" style="margin-right:10px;"></i>Sabores combinados</h2>
+                <div id="popupCombosList" class="sabores-grid"></div>
             </div>
         </div>
     </div>
