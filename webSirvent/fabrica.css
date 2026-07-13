@@ -357,10 +357,23 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-    .eventos-wrapper { grid-template-columns: 1fr; }
+    .fabrica-hero { padding: 64px 0 48px; }
+    .fabrica-hero p { font-size: 1rem; }
+    .fab-section { padding: 56px 0; }
+    .fab-section .section-intro { margin-bottom: 32px; }
+    .stats-bar { padding: 24px 0; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .stat-item .stat-number { font-size: 1.8rem; }
+    .eventos-wrapper { grid-template-columns: 1fr; gap: 32px; }
+    .cta-section { padding: 56px 0; }
 }
 @media (max-width: 480px) {
-    .granizados-grid { grid-template-columns: repeat(2, 1fr); }
+    .granizados-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .granizado-card { padding: 24px 12px; }
+    .granizado-icon { font-size: 2.2rem; }
     .helados-grid    { grid-template-columns: 1fr; }
+    .maq-card { padding: 28px 20px; }
     .eventos-stats   { grid-template-columns: 1fr 1fr; }
+    .ev-stat { padding: 22px 14px; }
+    .ev-stat .num { font-size: 1.9rem; }
 }
