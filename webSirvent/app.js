@@ -260,6 +260,22 @@ const products = [
             { id: "lg", nameEs: "Grande", nameEn: "Large", price: 7.00 }
         ]
     },
+    {
+        id: "frape_cafe",
+        category: "frap",
+        nameEs: "Frap-Shake Café",
+        nameEn: "Coffee Frap-Shake",
+        descEs: "Batido helado de café espresso y leche coronado con nata montada.",
+        descEn: "Frozen shake made with espresso coffee and milk, topped with whipped cream.",
+        price: 4.50,
+        img: "img/Productos/Frap-Shake Cafe copia.png",
+        tags: ["Coffee Lovers", "Sweet"],
+        hasSizes: true,
+        sizes: [
+            { id: "md", nameEs: "Mediano", nameEn: "Medium", price: 4.50 },
+            { id: "lg", nameEs: "Grande", nameEn: "Large", price: 7.00 }
+        ]
+    },
 
     // --- HORCHATA & LECHE PREPARADA ---
     {
@@ -309,12 +325,24 @@ const products = [
 
     // --- GOFRES & CREPES ---
     {
-        id: "gofre_crepe",
+        id: "gofre",
         category: "gofres",
-        nameEs: "Gofre o Crepe Recién Hecho",
-        nameEn: "Freshly Made Waffle or Crepe",
-        descEs: "Gofre o crepe crujiente sin nada. Personalízalo con nata montada, salsas Kinder Bueno, Nutella, chocolate blanco o negro, o bola extra.",
-        descEn: "Crispy waffle or thin crepe plain. Customize it with whipped cream, Kinder Bueno, Nutella, white or dark chocolate sauces, or an extra scoop.",
+        nameEs: "Gofre Recién Hecho",
+        nameEn: "Freshly Made Waffle",
+        descEs: "Gofre crujiente sin nada. Personalízalo con nata montada, salsas Kinder Bueno, Nutella, chocolate blanco o negro, o bola extra.",
+        descEn: "Crispy waffle plain. Customize it with whipped cream, Kinder Bueno, Nutella, white or dark chocolate sauces, or an extra scoop.",
+        price: null,
+        img: "img/Productos/gofre.png",
+        tags: ["Freshly Baked", "Customizable"],
+        hasSizes: false
+    },
+    {
+        id: "crepe",
+        category: "gofres",
+        nameEs: "Crepe Recién Hecho",
+        nameEn: "Freshly Made Crepe",
+        descEs: "Crepe fino y crujiente sin nada. Personalízalo con nata montada, salsas Kinder Bueno, Nutella, chocolate blanco o negro, o bola extra.",
+        descEn: "Thin crispy crepe plain. Customize it with whipped cream, Kinder Bueno, Nutella, white or dark chocolate sauces, or an extra scoop.",
         price: null,
         img: "img/Productos/CREPE.png",
         tags: ["Freshly Baked", "Customizable"],
@@ -392,7 +420,7 @@ const products = [
         descEs: "Coca-Cola, Fanta, Sprite o Nestea helados en lata.",
         descEn: "Chilled Coca-Cola, Fanta, Sprite, or Nestea in a can.",
         price: 2.50,
-        img: "img/Productos/refrescos.webp",
+        img: "img/Productos/refrescos.png",
         tags: ["Soft drink"],
         hasSizes: false,
         hasBebidas: true
