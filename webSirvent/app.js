@@ -5,12 +5,78 @@ const state = {
     currentLanguage: 'es',
     currentCategory: 'all',
     searchQuery: '',
-    selectedLocation: 'levante', // 'levante' or 'poniente'
-    openingHours: {
-        openHour: 9,
-        closeHour: 2 // 02:00 AM
-    }
+    selectedLocation: 'levante' // 'levante' or 'poniente'
 };
+
+// --- SEASONAL OPENING HOURS ---
+// Returns the schedule for a given date, in minutes from midnight.
+// closeMin <= openMin means the closing time falls after midnight.
+function getScheduleForDate(date) {
+    const month = date.getMonth(); // 0 = Jan ... 11 = Dec
+    const day = date.getDay();     // 0 = Sun, 5 = Fri, 6 = Sat
+
+    // July & August: peak season (Fri/Sat until 02:00, rest until 01:30)
+    if (month === 6 || month === 7) {
+        if (day === 5 || day === 6) {
+            return { openHour: 9, openMinute: 0, closeHour: 2, closeMinute: 0 };
+        }
+        return { openHour: 9, openMinute: 0, closeHour: 1, closeMinute: 30 };
+    }
+    // June & September: every day until 01:00
+    if (month === 5 || month === 8) {
+        return { openHour: 9, openMinute: 0, closeHour: 1, closeMinute: 0 };
+    }
+    // April, May & October: every day until 00:30
+    if (month === 3 || month === 4 || month === 9) {
+        return { openHour: 9, openMinute: 0, closeHour: 0, closeMinute: 30 };
+    }
+    // Rest of the year (Nov, Dec, Jan, Feb, Mar): every day until 19:00
+    return { openHour: 9, openMinute: 0, closeHour: 19, closeMinute: 0 };
+}
+
+// Builds the human-readable hours line for the current date & language.
+function getHoursText(date, lang) {
+    const month = date.getMonth();
+    const es = lang === 'es';
+
+    if (month === 6 || month === 7) {
+        return es
+            ? "Horario: Vie y Sáb de 09:00 a 02:00 · Otros días 09:00 a 01:30"
+            : "Hours: Fri & Sat 09:00 AM to 02:00 AM · Other days 09:00 AM to 01:30 AM";
+    }
+    if (month === 5 || month === 8) {
+        return es
+            ? "Horario: Todos los días de 09:00 a 01:00"
+            : "Hours: Every day from 09:00 AM to 01:00 AM";
+    }
+    if (month === 3 || month === 4 || month === 9) {
+        return es
+            ? "Horario: Todos los días de 09:00 a 00:30"
+            : "Hours: Every day from 09:00 AM to 00:30 AM";
+    }
+    return es
+        ? "Horario: Todos los días de 09:00 a 19:00"
+        : "Hours: Every day from 09:00 AM to 07:00 PM";
+}
+
+// Compact hours line for the footer, e.g. "09:00 - 19:00 (Lunes - Domingo)".
+function getFooterHoursText(date, lang) {
+    const month = date.getMonth();
+    const days = lang === 'es' ? "(Lunes - Domingo)" : "(Monday - Sunday)";
+
+    if (month === 6 || month === 7) {
+        return (lang === 'es'
+            ? "Vie-Sáb 09:00-02:00 · resto 09:00-01:30 "
+            : "Fri-Sat 09:00-02:00 · other days 09:00-01:30 ") + days;
+    }
+    if (month === 5 || month === 8) {
+        return "09:00 - 01:00 " + days;
+    }
+    if (month === 3 || month === 4 || month === 9) {
+        return "09:00 - 00:30 " + days;
+    }
+    return "09:00 - 19:00 " + days;
+}
 
 // --- TRANSLATION DICTIONARY (ES / EN) ---
 const translations = {
@@ -40,13 +106,14 @@ const translations = {
         tab_granizados: "Granizados",
         tab_cocktails: "Cócteles Froozen",
         tab_frap: "Frap-Shakes",
+        tab_copas: "Copas",
         tab_horchata: "Horchata y Leche",
         tab_gofres: "Gofres y Crepes",
         tab_cafe: "Cafetería",
         tab_bebidas: "Bebidas",
         status_open: "Abierto ahora",
         status_closed: "Cerrado ahora",
-        status_hours: "Horario: Todos los días de 09:00 a 02:00",
+        status_hours: "Horario: Todos los días de 09:00 a 19:00",
         contact_title: "Ven a vernos en Benidorm",
         location_levante: "Playa de Levante",
         location_poniente: "Playa de Poniente",
@@ -90,13 +157,14 @@ const translations = {
         tab_granizados: "Slushes / Granizados",
         tab_cocktails: "Froozen Cocktails",
         tab_frap: "Frap-Shakes",
+        tab_copas: "Ice Cream Cups",
         tab_horchata: "Horchata & Milk",
         tab_gofres: "Waffles & Crepes",
         tab_cafe: "Coffee Shop",
         tab_bebidas: "Drinks",
         status_open: "Open now",
         status_closed: "Closed now",
-        status_hours: "Hours: Every day from 09:00 AM to 02:00 AM",
+        status_hours: "Hours: Every day from 09:00 AM to 07:00 PM",
         contact_title: "Come see us in Benidorm",
         location_levante: "Levante Beach",
         location_poniente: "Poniente Beach",
@@ -206,7 +274,7 @@ const products = [
     // --- COPAS Y FRAP-SHAKES ---
     {
         id: "copa_blanco_y_negro",
-        category: "frap",
+        category: "copas",
         nameEs: "Blanco y Negro",
         nameEn: "Black and White",
         descEs: "Granizado de café espresso coronado con una generosa bola de helado de leche merengada o vainilla.",
@@ -218,13 +286,13 @@ const products = [
     },
     {
         id: "copa_leche_merengada",
-        category: "frap",
+        category: "copas",
         nameEs: "Leche Merengada Premium",
         nameEn: "Premium Merengue Milk",
         descEs: "Nuestra clásica copa helada de leche merengada aromatizada con canela y limón.",
         descEn: "Our classic iced cup of sweet merengue milk flavored with cinnamon and lemon.",
         price: 7.00,
-        img: "img/Productos/LECHE MERENGADA.png",
+        img: "img/Productos/copaMerengada.png",
         tags: ["Traditional", "Best Seller"],
         hasSizes: false
     },
@@ -586,6 +654,16 @@ function setLanguage(lang) {
         searchInput.placeholder = translations[lang].search_placeholder;
     }
 
+    // Refresh the seasonal hours lines in the new language
+    const statusHours = document.getElementById("statusHours");
+    if (statusHours) {
+        statusHours.textContent = getHoursText(new Date(), lang);
+    }
+    const footerHours = document.getElementById("footerHours");
+    if (footerHours) {
+        footerHours.textContent = getFooterHoursText(new Date(), lang);
+    }
+
     // Rerender products in new language
     renderProducts();
 }
@@ -770,22 +848,50 @@ function renderProducts() {
 // --- OPEN / CLOSED REALTIME CHECKER ---
 function checkOpeningStatus() {
     const now = new Date();
-    const currentHour = now.getHours();
 
     const statusBadge = document.getElementById("statusBadge");
     const statusDot = document.getElementById("statusDot");
     const statusText = document.getElementById("statusText");
+    const statusHours = document.getElementById("statusHours");
+
+    // Keep the visible hours lines in sync with the current season
+    if (statusHours) {
+        statusHours.textContent = getHoursText(now, state.currentLanguage);
+    }
+    const footerHours = document.getElementById("footerHours");
+    if (footerHours) {
+        footerHours.textContent = getFooterHoursText(now, state.currentLanguage);
+    }
 
     if (!statusBadge) return;
 
-    // Handle closing hours that cross midnight (e.g., open 9:00 - 01:00)
-    let isOpen;
-    if (state.openingHours.closeHour > state.openingHours.openHour) {
-        // Normal case (e.g., 9-22)
-        isOpen = currentHour >= state.openingHours.openHour && currentHour < state.openingHours.closeHour;
+    const nowMin = now.getHours() * 60 + now.getMinutes();
+
+    // A day's session runs 09:00 -> closing time; when closing falls after
+    // midnight, the early-morning tail belongs to the PREVIOUS day's session.
+    // So we test two sessions: the one that started today and the one that
+    // started yesterday (which may still be running past midnight).
+    const today = getScheduleForDate(now);
+    const yesterdayDate = new Date(now);
+    yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+    const yesterday = getScheduleForDate(yesterdayDate);
+
+    const openMin = today.openHour * 60 + today.openMinute;
+    const todayClose = today.closeHour * 60 + today.closeMinute;
+    const yOpenMin = yesterday.openHour * 60 + yesterday.openMinute;
+    const yCloseMin = yesterday.closeHour * 60 + yesterday.closeMinute;
+
+    let isOpen = false;
+    // Today's session, from opening up to closing (or up to midnight if it
+    // closes after midnight — the post-midnight part is handled as yesterday's).
+    if (todayClose > openMin) {
+        isOpen = nowMin >= openMin && nowMin < todayClose;
     } else {
-        // Crosses midnight (e.g., 9-1): open if hour >= 9 OR hour < 1
-        isOpen = currentHour >= state.openingHours.openHour || currentHour < state.openingHours.closeHour;
+        isOpen = nowMin >= openMin;
+    }
+    // Yesterday's session tail after midnight (only if it closed after midnight).
+    if (yCloseMin <= yOpenMin && nowMin < yCloseMin) {
+        isOpen = true;
     }
 
     if (isOpen) {

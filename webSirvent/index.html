@@ -115,7 +115,8 @@
                     <button class="tab-btn" data-category="helados" data-key="tab_helados">Helados y Tarrinas</button>
                     <button class="tab-btn" data-category="granizados" data-key="tab_granizados">Granizados</button>
                     <button class="tab-btn" data-category="cocktails" data-key="tab_cocktails">Cócteles Frozen</button>
-                    <button class="tab-btn" data-category="frap" data-key="tab_frap">Frap-Shakes y Copas</button>
+                    <button class="tab-btn" data-category="frap" data-key="tab_frap">Frap-Shakes</button>
+                    <button class="tab-btn" data-category="copas" data-key="tab_copas">Copas</button>
                     <button class="tab-btn" data-category="horchata" data-key="tab_horchata">Horchata y Leche</button>
                     <button class="tab-btn" data-category="gofres" data-key="tab_gofres">Gofres y Crepes</button>
                     <button class="tab-btn" data-category="cafe" data-key="tab_cafe">Cafetería</button>
@@ -143,8 +144,8 @@
                         <span class="status-dot" id="statusDot"></span>
                         <span id="statusText">Abierto ahora</span>
                     </div>
-                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;" data-key="status_hours">
-                        Horario: Todos los días de 09:00 a 02:00
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;" id="statusHours">
+                        Horario: Todos los días de 09:00 a 19:00
                     </p>
 
                     <div class="contact-list">
@@ -221,8 +222,8 @@
                         Las combinaciones más pedidas por nuestros clientes. ¡Inspírate y crea la tuya!
                     </p>
 
-                    <img src="img/Productos/saborescombinados.png"
-                        alt="Sabores combinados de nuestros clientes" class="combos-img">
+                    <img src="img/Productos/saborescombinados.png" alt="Sabores combinados de nuestros clientes"
+                        class="combos-img">
 
                     <button class="btn-ver-sabores" onclick="abrirPopupCombos()">
                         <i class="fa-solid fa-ice-cream"></i>
@@ -260,12 +261,16 @@
                         <div class="reviewer-info">
                             <span class="reviewer-name">María G.</span>
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                            class="google-logo">
                     </div>
-                    <p class="review-text">"Los mejores helados artesanales que he probado en Benidorm. El helado de turrón es increíble, se nota que es de verdad. Volveremos sin duda."</p>
+                    <p class="review-text">"Los mejores helados artesanales que he probado en Benidorm. El helado de
+                        turrón es increíble, se nota que es de verdad. Volveremos sin duda."</p>
                 </div>
 
                 <div class="review-card">
@@ -274,12 +279,16 @@
                         <div class="reviewer-info">
                             <span class="reviewer-name">Carlos R.</span>
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                            class="google-logo">
                     </div>
-                    <p class="review-text">"Llevamos años viniendo cada verano y siempre repetimos. La horchata artesanal es de las mejores que hemos tomado fuera de Valencia."</p>
+                    <p class="review-text">"Llevamos años viniendo cada verano y siempre repetimos. La horchata
+                        artesanal es de las mejores que hemos tomado fuera de Valencia."</p>
                 </div>
 
                 <div class="review-card">
@@ -288,12 +297,16 @@
                         <div class="reviewer-info">
                             <span class="reviewer-name">Laura M.</span>
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                            class="google-logo">
                     </div>
-                    <p class="review-text">"Sitio con mucha historia y se nota. El personal es muy amable y los precios muy razonables para la calidad que ofrecen. 100% recomendable."</p>
+                    <p class="review-text">"Sitio con mucha historia y se nota. El personal es muy amable y los precios
+                        muy razonables para la calidad que ofrecen. 100% recomendable."</p>
                 </div>
 
                 <div class="review-card">
@@ -302,12 +315,16 @@
                         <div class="reviewer-info">
                             <span class="reviewer-name">Javier P.</span>
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                            class="google-logo">
                     </div>
-                    <p class="review-text">"El granizado de limón es refrescante y natural, perfecto para el calor de Benidorm. Una heladería clásica que merece mucho la pena visitar."</p>
+                    <p class="review-text">"El granizado de limón es refrescante y natural, perfecto para el calor de
+                        Benidorm. Una heladería clásica que merece mucho la pena visitar."</p>
                 </div>
 
                 <div class="review-card">
@@ -316,12 +333,16 @@
                         <div class="reviewer-info">
                             <span class="reviewer-name">Ana T.</span>
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                            class="google-logo">
                     </div>
-                    <p class="review-text">"Desde 1940 haciendo las cosas bien. Probé el helado de pistacho Dubai y fue amor a primera vista. Hay una variedad enorme de sabores para todos los gustos."</p>
+                    <p class="review-text">"Desde 1940 haciendo las cosas bien. Probé el helado de pistacho Dubai y fue
+                        amor a primera vista. Hay una variedad enorme de sabores para todos los gustos."</p>
                 </div>
 
                 <div class="review-card">
@@ -330,18 +351,23 @@
                         <div class="reviewer-info">
                             <span class="reviewer-name">Pedro F.</span>
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                            class="google-logo">
                     </div>
-                    <p class="review-text">"Imprescindible en Benidorm. El helado de chocolate Sirvent no tiene comparación. Un negocio familiar con muchísima calidad y tradición."</p>
+                    <p class="review-text">"Imprescindible en Benidorm. El helado de chocolate Sirvent no tiene
+                        comparación. Un negocio familiar con muchísima calidad y tradición."</p>
                 </div>
 
             </div>
 
             <div class="reviews-cta">
-                <a href="https://maps.app.goo.gl/QLenQaYhk72Sozxm8" target="_blank" rel="noopener noreferrer" class="btn-google-reviews">
+                <a href="https://maps.app.goo.gl/QLenQaYhk72Sozxm8" target="_blank" rel="noopener noreferrer"
+                    class="btn-google-reviews">
                     <i class="fa-brands fa-google"></i> Ver todas las reseñas en Google
                 </a>
             </div>
@@ -372,7 +398,8 @@
                     <h4 data-key="footer_links_title">Navegación</h4>
                     <ul class="footer-links-list">
                         <li><a href="#hero" class="footer-link">Home</a></li>
-                        <li><a href="historia.html" class="footer-link" data-key="nav_historia">Nuestra Historia</a></li>
+                        <li><a href="historia.html" class="footer-link" data-key="nav_historia">Nuestra Historia</a>
+                        </li>
                         <li><a href="#carta" class="footer-link" data-key="nav_carta">La Carta</a></li>
                         <li><a href="#contacto" class="footer-link" data-key="nav_contacto">Contacto</a></li>
                     </ul>
@@ -387,7 +414,7 @@
                         </li>
                         <li class="footer-link" style="cursor: default;">
                             <i class="fa-solid fa-clock" style="color: var(--primary-light); margin-right: 8px;"></i>
-                            09:00 - 02:00 (Lunes - Domingo)
+                            <span id="footerHours">09:00 - 19:00 (Lunes - Domingo)</span>
                         </li>
                     </ul>
                 </div>
