@@ -57,14 +57,26 @@ export class TrackingService {
   // Resumen semanal: cada lunes a las 9:00 (hora de España).
   @Cron('0 0 9 * * 1', { timeZone: 'Europe/Madrid' })
   async sendWeeklySummary() {
-    const to =
+    await this.enviarResumenAhora();
+  }
+
+  /**
+   * Genera y envía el resumen de accesos de los últimos 7 días.
+   * Lo usa el cron semanal y también se puede disparar a mano
+   * (ver scripts/send-tracking-summary.ts) para pruebas.
+   *
+   * @param to Destinatario opcional. Si se omite, usa QR_EMAIL_TO o EMAIL_RECIPIENTS.
+   */
+  async enviarResumenAhora(to?: string) {
+    const destino =
+      to ||
       this.config.get<string>('QR_EMAIL_TO') ||
       this.config.get<string>('EMAIL_RECIPIENTS', '');
-    if (!to) {
+    if (!destino) {
       this.logger.warn(
-        'QR_EMAIL_TO/EMAIL_RECIPIENTS no configurado, resumen de accesos omitido',
+        'Sin destinatario (pasa uno como argumento o define QR_EMAIL_TO/EMAIL_RECIPIENTS); resumen omitido',
       );
-      return;
+      return { sent: false, reason: 'sin-destinatario' as const };
     }
 
     const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
@@ -112,13 +124,14 @@ export class TrackingService {
 
     await this.transporter.sendMail({
       from: `"Web Sirvent" <${this.config.get('EMAIL_USER')}>`,
-      to,
+      to: destino,
       subject: `📊 Accesos web Heladería Sirvent — ${desde} a ${hasta}`,
       html,
     });
 
     this.logger.log(
-      `Resumen semanal de accesos enviado a: ${to} (${total} visitas)`,
+      `Resumen de accesos enviado a: ${destino} (${total} visitas)`,
     );
+    return { sent: true as const, to: destino, total, movil, nuevos, qr };
   }
 }
