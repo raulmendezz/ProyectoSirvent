@@ -59,6 +59,22 @@ model IpWhitelistEntry {
   @@map("ipwhitelistentry")
 }
 
+// ── Visitas web (tracking QR) ─────────────────────────────────────────────────
+
+model Visit {
+  id         Int      @id @default(autoincrement())
+  path       String   @default("/") @db.VarChar(255)
+  referrer   String?  @db.VarChar(500)
+  userAgent  String?  @map("user_agent") @db.VarChar(500)
+  device     String   @db.VarChar(20) // "movil" | "escritorio"
+  isNew      Boolean  @default(false) @map("is_new")
+  probableQr Boolean  @default(false) @map("probable_qr")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@index([createdAt], map: "idx_visit_created")
+  @@map("visits")
+}
+
 // ── Products ──────────────────────────────────────────────────────────────────
 
 model Product {
