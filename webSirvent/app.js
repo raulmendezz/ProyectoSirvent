@@ -129,7 +129,11 @@ const translations = {
         footer_desc: "Elaborando momentos felices y helados artesanales en Benidorm desde 1940. Recetas tradicionales directas de Jijona.",
         footer_links_title: "Navegación",
         footer_hours_title: "Nuestros Locales",
-        footer_credit: "Diseñado con amor para <span>Heladería Sirvent</span>"
+        footer_credit: "Diseñado con amor para <span>Heladería Sirvent</span>",
+        cookie_title: "Nos gustan las cookies 🍪",
+        cookie_text: "Usamos cookies propias y de terceros para mejorar tu experiencia y analizar el tráfico de nuestra web. Puedes aceptarlas todas o rechazar las opcionales.",
+        cookie_accept: "Aceptar todas",
+        cookie_reject: "Rechazar"
     },
     en: {
         nav_carta: "The Menu",
@@ -180,7 +184,11 @@ const translations = {
         footer_desc: "Crafting happy moments and artisanal ice cream in Benidorm since 1940. Traditional recipes straight from Jijona.",
         footer_links_title: "Navigation",
         footer_hours_title: "Our Shops",
-        footer_credit: "Designed with love for <span>Heladería Sirvent</span>"
+        footer_credit: "Designed with love for <span>Heladería Sirvent</span>",
+        cookie_title: "We love cookies 🍪",
+        cookie_text: "We use our own and third-party cookies to improve your experience and analyze our website traffic. You can accept them all or reject the optional ones.",
+        cookie_accept: "Accept all",
+        cookie_reject: "Reject"
     }
 };
 

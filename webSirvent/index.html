@@ -528,6 +528,52 @@
         </div>
     </div>
 
+    <!-- --- COOKIE CONSENT BANNER --- -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+        <div class="cookie-banner-header">
+            <span class="cookie-banner-icon"><i class="fa-solid fa-cookie-bite"></i></span>
+            <span class="cookie-banner-title" data-key="cookie_title">Nos gustan las cookies 🍪</span>
+        </div>
+        <p class="cookie-banner-text" data-key="cookie_text">
+            Usamos cookies propias y de terceros para mejorar tu experiencia y analizar el tráfico de nuestra web.
+            Puedes aceptarlas todas o rechazar las opcionales.
+        </p>
+        <div class="cookie-banner-actions">
+            <button class="cookie-btn cookie-btn-reject" onclick="setCookieConsent('rejected')"
+                data-key="cookie_reject">Rechazar</button>
+            <button class="cookie-btn cookie-btn-accept" onclick="setCookieConsent('accepted')"
+                data-key="cookie_accept">Aceptar todas</button>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const CONSENT_KEY = "sirvent_cookie_consent";
+            const banner = document.getElementById("cookieBanner");
+
+            function showBanner() {
+                // Pequeño retardo para permitir la animación de entrada
+                setTimeout(() => banner.classList.add("visible"), 600);
+            }
+
+            window.setCookieConsent = function (value) {
+                try {
+                    localStorage.setItem(CONSENT_KEY, value);
+                } catch (e) { /* almacenamiento no disponible */ }
+                banner.classList.remove("visible");
+            };
+
+            let consent = null;
+            try {
+                consent = localStorage.getItem(CONSENT_KEY);
+            } catch (e) { /* almacenamiento no disponible */ }
+
+            if (!consent) {
+                showBanner();
+            }
+        })();
+    </script>
+
     <!-- Load Interactive app logic -->
     <script src="app.js"></script>
 
