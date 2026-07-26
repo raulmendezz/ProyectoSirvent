@@ -434,7 +434,7 @@ const products = [
         descEs: "Intenso café espresso 100% Arábica de excelente cuerpo.",
         descEn: "Intense 100% Arabica espresso coffee with excellent body.",
         price: 2.20,
-        img: "img/Productos/CAFE SOLO.png",
+        img: "img/Productos/cafe solo.jpeg",
         tags: ["100% Arabica"],
         hasSizes: false
     },
@@ -446,7 +446,7 @@ const products = [
         descEs: "Café espresso cortado con una pizca de leche caliente vaporizada.",
         descEn: "Espresso coffee cut with a splash of warm vaporized milk.",
         price: 2.30,
-        img: "img/Productos/CAFE SOLO.png",
+        img: "img/Productos/cafe solo.jpeg",
         tags: ["100% Arabica"],
         hasSizes: false
     },
@@ -470,15 +470,15 @@ const products = [
         descEs: "Espresso largo rebajado con agua caliente, suave y aromático.",
         descEn: "Long espresso diluted with hot water, smooth and aromatic.",
         price: 2.40,
-        img: "img/Productos/CAFE SOLO.png",
+        img: "img/Productos/cafeAmericano.png",
         tags: ["100% Arabica"],
         hasSizes: false
     },
     {
         id: "cafe_affogato",
         category: "cafe",
-        nameEs: "El Affogato de Axel",
-        nameEn: "Axel's Affogato Coffee",
+        nameEs: "Affogato",
+        nameEn: "Affogato",
         descEs: "Una bola de nuestro helado artesanal de vainilla ahogada en un shot de espresso caliente.",
         descEn: "A scoop of our artisanal vanilla ice cream drowned in a hot double espresso shot.",
         price: 6.00,
