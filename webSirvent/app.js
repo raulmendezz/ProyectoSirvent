@@ -283,6 +283,7 @@ const products = [
     {
         id: "copa_blanco_y_negro",
         category: "copas",
+        categories: ["cafe"],
         nameEs: "Blanco y Negro",
         nameEn: "Black and White",
         descEs: "Granizado de café espresso coronado con una generosa bola de helado de leche merengada o vainilla.",
@@ -339,6 +340,7 @@ const products = [
     {
         id: "frape_cafe",
         category: "frap",
+        categories: ["cafe"],
         nameEs: "Frap-Shake Café",
         nameEn: "Coffee Frap-Shake",
         descEs: "Batido helado de café espresso y leche coronado con nata montada.",
@@ -427,63 +429,15 @@ const products = [
 
     // --- CAFETERÍA ---
     {
-        id: "cafe_solo",
+        id: "cafe_granizado_leche_preparada",
         category: "cafe",
-        nameEs: "Café Solo",
-        nameEn: "Espresso Coffee",
-        descEs: "Intenso café espresso 100% Arábica de excelente cuerpo.",
-        descEn: "Intense 100% Arabica espresso coffee with excellent body.",
-        price: 2.20,
-        img: "img/Productos/cafe solo.jpeg",
-        tags: ["100% Arabica"],
-        hasSizes: false
-    },
-    {
-        id: "cafe_cortado",
-        category: "cafe",
-        nameEs: "Café Cortado",
-        nameEn: "Macchiato Coffee",
-        descEs: "Café espresso cortado con una pizca de leche caliente vaporizada.",
-        descEn: "Espresso coffee cut with a splash of warm vaporized milk.",
-        price: 2.30,
-        img: "img/Productos/cafe solo.jpeg",
-        tags: ["100% Arabica"],
-        hasSizes: false
-    },
-    {
-        id: "cafe_con_leche",
-        category: "cafe",
-        nameEs: "Café con Leche",
-        nameEn: "Coffee with Milk (Latte)",
-        descEs: "El equilibrio ideal: una generosa dosis de café y leche cremosa.",
-        descEn: "The perfect balance: a generous dose of espresso and creamy milk.",
-        price: 2.50,
-        img: "img/Productos/CAFE CON LECHE.png",
-        tags: ["Popular"],
-        hasSizes: false
-    },
-    {
-        id: "cafe_americano",
-        category: "cafe",
-        nameEs: "Café Americano",
-        nameEn: "Americano Coffee",
-        descEs: "Espresso largo rebajado con agua caliente, suave y aromático.",
-        descEn: "Long espresso diluted with hot water, smooth and aromatic.",
-        price: 2.40,
-        img: "img/Productos/cafeAmericano.png",
-        tags: ["100% Arabica"],
-        hasSizes: false
-    },
-    {
-        id: "cafe_affogato",
-        category: "cafe",
-        nameEs: "Affogato",
-        nameEn: "Affogato",
-        descEs: "Una bola de nuestro helado artesanal de vainilla ahogada en un shot de espresso caliente.",
-        descEn: "A scoop of our artisanal vanilla ice cream drowned in a hot double espresso shot.",
-        price: 6.00,
-        img: "img/Productos/AFOGATO.png",
-        tags: ["Chef Special", "Premium"],
+        nameEs: "Café Granizado con Leche Preparada",
+        nameEn: "Coffee Slush with Prepared Milk",
+        descEs: "Refrescante granizado de café combinado con nuestra leche preparada.",
+        descEn: "Refreshing coffee slush combined with our prepared milk.",
+        price: 4.50,
+        img: "img/Productos/lechePreparadaCafe.png",
+        tags: ["Coffee Lovers"],
         hasSizes: false
     },
 
@@ -707,7 +661,9 @@ function renderProducts() {
     // Filter products
     const filtered = products.filter(product => {
         // Category check
-        const matchCategory = state.currentCategory === 'all' || product.category === state.currentCategory;
+        const matchCategory = state.currentCategory === 'all'
+            || product.category === state.currentCategory
+            || (product.categories && product.categories.includes(state.currentCategory));
 
         // Search query check
         const name = (state.currentLanguage === 'es' ? product.nameEs : product.nameEn).toLowerCase();
