@@ -440,6 +440,18 @@ const products = [
         tags: ["Coffee Lovers"],
         hasSizes: false
     },
+    {
+        id: "cafe_granizado_horchata",
+        category: "cafe",
+        nameEs: "Café Granizado con Horchata",
+        nameEn: "Coffee Slush with Horchata",
+        descEs: "Refrescante granizado de café combinado con nuestra horchata artesanal.",
+        descEn: "Refreshing coffee slush combined with our artisanal horchata.",
+        price: 4.50,
+        img: "img/Productos/horchataCafe.png",
+        tags: ["Coffee Lovers"],
+        hasSizes: false
+    },
 
     // --- BEBIDAS ---
     {
