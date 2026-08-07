@@ -1590,6 +1590,29 @@ select {
     flex-shrink: 0;
 }
 
+.sabor-item-titulo {
+    align-items: flex-start;
+}
+
+.sabor-item-titulo i {
+    margin-top: 5px;
+}
+
+.sabor-item-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.sabor-item-nombre {
+    font-weight: 700;
+}
+
+.sabor-item-sub {
+    font-size: 12px;
+    opacity: 0.75;
+}
+
 .sabor-badge {
     font-size: 11px;
     background: rgba(255, 255, 255, 0.2);
@@ -1992,5 +2015,88 @@ select {
 
     .cookie-banner-actions {
         flex-direction: column;
+    }
+}
+/* --- ÚLTIMO REEL DE INSTAGRAM --- */
+.reel-section {
+    background-color: var(--bg-secondary);
+}
+
+.reel-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 40px;
+}
+
+.reel-header .section-subtitle i {
+    margin-right: 6px;
+}
+
+.reel-title {
+    font-size: 40px;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+.reel-desc {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+
+.reel-desc a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.reel-desc a:hover {
+    text-decoration: underline;
+}
+
+.reel-embed-wrap {
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* El widget/iframe que se pegue dentro ocupa todo el ancho disponible */
+.reel-embed-wrap iframe,
+.reel-embed-wrap .instagram-media,
+.reel-embed-wrap > div {
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.reel-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    padding: 64px 24px;
+    border: 2px dashed var(--primary-light);
+    border-radius: 20px;
+    background-color: var(--bg-primary);
+    color: var(--text-muted);
+}
+
+.reel-placeholder i.fa-instagram {
+    font-size: 48px;
+    color: var(--primary);
+}
+
+.reel-placeholder p {
+    font-size: 15px;
+    margin: 0;
+}
+
+.reel-placeholder-btn {
+    margin-top: 4px;
+}
+
+@media (max-width: 520px) {
+    .reel-title {
+        font-size: 30px;
     }
 }

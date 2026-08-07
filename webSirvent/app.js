@@ -85,7 +85,7 @@ const translations = {
         nav_historia: "Nuestra Historia",
         nav_contacto: "Contacto",
         hero_badge: "Desde 1940 · Helados Artesanos",
-        hero_title: "Tu momento sirvent en <span>Benidorm</span>",
+        hero_title: "Tu momento Sirvent en <span>Benidorm</span>",
         hero_desc: "Recetas tradicionales nacidas en Jijona y perfeccionadas a lo largo de generaciones. Disfruta del auténtico sabor artesanal con vistas al mar mediterráneo.",
         hero_cta_carta: "Ver la Carta",
         hero_cta_historia: "Nuestra Historia",
@@ -238,7 +238,7 @@ const products = [
         nameEs: "Tarrina o Cono",
         nameEn: "Tub or Cone",
         descEs: "Elige tu sabor favorito en tarrina crujiente o cono artesano. 1, 2 o 3 bolas.",
-        descEn: "Choose your favourite flavour in a crispy tub or artisan cone. 1, 2 or 3 scoops.",
+        descEn: "Choose your favorite flavor in a crispy tub or artisan cone. 1, 2 or 3 scoops.",
         price: 3.00,
         img: "img/Productos/conoTarrina.png",
         tags: ["Gluten-free option", "Artisanal"],
@@ -281,19 +281,6 @@ const products = [
 
     // --- COPAS Y FRAP-SHAKES ---
     {
-        id: "copa_blanco_y_negro",
-        category: "copas",
-        categories: ["cafe"],
-        nameEs: "Blanco y Negro",
-        nameEn: "Black and White",
-        descEs: "Granizado de café espresso coronado con una generosa bola de helado de leche merengada o vainilla.",
-        descEn: "Espresso coffee slush topped with a generous scoop of merengue milk or vanilla ice cream.",
-        price: 6.00,
-        img: "img/Productos/BLANCO Y NEGRO.png",
-        tags: ["Traditional", "Coffee Lovers"],
-        hasSizes: false
-    },
-    {
         id: "copa_leche_merengada",
         category: "copas",
         nameEs: "Leche Merengada Premium",
@@ -306,12 +293,25 @@ const products = [
         hasSizes: false
     },
     {
+        id: "granizado_con_bola",
+        category: "copas",
+        nameEs: "Granizados con Bola",
+        nameEn: "Slush with a Scoop",
+        descEs: "Nuestro refrescante granizado coronado con una generosa bola de tu helado artesanal favorito.",
+        descEn: "Our refreshing slush topped with a generous scoop of your favorite artisan ice cream.",
+        price: null,
+        img: "img/Productos/BLANCO Y NEGRO.png",
+        tags: ["Refreshing", "Best Seller"],
+        hasGranizadoConBola: true,
+        hasSizes: false
+    },
+    {
         id: "frape_oreo",
         category: "frap",
         nameEs: "Frap-Shake Oreo",
         nameEn: "Oreo Frap-Shake",
-        descEs: "Batido helado de galletas Oreo, leche y nata montada por encima.",
-        descEn: "Amazing frozen shake made with Oreo cookies, milk, topped with whipped cream.",
+        descEs: "Cremoso batido semigranizado de helado de Oreo con leche.",
+        descEn: "Creamy semi-frozen shake made with Oreo ice cream with milk.",
         price: 4.50,
         img: "img/Productos/Frap-Shake Oreo.png",
         tags: ["Sweet", "Chocolate"],
@@ -326,8 +326,8 @@ const products = [
         category: "frap",
         nameEs: "Frap-Shake Kinder Bueno",
         nameEn: "Kinder Bueno Frap-Shake",
-        descEs: "Batido cremoso de helado de Kinder Bueno con sirope de chocolate y nata.",
-        descEn: "Creamy shake made with Kinder Bueno ice cream, chocolate syrup, and cream.",
+        descEs: "Cremoso batido semigranizado de helado de Kinder Bueno con leche.",
+        descEn: "Creamy semi-frozen shake made with Kinder Bueno ice cream with milk.",
         price: 4.50,
         img: "img/Productos/Frap-Shake Kinder Bueno.png",
         tags: ["Sweet", "Kinder Lovers"],
@@ -343,11 +343,59 @@ const products = [
         categories: ["cafe"],
         nameEs: "Frap-Shake Café",
         nameEn: "Coffee Frap-Shake",
-        descEs: "Batido helado de café espresso y leche coronado con nata montada.",
-        descEn: "Frozen shake made with espresso coffee and milk, topped with whipped cream.",
+        descEs: "Cremoso batido semigranizado de helado de café con leche.",
+        descEn: "Creamy semi-frozen shake made with coffee ice cream with milk.",
         price: 4.50,
         img: "img/Productos/Frap-Shake Cafe copia.png",
         tags: ["Coffee Lovers", "Sweet"],
+        hasSizes: true,
+        sizes: [
+            { id: "md", nameEs: "Mediano", nameEn: "Medium", price: 4.50 },
+            { id: "lg", nameEs: "Grande", nameEn: "Large", price: 7.00 }
+        ]
+    },
+    {
+        id: "frape_fresa",
+        category: "frap",
+        nameEs: "Frap-Shake Fresa",
+        nameEn: "Strawberry Frap-Shake",
+        descEs: "Cremoso batido semigranizado de helado de fresa con leche.",
+        descEn: "Creamy semi-frozen shake made with strawberry ice cream with milk.",
+        price: 4.50,
+        img: "img/Productos/Frap-Shake-Fresa.png",
+        tags: ["Sweet", "Fruity"],
+        hasSizes: true,
+        sizes: [
+            { id: "md", nameEs: "Mediano", nameEn: "Medium", price: 4.50 },
+            { id: "lg", nameEs: "Grande", nameEn: "Large", price: 7.00 }
+        ]
+    },
+    {
+        id: "frape_vainilla",
+        category: "frap",
+        nameEs: "Frap-Shake Vainilla",
+        nameEn: "Vanilla Frap-Shake",
+        descEs: "Cremoso batido semigranizado de helado de vainilla con leche.",
+        descEn: "Creamy semi-frozen shake made with vanilla ice cream with milk.",
+        price: 4.50,
+        img: "img/Productos/Frap-Shake-Vainilla.png",
+        tags: ["Sweet", "Traditional"],
+        hasSizes: true,
+        sizes: [
+            { id: "md", nameEs: "Mediano", nameEn: "Medium", price: 4.50 },
+            { id: "lg", nameEs: "Grande", nameEn: "Large", price: 7.00 }
+        ]
+    },
+    {
+        id: "frape_chocolate",
+        category: "frap",
+        nameEs: "Frap-Shake Chocolate",
+        nameEn: "Chocolate Frap-Shake",
+        descEs: "Cremoso batido semigranizado de helado de chocolate con leche.",
+        descEn: "Creamy semi-frozen shake made with chocolate ice cream with milk.",
+        price: 4.50,
+        img: "img/Productos/Frap-Shake-Choco.png",
+        tags: ["Sweet", "Chocolate"],
         hasSizes: true,
         sizes: [
             { id: "md", nameEs: "Mediano", nameEn: "Medium", price: 4.50 },
@@ -401,28 +449,16 @@ const products = [
         hasSizes: false
     },
 
-    // --- GOFRES & CREPES ---
+    // --- GOFRES  ---
     {
         id: "gofre",
         category: "gofres",
-        nameEs: "Gofre Recién Hecho",
-        nameEn: "Freshly Made Waffle",
-        descEs: "Gofre crujiente sin nada. Personalízalo con nata montada, salsas Kinder Bueno, Nutella, chocolate blanco o negro, o bola extra.",
-        descEn: "Crispy waffle plain. Customize it with whipped cream, Kinder Bueno, Nutella, white or dark chocolate sauces, or an extra scoop.",
+        nameEs: "Gofre Manneken Pis",
+        nameEn: "Manneken Pis Waffle",
+        descEs: "Gofre crujiente sin nada. Personalízalo con salsas Kinder Bueno, Nutella, chocolate blanco o negro, o bola extra.",
+        descEn: "Plain crispy waffle. Customize it with Kinder Bueno, Nutella, or white or dark chocolate sauces, or an extra scoop.",
         price: null,
         img: "img/Productos/gofre.png",
-        tags: ["Freshly Baked", "Customizable"],
-        hasSizes: false
-    },
-    {
-        id: "crepe",
-        category: "gofres",
-        nameEs: "Crepe Recién Hecho",
-        nameEn: "Freshly Made Crepe",
-        descEs: "Crepe fino y crujiente sin nada. Personalízalo con nata montada, salsas Kinder Bueno, Nutella, chocolate blanco o negro, o bola extra.",
-        descEn: "Thin crispy crepe plain. Customize it with whipped cream, Kinder Bueno, Nutella, white or dark chocolate sauces, or an extra scoop.",
-        price: null,
-        img: "img/Productos/CREPE.png",
         tags: ["Freshly Baked", "Customizable"],
         hasSizes: false
     },
@@ -471,15 +507,16 @@ const products = [
 
 // --- FROZEN COCKTAILS LIST ---
 const frozenCocktailsList = [
-    { nombre: "Strawberry Daiquiri", desc: "Ron blanco, fresas frescas y hielo picado.", img: "img/Productos/daikiriStraw.png" },
-    { nombre: "Blue Lagoon", desc: "Vodka, curaçao azul, refrescante y helador.", img: "img/Productos/blueLagoon.png" },
-    { nombre: "Mango Daiquiri", desc: "Ron blanco con pulpa de mango natural.", img: "img/Productos/mangoDaikiri.png" },
-    { nombre: "Strawberry Vodka", desc: "Vodka premium con fresas trituradas heladas.", img: "img/Productos/StrawberryVodka.png" },
-    { nombre: "Irish Frozen", desc: "Whisky irlandés con un toque de crema.", img: "img/Productos/IrishFrozen.png" },
-    { nombre: "Frozen Margarita", desc: "Tequila, triple seco y zumo de lima.", img: "img/Productos/forezenMargarita.png" },
-    { nombre: "Mentireta", desc: "Café licor helado y ginebra. Tradición alicantina.", img: "img/Productos/mentireta.png" },
-    { nombre: "Café Frappé Baileys", desc: "Café expreso, Baileys y helado batidos.", img: "img/Productos/cafeFrappeBaileys.png" },
-    { nombre: "Piña con Malibu", desc: "Piña natural triturada con ron Malibu de coco, helado y refrescante.", img: "img/Productos/mangoMalibu.png" }
+    { nombre: "Strawberry Daiquiri", descEs: "Granizado de fresa con ron blanco Bacardi.", descEn: "Strawberry slush with Bacardi white rum.", img: "img/Productos/daikiriStraw.png" },
+    { nombre: "Blue Lagoon", descEs: "Granizado de tropical azul con Vodka Smirnoff.", descEn: "Blue tropical slush with Smirnoff vodka.", img: "img/Productos/blueLagoon.png" },
+    { nombre: "Mango Daiquiri", descEs: "Granizado de mango con ron blanco Bacardi.", descEn: "Mango slush with Bacardi white rum.", img: "img/Productos/mangoDaikiri.png" },
+    { nombre: "Strawberry Vodka", descEs: "Granizado de fresa con Vodka Smirnoff.", descEn: "Strawberry slush with Smirnoff vodka.", img: "img/Productos/StrawberryVodka.png" },
+    { nombre: "Irish Frozen", descEs: "Granizado de café con Whisky JB.", descEn: "Coffee slush with JB whisky.", img: "img/Productos/IrishFrozen.png" },
+    { nombre: "Frozen Margarita", descEs: "Granizado de limón con tequila José Cuervo.", descEn: "Lemon slush with José Cuervo tequila.", img: "img/Productos/forezenMargarita.png" },
+    { nombre: "Mentireta", descEs: "Granizado de limón con ginebra Beefeater.", descEn: "Lemon slush with Beefeater gin.", img: "img/Productos/mentireta.png" },
+    { nombre: "Café Frappé Baileys", descEs: "Frap-shake de café con Baileys.", descEn: "Coffee frap-shake with Baileys.", img: "img/Productos/cafeFrappeBaileys.png" },
+    { nombre: "Piña con Malibu", descEs: "Granizado de Piña colada con Malibu.", descEn: "Piña colada slush with Malibu.", img: "img/Productos/mangoMalibu.png" },
+    { nombre: "Tequila Sunrise Frozen", descEs: "Granizado de naranja con tequila José Cuervo.", descEn: "Orange slush with José Cuervo tequila.", img: "img/Productos/naranjaJoseCuervo.png" }
 ];
 
 // --- BEBIDAS DISPONIBLES ---
@@ -517,11 +554,23 @@ const saboresCombinados = [
 
 // --- SABORES GRANIZADO ---
 const saboresGranizado = [
-    { nombre: "Granizado de Limón" },
-    { nombre: "Fresa" },
-    { nombre: "Tropical Mango" },
-    { nombre: "Piña Colada" },
-    { nombre: "Café" }
+    { nombre: "Granizado de limon", sub: "", img: "img/Productos/granizadoLimon.png" },
+    { nombre: "Granizado de fresa", sub: "", img: "img/Productos/granizadoFresa.png" },
+    { nombre: "Granizado tropical", sub: "", img: "img/Productos/granizadoTropical.png" },
+    { nombre: "Granizado de cafe", sub: "", img: "img/Productos/granizadoMango.png" },
+    { nombre: "Granizado de piña colada", sub: "", img: "img/Productos/granizadoMango.png" },
+    { nombre: "Granizado de mojito", sub: "", img: "img/Productos/granizadoMango.png" },
+    { nombre: "Granizado de mango", sub: "", img: "img/Productos/granizadoMango.png" },
+    { nombre: "Granizado de naranja", sub: "", img: "img/Productos/granizadoMango.png" },
+];
+
+// --- SABORES GRANIZADO CON BOLA (independiente) ---
+// Edita aquí libremente: "nombre" es el título y "sub" el texto secundario de debajo.
+const saboresGranizadoConBola = [
+    { nombre: "Blanco y Negro", sub: "Café + Leche Merengada" },
+    { nombre: "Lemon Snow", sub: "Limón + Leche Merengada" },
+    { nombre: "Tropical Cream", sub: "Mango + Coco Raffaello" },
+    { nombre: "Moka Chocolate", sub: "Café + Chocolate Sirvent" },
 ];
 
 // --- SABORES DISPONIBLES ---
@@ -732,6 +781,13 @@ function renderProducts() {
                </button>`
             : "";
 
+        const btnGranizadoConBola = product.hasGranizadoConBola
+            ? `<button class="btn-ver-sabores" onclick="abrirPopupGranizadoConBola()">
+                   <i class="fa-solid fa-snowflake"></i>
+                   ${state.currentLanguage === 'es' ? 'Ver sabores' : 'See flavors'}
+               </button>`
+            : "";
+
         const card = document.createElement("div");
         card.className = "product-card";
         card.setAttribute("data-aos", "fade-up");
@@ -752,6 +808,7 @@ function renderProducts() {
                     ${btnBebidas}
                     ${btnGranizadoSabores}
                     ${btnFrozenCocktails}
+                    ${btnGranizadoConBola}
                 </div>
             </div>
         `;
@@ -935,9 +992,12 @@ function abrirPopupGranizadoSabores() {
     const popup = document.getElementById("popupGranizadoSabores");
     const lista = document.getElementById("popupGranizadoSaboresList");
     lista.innerHTML = saboresGranizado.map(s => `
-        <div class="sabor-item">
+        <div class="sabor-item sabor-item-titulo">
             <i class="fa-solid fa-circle"></i>
-            <span>${s.nombre}</span>
+            <div class="sabor-item-text">
+                <span class="sabor-item-nombre">${s.nombre}</span>
+                <span class="sabor-item-sub">${s.sub}</span>
+            </div>
         </div>
     `).join("");
     popup.style.display = "flex";
@@ -952,6 +1012,33 @@ function cerrarPopupGranizadoSabores() {
 window.addEventListener("click", (e) => {
     const popup = document.getElementById("popupGranizadoSabores");
     if (e.target === popup) cerrarPopupGranizadoSabores();
+});
+
+// --- POPUP GRANIZADOS CON BOLA ---
+function abrirPopupGranizadoConBola() {
+    const popup = document.getElementById("popupGranizadoConBola");
+    const lista = document.getElementById("popupGranizadoConBolaList");
+    lista.innerHTML = saboresGranizadoConBola.map(s => `
+        <div class="sabor-item sabor-item-titulo">
+            <i class="fa-solid fa-circle"></i>
+            <div class="sabor-item-text">
+                <span class="sabor-item-nombre">${s.nombre}</span>
+                <span class="sabor-item-sub">${s.sub}</span>
+            </div>
+        </div>
+    `).join("");
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarPopupGranizadoConBola() {
+    document.getElementById("popupGranizadoConBola").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+window.addEventListener("click", (e) => {
+    const popup = document.getElementById("popupGranizadoConBola");
+    if (e.target === popup) cerrarPopupGranizadoConBola();
 });
 
 // --- POPUP SABORES COMBINADOS ---
@@ -989,7 +1076,7 @@ function abrirPopupFrozenCocktails() {
             </div>
             <div class="cocktail-card-body">
                 <h4 class="cocktail-card-name">${c.nombre}</h4>
-                <p class="cocktail-card-desc">${c.desc}</p>
+                <p class="cocktail-card-desc">${state.currentLanguage === 'es' ? c.descEs : c.descEn}</p>
             </div>
         </div>
     `).join("");

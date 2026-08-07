@@ -68,7 +68,7 @@
                     <i class="fa-solid fa-award"></i> Desde 1940 · Helados Artesanos
                 </span>
                 <h1 class="hero-title" data-key="hero_title">
-                    Tu momento sirvent en <span>Benidorm</span>
+                    Tu momento Sirvent en <span>Benidorm</span>
                 </h1>
                 <p class="hero-desc" data-key="hero_desc">
                     Recetas tradicionales nacidas en Jijona y perfeccionadas a lo largo de generaciones. Disfruta del
@@ -230,6 +230,41 @@
                         Ver sabores combinados
                     </button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- ÚLTIMO REEL DE INSTAGRAM --- -->
+    <section class="reel-section section-padding" id="reel">
+        <div class="container">
+            <div class="reel-header">
+                <span class="section-subtitle">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </span>
+                <h2 class="reel-title">Nuestro último reel</h2>
+                <p class="reel-desc">
+                    Síguenos en <a href="https://www.instagram.com/heladossirvent" target="_blank"
+                        rel="noopener noreferrer">@heladossirvent</a> y no te pierdas nuestras novedades.
+                </p>
+            </div>
+
+            <div class="reel-embed-wrap">
+                <!--
+                    ====== EMBED OFICIAL DEL REEL ======
+                    Para cambiar el reel, sustituye la URL de "data-instgrm-permalink"
+                    y del <a href> por la del reel que quieras mostrar.
+                    Cómo conseguir el enlace (SIN necesidad de login):
+                      1. Abre https://www.instagram.com/heladossirvent
+                      2. Entra en el reel que quieras.
+                      3. Menú (···) o botón compartir → "Copiar enlace".
+                    IMPORTANTE: deja el "?utm_source=ig_embed" al final de la URL.
+                -->
+                <blockquote class="instagram-media" data-instgrm-captioned
+                    data-instgrm-permalink="https://www.instagram.com/reel/Dbv169ksxrr/?utm_source=ig_embed"
+                    data-instgrm-version="14">
+                    <a href="https://www.instagram.com/reel/Dbv169ksxrr/" target="_blank" rel="noopener noreferrer">Ver
+                        este reel en Instagram</a>
+                </blockquote>
             </div>
         </div>
     </section>
@@ -506,6 +541,17 @@
         </div>
     </div>
 
+    <!-- Popup Granizados con Bola -->
+    <div class="modal-sabores" id="popupGranizadoConBola">
+        <div class="modal-sabores-content">
+            <span class="modal-sabores-close" onclick="cerrarPopupGranizadoConBola()">&times;</span>
+            <div class="modal-sabores-text">
+                <h2>Granizados con Bola</h2>
+                <div id="popupGranizadoConBolaList" class="sabores-grid"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Popup Frozen Cocktails -->
     <div class="modal-sabores" id="popupFrozenCocktails">
         <div class="modal-sabores-content modal-cocktails-wide">
@@ -579,6 +625,42 @@
 
     <!-- Contador de accesos (QR) -->
     <script src="qr-track.js"></script>
+
+    <!-- Embed oficial de Instagram (reel) - carga diferida para no ralentizar la web -->
+    <script>
+        (function () {
+            const reel = document.getElementById("reel");
+            if (!reel) return;
+            let cargado = false;
+            const cargarInstagram = () => {
+                if (cargado) return;
+                cargado = true;
+                const s = document.createElement("script");
+                s.async = true;
+                s.src = "https://www.instagram.com/embed.js";
+                s.onload = () => {
+                    if (window.instgrm && window.instgrm.Embeds) {
+                        window.instgrm.Embeds.process();
+                    }
+                };
+                document.body.appendChild(s);
+            };
+            if ("IntersectionObserver" in window) {
+                const obs = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            cargarInstagram();
+                            obs.disconnect();
+                        }
+                    });
+                }, { rootMargin: "200px" });
+                obs.observe(reel);
+            } else {
+                // Navegadores antiguos: cargar tras el resto de la página
+                window.addEventListener("load", cargarInstagram);
+            }
+        })();
+    </script>
 </body>
 
 </html>
