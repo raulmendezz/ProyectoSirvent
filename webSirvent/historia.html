@@ -4,9 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nuestra Historia - Heladería Sirvent Benidorm. Desde Jijona hasta Benidorm, más de 80 años elaborando helados artesanales.">
+    <meta name="description" content="La historia de Heladería Sirvent: desde los neveros de Jijona en el siglo XIX hasta Benidorm. Más de 80 años elaborando helados artesanales de tradición familiar.">
     <meta name="author" content="Heladería Sirvent Benidorm">
     <title>Nuestra Historia | Heladería Sirvent Benidorm</title>
+
+    <link rel="canonical" href="https://heladossirvent.es/historia.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Heladería Sirvent Benidorm">
+    <meta property="og:title" content="Nuestra Historia | Heladería Sirvent Benidorm">
+    <meta property="og:description" content="Desde los neveros de Jijona hasta Benidorm: más de 80 años de tradición heladera artesanal.">
+    <meta property="og:url" content="https://heladossirvent.es/historia.html">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:image" content="https://heladossirvent.es/img/Productos/papaluis.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" type="image/png" href="img/Productos/TARRINA HELADO copia.png">
     <link rel="stylesheet" href="index.css">
@@ -46,12 +56,12 @@
     <section class="history section-padding" id="historia" style="padding-top: 140px;">
         <div class="container history-container">
             <div class="history-image-frame" data-aos="fade-right">
-                <img src="img/Productos/papaluis.jpeg" alt="Helado de Jijona Sirvent" class="history-img">
+                <img src="img/Productos/papaluis.webp" alt="Luis Sirvent, fundador de Heladería Sirvent, maestro heladero de Jijona" class="history-img" width="1000" height="751" decoding="async">
             </div>
 
             <div class="history-text" data-aos="fade-left">
                 <span class="section-subtitle">Nuestra Tradición</span>
-                <h2 class="section-title">De la cuna del turrón a la costa de Benidorm</h2>
+                <h1 class="section-title">De la cuna del turrón a la costa de Benidorm</h1>
                 <p>
                     No es casualidad que la mayoría de la población de Jijona de finales del siglo XIX, aparte de la
                     fabricación del turrón, a la que ya se dedicaba desde el siglo XIV, empezara la práctica de un nuevo
@@ -131,9 +141,9 @@
                         directas de Jijona.
                     </p>
                     <div class="footer-socials">
-                        <a href="https://www.instagram.com/heladossirvent" class="social-icon" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/HeladosSirvent" class="social-icon" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@heladossirvent?lang=es" class="social-icon" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/heladossirvent" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/HeladosSirvent" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@heladossirvent?lang=es" class="social-icon" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
 
@@ -157,7 +167,7 @@
                         </li>
                         <li class="footer-link" style="cursor: default;">
                             <i class="fa-solid fa-clock" style="color: var(--primary-light); margin-right: 8px;"></i>
-                            09:00 - 02:00 (Lunes - Domingo)
+                            <span id="footerHours">09:00 - 19:00 (Lunes - Domingo)</span>
                         </li>
                     </ul>
                 </div>
@@ -173,6 +183,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Horario estacional compartido (actualiza el footer automáticamente) -->
+    <script src="hours.js"></script>
 
     <script>
         function toggleMenu() {

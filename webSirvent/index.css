@@ -2057,6 +2057,14 @@ select {
     max-width: 540px;
     margin: 0 auto;
     width: 100%;
+    border-radius: 20px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    will-change: transform;
+}
+
+.reel-embed-wrap:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
 }
 
 /* El widget/iframe que se pegue dentro ocupa todo el ancho disponible */
@@ -2099,4 +2107,180 @@ select {
     .reel-title {
         font-size: 30px;
     }
+}
+
+/* ==========================================================================
+   SKEUOMORFISMO SUAVE (NEUMORPHISM)
+   Superficie mate uniforme con relieves. Mantiene la paleta rosa.
+   Todo vive en esta capa final para poder revertirlo fácilmente.
+   ========================================================================== */
+:root {
+    /* Superficie base mate: los elementos comparten color con el fondo
+       para que las sombras (clara arriba-izq, oscura abajo-der) den relieve. */
+    --neu-bg: #f4e4e8;
+    --neu-light: #ffffff;
+    --neu-dark: #d9c2c8;
+
+    /* Relieve elevado (raised) */
+    --neu-raised: -7px -7px 16px var(--neu-light), 7px 7px 16px var(--neu-dark);
+    --neu-raised-sm: -4px -4px 9px var(--neu-light), 4px 4px 9px var(--neu-dark);
+    --neu-raised-lg: -10px -10px 24px var(--neu-light), 10px 10px 24px var(--neu-dark);
+
+    /* Relieve hundido (inset / pressed) */
+    --neu-inset: inset -4px -4px 9px var(--neu-light), inset 4px 4px 9px var(--neu-dark);
+    --neu-inset-sm: inset -3px -3px 6px var(--neu-light), inset 3px 3px 6px var(--neu-dark);
+
+    /* Botón primario: relieve con sombras de color (rosa claro / oscuro) */
+    --neu-primary-raised: -6px -6px 14px rgba(255, 255, 255, 0.55), 6px 6px 14px rgba(197, 58, 90, 0.45);
+    --neu-primary-inset: inset -4px -4px 9px rgba(255, 255, 255, 0.30), inset 4px 4px 9px rgba(160, 40, 70, 0.55);
+}
+
+body {
+    background-color: var(--neu-bg);
+}
+
+/* --- Tarjetas de producto: de cristal a relieve mate --- */
+.product-card {
+    background-color: var(--neu-bg);
+    background-image: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: var(--neu-raised);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--neu-raised-lg);
+    border-color: transparent;
+}
+
+/* --- Botones base con material físico --- */
+.btn {
+    border: none;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    box-shadow: var(--neu-primary-raised);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--neu-primary-raised);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--neu-primary-inset);
+}
+
+.btn-secondary {
+    background-color: var(--neu-bg);
+    box-shadow: var(--neu-raised-sm);
+}
+
+.btn-secondary:hover {
+    background-color: var(--neu-bg);
+    transform: translateY(-2px);
+    box-shadow: var(--neu-raised);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: var(--neu-inset);
+}
+
+/* --- Botones de filtro / pestañas (tab-btn) --- */
+.tab-btn {
+    background-color: var(--neu-bg);
+    border: none;
+    backdrop-filter: none;
+    box-shadow: var(--neu-raised-sm);
+}
+
+.tab-btn:hover {
+    color: var(--primary);
+    box-shadow: var(--neu-raised);
+}
+
+.tab-btn.active {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: var(--neu-primary-inset);
+}
+
+/* --- Selector de idioma --- */
+.lang-btn {
+    box-shadow: var(--neu-raised-sm);
+}
+
+.lang-btn:active {
+    box-shadow: var(--neu-inset-sm);
+}
+
+/* --- Botón "Ver sabores" y similares con acento rosa --- */
+.btn-ver-sabores {
+    box-shadow: var(--neu-primary-raised);
+}
+
+.btn-ver-sabores:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--neu-primary-raised);
+}
+
+.btn-ver-sabores:active {
+    transform: translateY(0);
+    box-shadow: var(--neu-primary-inset);
+}
+
+/* --- Botón de ruleta --- */
+.btn-spin-roulette {
+    border: none;
+    box-shadow: var(--neu-primary-raised);
+}
+
+.btn-spin-roulette:hover:not(:disabled) {
+    box-shadow: var(--neu-primary-raised);
+}
+
+.btn-spin-roulette:active:not(:disabled) {
+    box-shadow: var(--neu-primary-inset);
+}
+
+/* --- Reel de Instagram: hundido en la superficie --- */
+.reel-embed-wrap {
+    background-color: var(--neu-bg);
+    padding: 12px;
+    box-shadow: var(--neu-raised);
+}
+
+.reel-embed-wrap:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--neu-raised-lg);
+}
+
+/* Suaviza los bordes duros heredados del glassmorphism */
+.glass-card {
+    background-color: var(--neu-bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: var(--neu-raised);
+}
+
+/* --- historia.html: marco de imagen e iconos en relieve --- */
+.history-image-frame {
+    background-color: var(--neu-bg);
+    border: none;
+    box-shadow: var(--neu-raised);
+}
+
+.highlight-icon {
+    background-color: var(--neu-bg);
+    color: var(--primary);
+    box-shadow: var(--neu-raised-sm);
 }

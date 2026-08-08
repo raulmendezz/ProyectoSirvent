@@ -9,74 +9,10 @@ const state = {
 };
 
 // --- SEASONAL OPENING HOURS ---
-// Returns the schedule for a given date, in minutes from midnight.
-// closeMin <= openMin means the closing time falls after midnight.
-function getScheduleForDate(date) {
-    const month = date.getMonth(); // 0 = Jan ... 11 = Dec
-    const day = date.getDay();     // 0 = Sun, 5 = Fri, 6 = Sat
-
-    // July & August: peak season (Fri/Sat until 02:00, rest until 01:30)
-    if (month === 6 || month === 7) {
-        if (day === 5 || day === 6) {
-            return { openHour: 9, openMinute: 0, closeHour: 2, closeMinute: 0 };
-        }
-        return { openHour: 9, openMinute: 0, closeHour: 1, closeMinute: 30 };
-    }
-    // June & September: every day until 01:00
-    if (month === 5 || month === 8) {
-        return { openHour: 9, openMinute: 0, closeHour: 1, closeMinute: 0 };
-    }
-    // April, May & October: every day until 00:30
-    if (month === 3 || month === 4 || month === 9) {
-        return { openHour: 9, openMinute: 0, closeHour: 0, closeMinute: 30 };
-    }
-    // Rest of the year (Nov, Dec, Jan, Feb, Mar): every day until 19:00
-    return { openHour: 9, openMinute: 0, closeHour: 19, closeMinute: 0 };
-}
-
-// Builds the human-readable hours line for the current date & language.
-function getHoursText(date, lang) {
-    const month = date.getMonth();
-    const es = lang === 'es';
-
-    if (month === 6 || month === 7) {
-        return es
-            ? "Horario: Vie y Sáb de 09:00 a 02:00 · Otros días 09:00 a 01:30"
-            : "Hours: Fri & Sat 09:00 AM to 02:00 AM · Other days 09:00 AM to 01:30 AM";
-    }
-    if (month === 5 || month === 8) {
-        return es
-            ? "Horario: Todos los días de 09:00 a 01:00"
-            : "Hours: Every day from 09:00 AM to 01:00 AM";
-    }
-    if (month === 3 || month === 4 || month === 9) {
-        return es
-            ? "Horario: Todos los días de 09:00 a 00:30"
-            : "Hours: Every day from 09:00 AM to 00:30 AM";
-    }
-    return es
-        ? "Horario: Todos los días de 09:00 a 19:00"
-        : "Hours: Every day from 09:00 AM to 07:00 PM";
-}
-
-// Compact hours line for the footer, e.g. "09:00 - 19:00 (Lunes - Domingo)".
-function getFooterHoursText(date, lang) {
-    const month = date.getMonth();
-    const days = lang === 'es' ? "(Lunes - Domingo)" : "(Monday - Sunday)";
-
-    if (month === 6 || month === 7) {
-        return (lang === 'es'
-            ? "Vie-Sáb 09:00-02:00 · resto 09:00-01:30 "
-            : "Fri-Sat 09:00-02:00 · other days 09:00-01:30 ") + days;
-    }
-    if (month === 5 || month === 8) {
-        return "09:00 - 01:00 " + days;
-    }
-    if (month === 3 || month === 4 || month === 9) {
-        return "09:00 - 00:30 " + days;
-    }
-    return "09:00 - 19:00 " + days;
-}
+// getScheduleForDate() / getHoursText() / getFooterHoursText() viven ahora en
+// hours.js (fuente única de verdad, compartida con historia.html y fabrica.html).
+// hours.js se carga ANTES que app.js, por lo que estas funciones ya están
+// disponibles globalmente aquí.
 
 // --- TRANSLATION DICTIONARY (ES / EN) ---
 const translations = {
@@ -240,7 +176,7 @@ const products = [
         descEs: "Elige tu sabor favorito en tarrina crujiente o cono artesano. 1, 2 o 3 bolas.",
         descEn: "Choose your favorite flavor in a crispy tub or artisan cone. 1, 2 or 3 scoops.",
         price: 3.00,
-        img: "img/Productos/conoTarrina.png",
+        img: "img/Productos/conoTarrina.webp",
         tags: ["Gluten-free option", "Artisanal"],
         hasSizes: false
     },
@@ -254,7 +190,7 @@ const products = [
         descEs: "Súper refrescante. Elige tu sabor preferido: Limón, Café, Fresa, Mango o Blue Tropic.",
         descEn: "Super refreshing. Choose your favorite flavor: Lemon, Coffee, Strawberry, Mango, or Blue Tropic.",
         price: 4.00,
-        img: "img/Productos/GRANIZADOS%20SABORES%20%20copia.png",
+        img: "img/Productos/GRANIZADOS%20SABORES%20%20copia.webp",
         tags: ["Refreshing", "Vegan"],
         hasGranizadoSabores: true,
         hasSizes: true,
@@ -273,7 +209,7 @@ const products = [
         descEs: "Cócteles helados artesanales. Elige entre nuestra selección de combinados frozen.",
         descEn: "Artisan frozen cocktails. Choose from our selection of frozen blends.",
         price: 8.50,
-        img: "img/Productos/mangoDaikiri.png",
+        img: "img/Productos/mangoDaikiri.webp",
         tags: ["Alcoholic", "Artisanal"],
         hasSizes: false,
         hasFrozenCocktails: true
@@ -288,7 +224,7 @@ const products = [
         descEs: "Nuestra clásica copa helada de leche merengada aromatizada con canela y limón.",
         descEn: "Our classic iced cup of sweet merengue milk flavored with cinnamon and lemon.",
         price: 7.00,
-        img: "img/Productos/copaMerengada.png",
+        img: "img/Productos/copaMerengada.webp",
         tags: ["Traditional", "Best Seller"],
         hasSizes: false
     },
@@ -300,7 +236,7 @@ const products = [
         descEs: "Nuestro refrescante granizado coronado con una generosa bola de tu helado artesanal favorito.",
         descEn: "Our refreshing slush topped with a generous scoop of your favorite artisan ice cream.",
         price: null,
-        img: "img/Productos/BLANCO Y NEGRO.png",
+        img: "img/Productos/BLANCO Y NEGRO.webp",
         tags: ["Refreshing", "Best Seller"],
         hasGranizadoConBola: true,
         hasSizes: false
@@ -313,7 +249,7 @@ const products = [
         descEs: "Cremoso batido semigranizado de helado de Oreo con leche.",
         descEn: "Creamy semi-frozen shake made with Oreo ice cream with milk.",
         price: 4.50,
-        img: "img/Productos/Frap-Shake Oreo.png",
+        img: "img/Productos/Frap-Shake Oreo.webp",
         tags: ["Sweet", "Chocolate"],
         hasSizes: true,
         sizes: [
@@ -329,7 +265,7 @@ const products = [
         descEs: "Cremoso batido semigranizado de helado de Kinder Bueno con leche.",
         descEn: "Creamy semi-frozen shake made with Kinder Bueno ice cream with milk.",
         price: 4.50,
-        img: "img/Productos/Frap-Shake Kinder Bueno.png",
+        img: "img/Productos/Frap-Shake Kinder Bueno.webp",
         tags: ["Sweet", "Kinder Lovers"],
         hasSizes: true,
         sizes: [
@@ -346,7 +282,7 @@ const products = [
         descEs: "Cremoso batido semigranizado de helado de café con leche.",
         descEn: "Creamy semi-frozen shake made with coffee ice cream with milk.",
         price: 4.50,
-        img: "img/Productos/Frap-Shake Cafe copia.png",
+        img: "img/Productos/Frap-Shake Cafe copia.webp",
         tags: ["Coffee Lovers", "Sweet"],
         hasSizes: true,
         sizes: [
@@ -362,7 +298,7 @@ const products = [
         descEs: "Cremoso batido semigranizado de helado de fresa con leche.",
         descEn: "Creamy semi-frozen shake made with strawberry ice cream with milk.",
         price: 4.50,
-        img: "img/Productos/Frap-Shake-Fresa.png",
+        img: "img/Productos/Frap-Shake-Fresa.webp",
         tags: ["Sweet", "Fruity"],
         hasSizes: true,
         sizes: [
@@ -378,7 +314,7 @@ const products = [
         descEs: "Cremoso batido semigranizado de helado de vainilla con leche.",
         descEn: "Creamy semi-frozen shake made with vanilla ice cream with milk.",
         price: 4.50,
-        img: "img/Productos/Frap-Shake-Vainilla.png",
+        img: "img/Productos/Frap-Shake-Vainilla.webp",
         tags: ["Sweet", "Traditional"],
         hasSizes: true,
         sizes: [
@@ -394,7 +330,7 @@ const products = [
         descEs: "Cremoso batido semigranizado de helado de chocolate con leche.",
         descEn: "Creamy semi-frozen shake made with chocolate ice cream with milk.",
         price: 4.50,
-        img: "img/Productos/Frap-Shake-Choco.png",
+        img: "img/Productos/Frap-Shake-Choco.webp",
         tags: ["Sweet", "Chocolate"],
         hasSizes: true,
         sizes: [
@@ -407,12 +343,28 @@ const products = [
     {
         id: "horchata",
         category: "horchata",
-        nameEs: "Horchata de Chufa de Alboraya",
-        nameEn: "Premium Tigernut Horchata",
+        nameEs: "Horchata líquida de Chufa de Alboraya",
+        nameEn: "Premium Liquid Tigernut Horchata",
         descEs: "Horchata artesanal de primera calidad elaborada con auténtica chufa de Alboraya.",
         descEn: "Artisanal top-quality horchata made with authentic Alboraya tigernuts.",
         price: 4.00,
-        img: "img/Productos/HORCHATA.png",
+        img: "img/Productos/HORCHATA.webp",
+        tags: ["Vegan", "Nut-Free", "Local"],
+        hasSizes: true,
+        sizes: [
+            { id: "sm", nameEs: "Pequeña", nameEn: "Small", price: 4.00 },
+            { id: "lg", nameEs: "Grande", nameEn: "Large", price: 6.00 }
+        ]
+    },
+    {
+        id: "horchata_granizada",
+        category: "horchata",
+        nameEs: "Horchata granizada de Chufa de Alboraya",
+        nameEn: "Premium Slushy Tigernut Horchata",
+        descEs: "Horchata artesanal de primera calidad elaborada con auténtica chufa de Alboraya.",
+        descEn: "Artisanal top-quality horchata made with authentic Alboraya tigernuts.",
+        price: 4.00,
+        img: "img/Productos/HORCHATA.webp",
         tags: ["Vegan", "Nut-Free", "Local"],
         hasSizes: true,
         sizes: [
@@ -428,7 +380,7 @@ const products = [
         descEs: "Receta tradicional de leche con canela y raspadura de limón.",
         descEn: "Traditional recipe of milk with cinnamon and lemon zest.",
         price: 4.00,
-        img: "img/Productos/LECHE MERENGADA.png",
+        img: "img/Productos/LECHE MERENGADA.webp",
         tags: ["Traditional", "Sweet"],
         hasSizes: true,
         sizes: [
@@ -444,7 +396,7 @@ const products = [
         descEs: "Bollo alargado, dulce y esponjoso con glaseado, ideal para mojar en la horchata.",
         descEn: "Elongated, sweet, spongy pastry with sugar glaze, perfect for dipping in horchata.",
         price: 2.30,
-        img: "img/Productos/Fartons.png",
+        img: "img/Productos/Fartons.webp",
         tags: ["Pastry", "Sweet"],
         hasSizes: false
     },
@@ -458,7 +410,7 @@ const products = [
         descEs: "Gofre crujiente sin nada. Personalízalo con salsas Kinder Bueno, Nutella, chocolate blanco o negro, o bola extra.",
         descEn: "Plain crispy waffle. Customize it with Kinder Bueno, Nutella, or white or dark chocolate sauces, or an extra scoop.",
         price: null,
-        img: "img/Productos/gofre.png",
+        img: "img/Productos/gofre.webp",
         tags: ["Freshly Baked", "Customizable"],
         hasSizes: false
     },
@@ -472,7 +424,7 @@ const products = [
         descEs: "Refrescante granizado de café combinado con nuestra leche preparada.",
         descEn: "Refreshing coffee slush combined with our prepared milk.",
         price: 4.50,
-        img: "img/Productos/lechePreparadaCafe.png",
+        img: "img/Productos/lechePreparadaCafe.webp",
         tags: ["Coffee Lovers"],
         hasSizes: false
     },
@@ -484,7 +436,7 @@ const products = [
         descEs: "Refrescante granizado de café combinado con nuestra horchata artesanal.",
         descEn: "Refreshing coffee slush combined with our artisanal horchata.",
         price: 4.50,
-        img: "img/Productos/horchataCafe.png",
+        img: "img/Productos/horchataCafe.webp",
         tags: ["Coffee Lovers"],
         hasSizes: false
     },
@@ -498,7 +450,7 @@ const products = [
         descEs: "Coca-Cola, Fanta, Sprite o Nestea helados en lata.",
         descEn: "Chilled Coca-Cola, Fanta, Sprite, or Nestea in a can.",
         price: 2.50,
-        img: "img/Productos/refrescos.png",
+        img: "img/Productos/refrescos.webp",
         tags: ["Soft drink"],
         hasSizes: false,
         hasBebidas: true
@@ -507,16 +459,16 @@ const products = [
 
 // --- FROZEN COCKTAILS LIST ---
 const frozenCocktailsList = [
-    { nombre: "Strawberry Daiquiri", descEs: "Granizado de fresa con ron blanco Bacardi.", descEn: "Strawberry slush with Bacardi white rum.", img: "img/Productos/daikiriStraw.png" },
-    { nombre: "Blue Lagoon", descEs: "Granizado de tropical azul con Vodka Smirnoff.", descEn: "Blue tropical slush with Smirnoff vodka.", img: "img/Productos/blueLagoon.png" },
-    { nombre: "Mango Daiquiri", descEs: "Granizado de mango con ron blanco Bacardi.", descEn: "Mango slush with Bacardi white rum.", img: "img/Productos/mangoDaikiri.png" },
-    { nombre: "Strawberry Vodka", descEs: "Granizado de fresa con Vodka Smirnoff.", descEn: "Strawberry slush with Smirnoff vodka.", img: "img/Productos/StrawberryVodka.png" },
-    { nombre: "Irish Frozen", descEs: "Granizado de café con Whisky JB.", descEn: "Coffee slush with JB whisky.", img: "img/Productos/IrishFrozen.png" },
-    { nombre: "Frozen Margarita", descEs: "Granizado de limón con tequila José Cuervo.", descEn: "Lemon slush with José Cuervo tequila.", img: "img/Productos/forezenMargarita.png" },
-    { nombre: "Mentireta", descEs: "Granizado de limón con ginebra Beefeater.", descEn: "Lemon slush with Beefeater gin.", img: "img/Productos/mentireta.png" },
-    { nombre: "Café Frappé Baileys", descEs: "Frap-shake de café con Baileys.", descEn: "Coffee frap-shake with Baileys.", img: "img/Productos/cafeFrappeBaileys.png" },
-    { nombre: "Piña con Malibu", descEs: "Granizado de Piña colada con Malibu.", descEn: "Piña colada slush with Malibu.", img: "img/Productos/mangoMalibu.png" },
-    { nombre: "Tequila Sunrise Frozen", descEs: "Granizado de naranja con tequila José Cuervo.", descEn: "Orange slush with José Cuervo tequila.", img: "img/Productos/naranjaJoseCuervo.png" }
+    { nombre: "Strawberry Daiquiri", descEs: "Granizado de fresa con ron blanco Bacardi.", descEn: "Strawberry slush with Bacardi white rum.", img: "img/Productos/daikiriStraw.webp" },
+    { nombre: "Blue Lagoon", descEs: "Granizado de tropical azul con Vodka Smirnoff.", descEn: "Blue tropical slush with Smirnoff vodka.", img: "img/Productos/blueLagoon.webp" },
+    { nombre: "Mango Daiquiri", descEs: "Granizado de mango con ron blanco Bacardi.", descEn: "Mango slush with Bacardi white rum.", img: "img/Productos/mangoDaikiri.webp" },
+    { nombre: "Strawberry Vodka", descEs: "Granizado de fresa con Vodka Smirnoff.", descEn: "Strawberry slush with Smirnoff vodka.", img: "img/Productos/StrawberryVodka.webp" },
+    { nombre: "Irish Frozen", descEs: "Granizado de café con Whisky JB.", descEn: "Coffee slush with JB whisky.", img: "img/Productos/IrishFrozen.webp" },
+    { nombre: "Frozen Margarita", descEs: "Granizado de limón con tequila José Cuervo.", descEn: "Lemon slush with José Cuervo tequila.", img: "img/Productos/forezenMargarita.webp" },
+    { nombre: "Mentireta", descEs: "Granizado de limón con ginebra Beefeater.", descEn: "Lemon slush with Beefeater gin.", img: "img/Productos/mentireta.webp" },
+    { nombre: "Café Frappé Baileys", descEs: "Frap-shake de café con Baileys.", descEn: "Coffee frap-shake with Baileys.", img: "img/Productos/cafeFrappeBaileys.webp" },
+    { nombre: "Piña con Malibu", descEs: "Granizado de Piña colada con Malibu.", descEn: "Piña colada slush with Malibu.", img: "img/Productos/mangoMalibu.webp" },
+    { nombre: "Tequila Sunrise Frozen", descEs: "Granizado de naranja con tequila José Cuervo.", descEn: "Orange slush with José Cuervo tequila.", img: "img/Productos/naranjaJoseCuervo.webp" }
 ];
 
 // --- BEBIDAS DISPONIBLES ---
@@ -554,10 +506,10 @@ const saboresCombinados = [
 
 // --- SABORES GRANIZADO ---
 const saboresGranizado = [
-    { nombre: "Granizado de limon", sub: "", img: "img/Productos/granizadoLimon.png" },
+    { nombre: "Granizado de limón", sub: "", img: "img/Productos/granizadoLimon.png" },
     { nombre: "Granizado de fresa", sub: "", img: "img/Productos/granizadoFresa.png" },
     { nombre: "Granizado tropical", sub: "", img: "img/Productos/granizadoTropical.png" },
-    { nombre: "Granizado de cafe", sub: "", img: "img/Productos/granizadoMango.png" },
+    { nombre: "Granizado de café", sub: "", img: "img/Productos/granizadoMango.png" },
     { nombre: "Granizado de piña colada", sub: "", img: "img/Productos/granizadoMango.png" },
     { nombre: "Granizado de mojito", sub: "", img: "img/Productos/granizadoMango.png" },
     { nombre: "Granizado de mango", sub: "", img: "img/Productos/granizadoMango.png" },
@@ -794,7 +746,7 @@ function renderProducts() {
         card.innerHTML = `
             <span class="product-badge">${state.currentLanguage === 'es' ? product.category : product.category}</span>
             <div class="product-img-container">
-                <img src="${product.img}" alt="${title}" class="product-img" loading="lazy">
+                <img src="${product.img}" alt="${title}" class="product-img" loading="lazy" decoding="async">
             </div>
             <div class="product-info">
                 <div class="product-title-row" style="align-items: center;">
@@ -857,8 +809,10 @@ function renderProducts() {
             }
             cartaRouletteRotation = 0;
         }, 0);
+    }
 
-        // Inject sabores combinados card next to helados as well
+    // Inject sabores combinados card next to copas when that category is selected
+    if (state.currentCategory === 'copas') {
         const combosCard = document.createElement("div");
         combosCard.className = "product-card roulette-grid-card combos-grid-card";
         combosCard.setAttribute("data-aos", "fade-up");
@@ -867,7 +821,7 @@ function renderProducts() {
                 <span class="section-subtitle">${state.currentLanguage === 'es' ? 'Favoritos' : 'Favorites'}</span>
                 <h3 class="roulette-grid-title">${state.currentLanguage === 'es' ? 'Sabores combinados de nuestros clientes' : 'Our customers\' combined flavors'}</h3>
                 <p class="roulette-grid-desc">${state.currentLanguage === 'es' ? 'Las combinaciones más pedidas por nuestros clientes. ¡Inspírate y crea la tuya!' : 'The combinations our customers order the most. Get inspired and create your own!'}</p>
-                <img src="img/Productos/saborescombinados.png" alt="Sabores combinados de nuestros clientes" class="combos-grid-img" loading="lazy">
+                <img src="img/Productos/saborescombinados.webp" alt="Sabores combinados de nuestros clientes" class="combos-grid-img" loading="lazy">
                 <button class="btn-ver-sabores" onclick="abrirPopupCombos()">
                     <i class="fa-solid fa-ice-cream"></i>
                     ${state.currentLanguage === 'es' ? 'Ver sabores combinados' : 'See combined flavors'}
@@ -1072,7 +1026,7 @@ function abrirPopupFrozenCocktails() {
     lista.innerHTML = frozenCocktailsList.map(c => `
         <div class="cocktail-card">
             <div class="cocktail-card-img-wrap">
-                <img src="${c.img}" alt="${c.nombre}" class="cocktail-card-img">
+                <img src="${c.img}" alt="${c.nombre}" class="cocktail-card-img" loading="lazy" decoding="async">
             </div>
             <div class="cocktail-card-body">
                 <h4 class="cocktail-card-name">${c.nombre}</h4>

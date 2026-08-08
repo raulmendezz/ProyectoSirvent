@@ -13,14 +13,71 @@
     <!-- Title -->
     <title>Heladería Sirvent Benidorm | Helados Artesanos desde 1940</title>
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://heladossirvent.es/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Heladería Sirvent Benidorm">
+    <meta property="og:title" content="Heladería Sirvent Benidorm | Helados Artesanos desde 1940">
+    <meta property="og:description" content="Helados y horchata de chufa artesanales en Benidorm desde 1940. Recetas tradicionales de Jijona. Más de 37 sabores, granizados y cócteles frozen.">
+    <meta property="og:url" content="https://heladossirvent.es/">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:image" content="https://heladossirvent.es/img/Productos/CONO%20BOLAS%20HELADO.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Heladería Sirvent Benidorm | Helados Artesanos desde 1940">
+    <meta name="twitter:description" content="Helados y horchata de chufa artesanales en Benidorm desde 1940. Recetas tradicionales de Jijona.">
+    <meta name="twitter:image" content="https://heladossirvent.es/img/Productos/CONO%20BOLAS%20HELADO.png">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/Productos/TARRINA HELADO copia.png">
+
+    <!-- Preload de la imagen hero (mejora el LCP) -->
+    <link rel="preload" as="image" href="img/Productos/CONO BOLAS HELADO.webp" fetchpriority="high">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="index.css">
 
     <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data: LocalBusiness (Google local SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "IceCreamShop",
+      "name": "Heladería Sirvent Benidorm",
+      "description": "Heladería artesanal en Benidorm desde 1940. Helados, horchata de chufa de Alboraya, granizados, gofres y cócteles frozen con recetas tradicionales de Jijona.",
+      "image": "https://heladossirvent.es/img/Productos/CONO%20BOLAS%20HELADO.png",
+      "url": "https://heladossirvent.es/",
+      "telephone": "+34666373531",
+      "email": "helados.sirvent@gmail.com",
+      "priceRange": "€€",
+      "foundingDate": "1940",
+      "servesCuisine": "Helados artesanales, horchata, granizados",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avinguda Alcoi, 2",
+        "addressLocality": "Benidorm",
+        "addressRegion": "Alicante",
+        "postalCode": "03503",
+        "addressCountry": "ES"
+      },
+      "sameAs": [
+        "https://www.instagram.com/heladossirvent",
+        "https://www.facebook.com/HeladosSirvent",
+        "https://www.tiktok.com/@heladossirvent"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "ratingCount": "6"
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -53,7 +110,8 @@
                 </div>
 
                 <!-- Mobile Menu Hamburger -->
-                <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="menu-toggle" onclick="toggleMenu()" role="button" tabindex="0"
+                    aria-label="Abrir menú de navegación" aria-controls="navMenu">
                     <i class="fa-solid fa-bars" id="menuIcon"></i>
                 </div>
             </div>
@@ -87,8 +145,9 @@
             <div class="hero-image-wrapper">
                 <div class="hero-image-bg"></div>
                 <!-- Premium Hero image showcasing a signature artisan product -->
-                <img src="img/Productos/CONO BOLAS HELADO.png" alt="Heladería Sirvent Helados Artesanos"
-                    class="hero-image">
+                <img src="img/Productos/CONO BOLAS HELADO.webp"
+                    alt="Cono de helado artesano de la Heladería Sirvent en Benidorm"
+                    class="hero-image" width="813" height="1594" fetchpriority="high" decoding="async">
             </div>
         </div>
     </section>
@@ -106,7 +165,8 @@
                 <!-- Live Search -->
                 <div class="search-box">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" class="search-input" placeholder="Busca tu helado o bebida favorita...">
+                    <input type="text" class="search-input" placeholder="Busca tu helado o bebida favorita..."
+                        aria-label="Buscar en la carta">
                 </div>
 
                 <!-- Category Tabs -->
@@ -222,8 +282,8 @@
                         Las combinaciones más pedidas por nuestros clientes. ¡Inspírate y crea la tuya!
                     </p>
 
-                    <img src="img/Productos/saborescombinados.png" alt="Sabores combinados de nuestros clientes"
-                        class="combos-img">
+                    <img src="img/Productos/saborescombinados.webp" alt="Sabores combinados de helado más pedidos en la Heladería Sirvent"
+                        class="combos-img" width="1000" height="558" loading="lazy" decoding="async">
 
                     <button class="btn-ver-sabores" onclick="abrirPopupCombos()">
                         <i class="fa-solid fa-ice-cream"></i>
@@ -421,11 +481,11 @@
                     </p>
                     <div class="footer-socials">
                         <a href="https://www.instagram.com/heladossirvent" class="social-icon" target="_blank"
-                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.facebook.com/HeladosSirvent" class="social-icon" target="_blank"
-                            aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://www.tiktok.com/@heladossirvent?lang=es" class="social-icon" target="_blank"
-                            aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                            rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
 
@@ -619,6 +679,9 @@
             }
         })();
     </script>
+
+    <!-- Horario estacional compartido (debe cargarse antes que app.js) -->
+    <script src="hours.js"></script>
 
     <!-- Load Interactive app logic -->
     <script src="app.js"></script>

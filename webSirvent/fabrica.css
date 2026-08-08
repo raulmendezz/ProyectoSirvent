@@ -377,3 +377,100 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
     .ev-stat { padding: 22px 14px; }
     .ev-stat .num { font-size: 1.9rem; }
 }
+
+/* ==========================================================================
+   SKEUOMORFISMO SUAVE (NEUMORPHISM) — fabrica.html
+   Usa los tokens --neu-* definidos en index.css (se carga antes que este).
+   Capa final para poder revertirlo fácilmente.
+   ========================================================================== */
+
+/* Superficie base mate (fabrica.css reimpone el body, hay que sobreescribirlo) */
+body {
+    background-color: var(--neu-bg);
+}
+
+/* Hero y CTA: fondos planos sobre la superficie neumórfica */
+.fabrica-hero {
+    background: var(--neu-bg);
+    border-bottom: none;
+}
+
+.stats-bar {
+    background: var(--neu-bg);
+    backdrop-filter: none;
+    border-bottom: none;
+    box-shadow: var(--neu-inset-sm);
+}
+
+.fab-section.alt {
+    background: var(--neu-bg);
+}
+
+.cta-section {
+    background: var(--neu-bg);
+    border-top: none;
+}
+
+/* Etiquetas de sección en relieve suave */
+.section-label,
+.fabrica-hero .badge {
+    background: var(--neu-bg);
+    border: none;
+    box-shadow: var(--neu-raised-sm);
+}
+
+/* Tarjetas de granizados */
+.granizado-card {
+    background: var(--neu-bg);
+    backdrop-filter: none;
+    border: none;
+    box-shadow: var(--neu-raised);
+}
+.granizado-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--neu-raised-lg);
+}
+
+/* Etiquetas de helados */
+.helado-tag {
+    background: var(--neu-bg);
+    border: none;
+    box-shadow: var(--neu-raised-sm);
+}
+.helado-tag:hover {
+    box-shadow: var(--neu-raised);
+}
+
+/* Tarjetas de maquinaria */
+.maq-card {
+    background: var(--neu-bg);
+    backdrop-filter: none;
+    border: none;
+    border-top: none;
+    box-shadow: var(--neu-raised);
+}
+.maq-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--neu-raised-lg);
+}
+.maq-card .maq-icon {
+    box-shadow: var(--neu-primary-raised);
+}
+
+/* Stat cards de eventos (fondo rosa → relieve de color) */
+.ev-stat {
+    box-shadow: var(--neu-primary-raised);
+}
+
+/* Botón CTA */
+.cta-btn {
+    box-shadow: var(--neu-primary-raised);
+}
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--neu-primary-raised);
+}
+.cta-btn:active {
+    transform: translateY(0);
+    box-shadow: var(--neu-primary-inset);
+}

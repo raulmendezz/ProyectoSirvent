@@ -1,0 +1,20 @@
+# --- Backup de imágenes originales (112 MB, NO referenciado por la web) ---
+img/Productos_originales/
+
+# --- Cruft del sistema operativo ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*.ini
+.DS_Store
+
+# --- Dependencias / build (por si en el futuro usas Node) ---
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# --- Editores / IDE ---
+.vscode/
+.idea/
+*.swp
+*~
