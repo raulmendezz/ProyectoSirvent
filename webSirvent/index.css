@@ -2284,3 +2284,21 @@ body {
     color: var(--primary);
     box-shadow: var(--neu-raised-sm);
 }
+
+/* --- Sección de contacto: unificar los 3 paneles con el relieve neumórfico --- */
+/* (el glassmorphism los dejaba translúcidos y desentonaban sobre el fondo mate) */
+.contact-card,
+.roulette-card,
+.combos-card {
+    background-color: var(--neu-bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: var(--neu-raised);
+}
+
+/* Blindaje: con width/height en el HTML, forzar que la imagen mantenga ratio */
+.combos-img,
+.combos-grid-img {
+    height: auto;
+}
