@@ -44,7 +44,7 @@ const translations = {
         tab_frap: "Frap-Shakes",
         tab_copas: "Copas",
         tab_horchata: "Horchata y Leche",
-        tab_gofres: "Gofres y Crepes",
+        tab_gofres: "Gofres",
         tab_cafe: "Cafetería",
         tab_bebidas: "Bebidas",
         status_open: "Abierto ahora",
@@ -99,7 +99,7 @@ const translations = {
         tab_frap: "Frap-Shakes",
         tab_copas: "Ice Cream Cups",
         tab_horchata: "Horchata & Milk",
-        tab_gofres: "Waffles & Crepes",
+        tab_gofres: "Waffles",
         tab_cafe: "Coffee Shop",
         tab_bebidas: "Drinks",
         status_open: "Open now",
@@ -176,7 +176,7 @@ const products = [
         descEs: "Elige tu sabor favorito en tarrina crujiente o cono artesano. 1, 2 o 3 bolas.",
         descEn: "Choose your favorite flavor in a crispy tub or artisan cone. 1, 2 or 3 scoops.",
         price: 3.00,
-        img: "img/Productos/conoTarrina.webp",
+        img: "img/Productos/nueva/TARRINA HELADO SIRVENT-1.webp",
         tags: ["Gluten-free option", "Artisanal"],
         hasSizes: false
     },
@@ -209,7 +209,7 @@ const products = [
         descEs: "Cócteles helados artesanales. Elige entre nuestra selección de combinados frozen.",
         descEn: "Artisan frozen cocktails. Choose from our selection of frozen blends.",
         price: 8.50,
-        img: "img/Productos/mangoDaikiri.webp",
+        img: "img/Productos/frz/portada.png",
         tags: ["Alcoholic", "Artisanal"],
         hasSizes: false,
         hasFrozenCocktails: true
@@ -450,7 +450,7 @@ const products = [
         descEs: "Coca-Cola, Fanta, Sprite o Nestea helados en lata.",
         descEn: "Chilled Coca-Cola, Fanta, Sprite, or Nestea in a can.",
         price: 2.50,
-        img: "img/Productos/refrescos.webp",
+        img: "img/Productos/refrescos.png",
         tags: ["Soft drink"],
         hasSizes: false,
         hasBebidas: true
@@ -459,24 +459,24 @@ const products = [
 
 // --- FROZEN COCKTAILS LIST ---
 const frozenCocktailsList = [
-    { nombre: "Strawberry Daiquiri", descEs: "Granizado de fresa con ron blanco Bacardi.", descEn: "Strawberry slush with Bacardi white rum.", img: "img/Productos/daikiriStraw.webp" },
-    { nombre: "Blue Lagoon", descEs: "Granizado de tropical azul con Vodka Smirnoff.", descEn: "Blue tropical slush with Smirnoff vodka.", img: "img/Productos/blueLagoon.webp" },
-    { nombre: "Mango Daiquiri", descEs: "Granizado de mango con ron blanco Bacardi.", descEn: "Mango slush with Bacardi white rum.", img: "img/Productos/mangoDaikiri.webp" },
-    { nombre: "Strawberry Vodka", descEs: "Granizado de fresa con Vodka Smirnoff.", descEn: "Strawberry slush with Smirnoff vodka.", img: "img/Productos/StrawberryVodka.webp" },
-    { nombre: "Irish Frozen", descEs: "Granizado de café con Whisky JB.", descEn: "Coffee slush with JB whisky.", img: "img/Productos/IrishFrozen.webp" },
-    { nombre: "Frozen Margarita", descEs: "Granizado de limón con tequila José Cuervo.", descEn: "Lemon slush with José Cuervo tequila.", img: "img/Productos/forezenMargarita.webp" },
-    { nombre: "Mentireta", descEs: "Granizado de limón con ginebra Beefeater.", descEn: "Lemon slush with Beefeater gin.", img: "img/Productos/mentireta.webp" },
-    { nombre: "Café Frappé Baileys", descEs: "Frap-shake de café con Baileys.", descEn: "Coffee frap-shake with Baileys.", img: "img/Productos/cafeFrappeBaileys.webp" },
-    { nombre: "Piña con Malibu", descEs: "Granizado de Piña colada con Malibu.", descEn: "Piña colada slush with Malibu.", img: "img/Productos/mangoMalibu.webp" },
-    { nombre: "Tequila Sunrise Frozen", descEs: "Granizado de naranja con tequila José Cuervo.", descEn: "Orange slush with José Cuervo tequila.", img: "img/Productos/naranjaJoseCuervo.webp" }
+    { nombre: "Strawberry Daiquiri", descEs: "Granizado de fresa con ron blanco Bacardi.", descEn: "Strawberry slush with Bacardi white rum.", img: "img/Productos/frz/fresadaiquiri.png" },
+    { nombre: "Blue Lagoon", descEs: "Granizado de tropical azul con Vodka Smirnoff.", descEn: "Blue tropical slush with Smirnoff vodka.", img: "img/Productos/frz/blueLagon.png" },
+    { nombre: "Mango Daiquiri", descEs: "Granizado de mango con ron blanco Bacardi.", descEn: "Mango slush with Bacardi white rum.", img: "img/Productos/frz/mangoDaikiri.png" },
+    { nombre: "Strawberry Vodka", descEs: "Granizado de fresa con Vodka Smirnoff.", descEn: "Strawberry slush with Smirnoff vodka.", img: "img/Productos/frz/fresaVodka.png" },
+    { nombre: "Irish Frozen", descEs: "Granizado de café con Whisky JB.", descEn: "Coffee slush with JB whisky.", img: "img/Productos/frz/irishFrozen.png" },
+    { nombre: "Frozen Margarita", descEs: "Granizado de limón con tequila José Cuervo.", descEn: "Lemon slush with José Cuervo tequila.", img: "img/Productos/frz/lemonJC.png" },
+    { nombre: "Mentireta", descEs: "Granizado de limón con ginebra Beefeater.", descEn: "Lemon slush with Beefeater gin.", img: "img/Productos/frz/leamonBeef.png" },
+    { nombre: "Café Frappé Baileys", descEs: "Frap-shake de café con Baileys.", descEn: "Coffee frap-shake with Baileys.", img: "img/Productos/frz/cafeBaileys.png" },
+    { nombre: "Piña con Malibu", descEs: "Granizado de Piña colada con Malibu.", descEn: "Piña colada slush with Malibu.", img: "img/Productos/frz/pinaMalibu.png" },
+    { nombre: "Tequila Sunrise Frozen", descEs: "Granizado de naranja con tequila José Cuervo.", descEn: "Orange slush with José Cuervo tequila.", img: "img/Productos/frz/naranjaJoseCuervo.png" }
 ];
 
 // --- BEBIDAS DISPONIBLES ---
 const bebidasDisponibles = [
-    { nombre: "Cocacola" },
-    { nombre: "Cocacola zero" },
+    { nombre: "Coca-Cola" },
+    { nombre: "Coca-Cola Zero" },
     { nombre: "Sprite" },
-    { nombre: "Agua gas" },
+    { nombre: "Agua con gas" },
     { nombre: "Agua" },
     { nombre: "Mahou" },
     { nombre: "Mahou 0,0" },
@@ -506,14 +506,14 @@ const saboresCombinados = [
 
 // --- SABORES GRANIZADO ---
 const saboresGranizado = [
-    { nombre: "Granizado de limón", sub: "", img: "img/Productos/granizadoLimon.png" },
-    { nombre: "Granizado de fresa", sub: "", img: "img/Productos/granizadoFresa.png" },
-    { nombre: "Granizado tropical", sub: "", img: "img/Productos/granizadoTropical.png" },
-    { nombre: "Granizado de café", sub: "", img: "img/Productos/granizadoMango.png" },
-    { nombre: "Granizado de piña colada", sub: "", img: "img/Productos/granizadoMango.png" },
-    { nombre: "Granizado de mojito", sub: "", img: "img/Productos/granizadoMango.png" },
-    { nombre: "Granizado de mango", sub: "", img: "img/Productos/granizadoMango.png" },
-    { nombre: "Granizado de naranja", sub: "", img: "img/Productos/granizadoMango.png" },
+    { nombre: "Granizado de limón", sub: "", img: "img/Productos/grani/Granizado Limon-0.webp" },
+    { nombre: "Granizado de fresa", sub: "", img: "img/Productos/grani/Granizado Fresa-0.webp" },
+    { nombre: "Granizado tropical", sub: "", img: "img/Productos/grani/Granizado Tropical-0.webp" },
+    { nombre: "Granizado de café", sub: "", img: "img/Productos/grani/Granizado Cafe-0.webp" },
+    { nombre: "Granizado de piña colada", sub: "", img: "img/Productos/grani/Granizado Piña-0.webp" },
+    { nombre: "Granizado de mojito", sub: "", img: "img/Productos/grani/Granizado Mojito-0.webp" },
+    { nombre: "Granizado de mango", sub: "", img: "img/Productos/grani/Granizado Mango-0.webp" },
+    { nombre: "Granizado de naranja", sub: "", img: "img/Productos/grani/Granizado Naranja-0.webp" },
 ];
 
 // --- SABORES GRANIZADO CON BOLA (independiente) ---
@@ -527,43 +527,43 @@ const saboresGranizadoConBola = [
 
 // --- SABORES DISPONIBLES ---
 const saboresHelado = [
-    { nombre: "Oreo", badge: null },
-    { nombre: "Turrón con trozos", badge: null },
-    { nombre: "Dulce de leche", badge: null },
-    { nombre: "Pistacho", badge: null },
-    { nombre: "Cheese Cake", badge: null },
-    { nombre: "Biscotino Cookies", badge: null },
-    { nombre: "Kinder Bueno", badge: null },
-    { nombre: "Plátano con nueces al caramelo", badge: null },
-    { nombre: "Turrón", badge: "Sin azúcar" },
-    { nombre: "Limón", badge: "Sin Lactosa" },
-    { nombre: "Stracciatella", badge: null },
-    { nombre: "Ferrero Rocher", badge: null },
-    { nombre: "Pantera Rosa", badge: null },
-    { nombre: "Chocolate negro", badge: "Sin Lactosa" },
-    { nombre: "Mango", badge: "Sin Lactosa" },
-    { nombre: "Nata", badge: null },
-    { nombre: "Chocolate Sirvent", badge: null },
-    { nombre: "Menta con chocolate (Aftereight)", badge: null },
-    { nombre: "Chocolate blanco con filipinos", badge: null },
-    { nombre: "Merengada", badge: "Sin azúcar" },
-    { nombre: "Avellana", badge: null },
-    { nombre: "Lotus", badge: null },
-    { nombre: "Caramelo salado", badge: null },
-    { nombre: "Vainilla", badge: null },
-    { nombre: "Fresa Natural", badge: null },
-    { nombre: "Huevo Kinder", badge: null },
-    { nombre: "Málaga (Ron con pasas)", badge: null },
-    { nombre: "Chocolate Fondant", badge: null },
-    { nombre: "Nube de Algodón", badge: null },
-    { nombre: "Tutti Frutti", badge: null },
-    { nombre: "Yogur", badge: null },
-    { nombre: "Coco con Raffaello", badge: null },
-    { nombre: "Moka (Café)", badge: null },
-    { nombre: "Crema Catalana", badge: null },
-    { nombre: "Pistacho Dubai", badge: null },
-    { nombre: "Chocolate con Oreo", badge: null },
-    { nombre: "Coco con Mango", badge: null }
+    { nombre: "Oreo", badge: null, img: "img/Productos/nueva/Bola _OREO-0.webp" },
+    { nombre: "Turrón con trozos", badge: null, img: "img/Productos/nueva/Bola _TURRON JIJONA-0.webp" },
+    { nombre: "Dulce de leche", badge: null, img: "img/Productos/nueva/Bola _DULCE DE LECHE-0.webp" },
+    { nombre: "Pistacho", badge: null, img: "img/Productos/nueva/Bola _PISTACHO-0.webp" },
+    { nombre: "Cheese Cake", badge: null, img: "img/Productos/nueva/Bola _CHEESE CAKE-0.webp" },
+    { nombre: "Biscotino Cookies", badge: null, img: "img/Productos/nueva/Bola _BISCOTINO COOKIES-0.webp" },
+    { nombre: "Kinder Bueno", badge: null, img: "img/Productos/nueva/Bola _KINDER BUENO-0.webp" },
+    { nombre: "Plátano con nueces al caramelo", badge: null, img: "img/Productos/nueva/Bola _PLATANO CON NUECES-0.webp" },
+    { nombre: "Turrón", badge: "Sin azúcar", img: "img/Productos/nueva/Bola _TURRON JIJONA-0.webp" },
+    { nombre: "Limón", badge: "Sin Lactosa", img: "img/Productos/nueva/Bola _LIMON-0.webp" },
+    { nombre: "Stracciatella", badge: null, img: "img/Productos/nueva/Bola _STRACCIATELLA-0.webp" },
+    { nombre: "Ferrero Rocher", badge: null, img: "img/Productos/nueva/Bola _FERRERO ROCHER-0.webp" },
+    { nombre: "Pantera Rosa", badge: null, img: "img/Productos/nueva/Bola _PANTERA ROSA-0.webp" },
+    { nombre: "Chocolate negro", badge: "Sin Lactosa", img: "img/Productos/nueva/Bola _COCHOLATE NEGOR SIN LACTOSA-0.webp" },
+    { nombre: "Mango", badge: "Sin Lactosa", img: "img/Productos/nueva/Bola _MANGO-0.webp" },
+    { nombre: "Nata", badge: null, img: "img/Productos/nueva/Bola _NATA-0.webp" },
+    { nombre: "Chocolate Sirvent", badge: null, img: "img/Productos/nueva/Bola _CHOCOLATE SIRVENT-0.webp" },
+    { nombre: "Menta con chocolate (Aftereight)", badge: null, img: "img/Productos/nueva/Bola _MENTA CHOCOLATE-0.webp" },
+    { nombre: "Chocolate blanco con filipinos", badge: null, img: "img/Productos/nueva/Bola _CHOCOLATE BLANCO FILIPINOS-0.webp" },
+    { nombre: "Merengada", badge: "Sin azúcar", img: "img/Productos/nueva/Bola _MERENGADA-0.webp" },
+    { nombre: "Avellana", badge: null, img: "img/Productos/nueva/Bola _AVELLANA-0.webp" },
+    { nombre: "Lotus", badge: null, img: "img/Productos/nueva/Bola _LOTUS-0.webp" },
+    { nombre: "Caramelo salado", badge: null, img: "img/Productos/nueva/Bola _CARAMELO SALADO-0.webp" },
+    { nombre: "Vainilla", badge: null, img: "img/Productos/nueva/Bola _VAINILLA NATURAL-0.webp" },
+    { nombre: "Fresa Natural", badge: null, img: "img/Productos/nueva/Bola _FRESA NATURAL-0.webp" },
+    { nombre: "Huevo Kinder", badge: null, img: "img/Productos/nueva/Bola _HUEVO KINDER-0.webp" },
+    { nombre: "Málaga (Ron con pasas)", badge: null, img: "img/Productos/nueva/Bola _MALAGA RON CON PASAS-0.webp" },
+    { nombre: "Chocolate Fondant", badge: null, img: "img/Productos/nueva/Bola _CHOCOLATE FONDANT-0.webp" },
+    { nombre: "Nube de Algodón", badge: null, img: "img/Productos/nueva/Bola _NUBE ALGODON-0.webp" },
+    { nombre: "Tutti Frutti", badge: null, img: "img/Productos/nueva/Bola _TUTI FRUTI-0.webp" },
+    { nombre: "Yogur", badge: null, img: "img/Productos/nueva/Bola _YOGUR-0.webp" },
+    { nombre: "Coco con Raffaello", badge: null, img: "img/Productos/nueva/Bola _COCO Raffaello-0.webp" },
+    { nombre: "Moka (Café)", badge: null, img: "img/Productos/nueva/Bola _MOKA-0.webp" },
+    { nombre: "Crema Catalana", badge: null, img: "img/Productos/nueva/Bola _CREMA CATALANA-0.webp" },
+    { nombre: "Pistacho Dubai", badge: null, img: "img/Productos/nueva/Bola _PISTACHO DUBAI-0.webp" },
+    { nombre: "Chocolate con Oreo", badge: null, img: "img/Productos/nueva/Bola _OREO-0.webp" },
+    { nombre: "Coco con Mango", badge: null, img: "img/Productos/nueva/Bola _COCO MANGO-0.webp" }
 ];
 
 // --- INITIALIZATION ---
@@ -898,7 +898,7 @@ function abrirPopupSabores(titulo) {
     const lista = document.getElementById("popupSaboresList");
     lista.innerHTML = saboresHelado.map(s => `
         <div class="sabor-item">
-            <i class="fa-solid fa-circle"></i>
+            <img class="sabor-item-img" src="${encodeURI(s.img)}" alt="Helado de ${s.nombre}" loading="lazy">
             <span>${s.nombre}${s.badge ? `<span class="sabor-badge">${s.badge}</span>` : ""}</span>
         </div>
     `).join("");
@@ -947,7 +947,7 @@ function abrirPopupGranizadoSabores() {
     const lista = document.getElementById("popupGranizadoSaboresList");
     lista.innerHTML = saboresGranizado.map(s => `
         <div class="sabor-item sabor-item-titulo">
-            <i class="fa-solid fa-circle"></i>
+            <img class="sabor-item-img" src="${encodeURI(s.img)}" alt="${s.nombre}" loading="lazy">
             <div class="sabor-item-text">
                 <span class="sabor-item-nombre">${s.nombre}</span>
                 <span class="sabor-item-sub">${s.sub}</span>
