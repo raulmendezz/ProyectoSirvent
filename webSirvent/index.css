@@ -527,8 +527,9 @@ select {
 /* --- FLOATING INSTAGRAM ILLUSTRATION --- */
 .hero-instagram {
     position: absolute;
-    top: -46px;
-    right: 24px;
+    /* Escala de forma fluida con el ancho del contenedor del helado */
+    top: clamp(-46px, -4vw, -8px);
+    right: clamp(0px, 2vw, 24px);
     z-index: 3;
     display: block;
     animation: float 3.5s ease-in-out infinite;
@@ -536,7 +537,7 @@ select {
 
 .hero-instagram-illu {
     display: block;
-    width: 180px;
+    width: clamp(88px, 13vw, 180px);
     height: auto;
     filter: drop-shadow(0 10px 18px rgba(214, 36, 159, 0.28));
     transition: transform var(--transition-fast), filter var(--transition-fast);
@@ -549,18 +550,8 @@ select {
 
 @media (max-width: 992px) {
     .hero-instagram {
-        top: -10px;
-        right: 0;
-    }
-
-    .hero-instagram-illu {
-        width: 140px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-instagram-illu {
-        width: 112px;
+        top: clamp(-8px, 1vw, 8px);
+        right: clamp(0px, 1vw, 8px);
     }
 }
 
